@@ -22,5 +22,3 @@ class Rank(Enum):
     KING = 13
     ACE = 14
 
-
-
