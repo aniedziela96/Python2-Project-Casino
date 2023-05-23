@@ -1,15 +1,12 @@
 from cards import Rank, Suit
 from random import shuffle
 
-CARDS_LST = []
-# create the list of possible playing cards
-for suit in Suit:
-    for rank in Rank:
-        CARDS_LST.append((rank, suit))
-
 class Deck:
     def __init__(self) -> None:
-        self.card_list = CARDS_LST
+        self.card_list = []
+        for suit in Suit:
+            for rank in Rank:
+                self.card_list.append((rank, suit))
 
     def shuffle(self) -> None:
         shuffle(self.card_list)
@@ -40,3 +37,4 @@ if __name__ == "__main__":
     print(d.draw(n = 5))
     print('-' * 20)
     print(len(d.card_list))
+
