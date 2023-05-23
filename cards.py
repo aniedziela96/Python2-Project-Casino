@@ -1,13 +1,13 @@
-from enum import Enum
+import enum
 
-class Suit(Enum):
+class Suit(enum.IntEnum):
     HEARTS = 1
-    DIAMOND = 2
+    DIAMONDS = 2
     SPADES = 3
     CLUBS = 4
 
 
-class Rank(Enum):
+class Rank(enum.IntEnum):
     TWO = 2
     THREE = 3
     FOUR = 4
@@ -22,3 +22,4 @@ class Rank(Enum):
     KING = 13
     ACE = 14
 
+    

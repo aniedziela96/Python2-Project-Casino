@@ -29,12 +29,15 @@ class Deck:
 
 if __name__ == "__main__":
     d = Deck()
-    print(d.card_list)
+    # print(d.card_list)
     d.shuffle()
-    print(d.card_list)
-    print('-' * 20)
-    print(d.is_empty())
-    print(d.draw(n = 5))
-    print('-' * 20)
-    print(len(d.card_list))
+    # print(d.card_list)
+    # print('-' * 20)
+    # print(d.is_empty())
+    # print(d.draw(n = 5))
+    # print('-' * 20)
+    # print(len(d.card_list))
+    c = d.draw()
+    print(c[0][0].name)
+
 
