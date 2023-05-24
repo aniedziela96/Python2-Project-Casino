@@ -17,13 +17,13 @@ class Deck:
         else:
             return False
 
-    def draw(self, n = 1) -> tuple:
-        if len(self.card_list) >= n:
-            drawn_cards = []
-            for i in range(n):
+    def draw(self, n = 1) -> list:
+        drawn_cards = []
+        for i in range(n):
+            if not self.is_empty():
                 drawn_cards.append(self.card_list.pop(-1))
-        else:
-            raise IndexError (f'There is not enough cards in deck. There are {len(self.card_list)} cards in the deck')
+            else:
+                raise IndexError ('Deck is empty')
                 
         return drawn_cards
 
