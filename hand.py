@@ -28,14 +28,7 @@ class Hand():
             else:
                 rank = str(card[0].value)
 
-            if card[1].name == "HEARTS":
-                suit = "\N{White Heart Suit}"
-            elif card[1].name == "DIAMONDS":
-                suit = "\N{White Diamond Suit}"
-            elif card[1].name == "CLUBS":
-                suit = "\N{White Club Suit}"
-            elif card[1].name == "SPADES":
-                suit = "\N{White Spade Suit}"
+            suit = str(card[1])
         
             cards_str = cards_str + rank + suit + ", "
 
@@ -117,17 +110,15 @@ class Hand():
 
 if __name__ == "__main__":
     s = set()
-    for i in range(100000):
+    for i in range(100):
         d = Deck()
         d.shuffle()
         h = Hand()
         c = d.draw(n = 5)
         h.add_cards(c)
         r = h.rank()
-        if r[0] not in ["Pair", "High card", "Three of a kind", "Two Pair", 
-                        "Straight", 'Flush', 'Full House', "Four of a kind"]:
-            print(h)
-            print(r)
+        print(h)
+        print(r)
         
         s.add(r)
 
