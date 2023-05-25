@@ -6,6 +6,18 @@ class Suit(enum.IntEnum):
     SPADES = 3
     CLUBS = 4
 
+    def __str__(self) -> str:
+        if self.name == "HEARTS":
+            suit = "\N{White Heart Suit}"
+        elif self.name == "DIAMONDS":
+            suit = "\N{White Diamond Suit}"
+        elif self.name == "CLUBS":
+            suit = "\N{White Club Suit}"
+        elif self.name == "SPADES":
+            suit = "\N{White Spade Suit}"
+
+        return suit
+
 
 class Rank(enum.IntEnum):
     TWO = 2
