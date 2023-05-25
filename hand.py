@@ -113,6 +113,8 @@ class Hand():
             return(HAND_RANKS[4], score) # straight 
         else: 
             return(HAND_RANKS[0], score)
+        
+        # TODO: scoring system
   
 
 if __name__ == "__main__":
