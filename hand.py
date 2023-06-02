@@ -17,16 +17,7 @@ class Hand():
     def __str__(self) -> str:
         cards_str = ""
         for card in self.cards:
-            if card[0].value == 14:
-                rank = "A"
-            elif card[0].value == 13:
-                rank = "K"
-            elif card[0].value == 12:
-                rank = "Q"
-            elif card[0].value == 11:
-                rank = "J"
-            else:
-                rank = str(card[0].value)
+            rank = str(card[0])
 
             suit = str(card[1])
         
@@ -59,7 +50,6 @@ class Hand():
         if len(self.cards) != 5:
             raise ValueError ('only possible for 5 cards hands')
         sorted_hand = sorted(self.cards)
-        score = 0
         # checks if there is a pair - if there is there's no possibility for straight, colour etc.
         if sorted_hand[0][0] == sorted_hand[1][0] or \
            sorted_hand[1][0] == sorted_hand[2][0] or \
@@ -79,35 +69,33 @@ class Hand():
                 # checks for four, if it is not, then we have a full
                     if(sorted_hand[0][0] == sorted_hand[3][0] or
                        sorted_hand[1][0] == sorted_hand[4][0]):
-                        return (HAND_RANKS[7], score)
+                        return HAND_RANKS[7] 
                     else: 
-                        return(HAND_RANKS[6], score) # Full
+                        return HAND_RANKS[6] # Full
                 else:
-                    return(HAND_RANKS[2], score)
+                    return HAND_RANKS[2]
                     # Two Pairs, there's no Three, so it only can be Two Pairs
             elif (sorted_hand[0][0] == sorted_hand[2][0] or 
                   sorted_hand[1][0] == sorted_hand[3][0] or 
                   sorted_hand[2][0] == sorted_hand[4][0]):
             # Check for Three, but now without the Two Pairs
-                    return(HAND_RANKS[3], score) # Three of a kind
+                    return HAND_RANKS[3]  # Three of a kind
             # if there is no Three or Two Pairs, there only can be a One Pair
             else:
-                return(HAND_RANKS[1], score)
+                return HAND_RANKS[1]
     
         elif self.is_one_color(): #check for straight, flush
             if self.is_straight():
                 if sorted_hand[0][0] == 10:
-                    return(HAND_RANKS[9], score) # Royal flush
+                    return HAND_RANKS[9] # Royal flush
                 else: 
-                    return(HAND_RANKS[8], score) # Straight flush
+                    return HAND_RANKS[8] # Straight flush
             else:
-                return(HAND_RANKS[5], score) # flush
+                return HAND_RANKS[5] # flush
         elif self.is_straight():
-            return(HAND_RANKS[4], score) # straight 
+            return HAND_RANKS[4] # straight 
         else: 
-            return(HAND_RANKS[0], score)
-        
-        # TODO: scoring system
+            return HAND_RANKS[0]
   
 
 if __name__ == "__main__":
@@ -116,8 +104,7 @@ if __name__ == "__main__":
         d = Deck()
         d.shuffle()
         h = Hand()
-        c = d.draw(n = 5)
-        h.add_cards(c)
+        h.add_cards(d.draw(n = 5))
         r = h.rank()
         print(h)
         print(r)

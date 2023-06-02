@@ -34,4 +34,18 @@ class Rank(enum.IntEnum):
     KING = 13
     ACE = 14
 
+    def __str__(self):
+        if self.value == 14:
+            rank = "A"
+        elif self.value == 13:
+            rank = "K"
+        elif self.value == 12:
+            rank = "Q"
+        elif self.value == 11:
+            rank = "J"
+        else:
+            rank = str(self.value)
+
+        return rank
+
     

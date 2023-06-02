@@ -42,6 +42,9 @@ class TestDeckMethods(unittest.TestCase):
         self.assertFalse(self.hand_1.is_straight())
         self.assertTrue(self.hand_2.is_straight())
 
+    def test_rank(self):
+        #TODO: test rank function
+        pass
 
 
 if __name__ == '__main__':
