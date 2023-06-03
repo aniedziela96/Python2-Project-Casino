@@ -44,10 +44,15 @@ class Hand():
                 return False
             
         return True
-
+    
+    def is_five(self) -> bool:
+        if len(self.cards) == 5:
+            raise True
+        else:
+            return False
 
     def rank(self) -> tuple:
-        if len(self.cards) != 5:
+        if not self.is_five:
             raise ValueError ('only possible for 5 cards hands')
         sorted_hand = sorted(self.cards)
         # checks if there is a pair - if there is there's no possibility for straight, colour etc.

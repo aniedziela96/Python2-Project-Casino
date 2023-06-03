@@ -1,3 +1,6 @@
+from typing import Any
+
+
 class Player():
     def __init__(self, name: str, money: int) -> None:
         self.name = name

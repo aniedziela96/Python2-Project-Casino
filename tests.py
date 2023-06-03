@@ -2,12 +2,15 @@ import unittest
 from deck import Deck
 from cards import Rank, Suit
 from hand import Hand
+from poker_player import Poker_Player
+from player import Player
 
 class TestDeckMethods(unittest.TestCase):
     def setUp(self) -> None:
         self.deck_1 = Deck()
         self.hand_1 = Hand()
         self.hand_2 = Hand()
+        self.poker_player = Poker_Player("rysio", 1000)
 
 
     def test_is_empty(self):
@@ -45,6 +48,10 @@ class TestDeckMethods(unittest.TestCase):
     def test_rank(self):
         #TODO: test rank function
         pass
+
+    # def test_poker_player_init(self):
+    #     self.assertEqual(self.poker_player.name, "rysio")
+    #     self.assertEqual(self.poker_player.wallet, 1000)
 
 
 if __name__ == '__main__':

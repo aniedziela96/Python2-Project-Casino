@@ -48,10 +48,11 @@ class Casino():
                         player_password = get_pass()
                         if player_password == password:
                             money = int(money)
-                            player = self.create_player(name, money)
+                            player = self.create_player(login, money)
                             break
         else:
             print("Are you dumb? YES or NO")
+            return None
 
 
         while True:
@@ -85,10 +86,11 @@ class Casino():
 
             elif choice == "q":
                 print("Thank you for playing, hope to see you soon!")
+                # when quitting check the current wallet and change the money
                 break
 
             elif choice == "b":
-                print("You have ...")
+                print(f"You have {player.get_money()} tokens")
 
 
 if __name__ == "__main__":
