@@ -32,14 +32,17 @@ class Casino():
                         line = line.strip('\n')
                         login, password, money = line.split(';')
                         if name == login:
-                            print("Sorry this login is already taken. \
-                                  Please choose another one.")
-                    break
+                            print("Sorry this login is already taken"
+                                  "Please choose another one.")
+                            break
+                    else:
+                        break
             password = input("Password: ")
             with open(self.file, 'a') as players:
                 players.write(name + ";" + password + ";" + "1000\n")
 
             player = self.create_player(name, 1000)
+            return player
 
         elif first_time in "Nono":
             player_login = input("Login: ")
@@ -108,11 +111,14 @@ class Casino():
 
             elif choice == "q":
                 print("Thank you for playing, hope to see you soon!")
-                # when quitting check the current wallet and change the money
+                self.logout()
                 break
 
             elif choice == "b":
                 print(f"You have {player.get_money()} tokens")
+
+    def logout(self):
+        pass
 
 
 if __name__ == "__main__":
