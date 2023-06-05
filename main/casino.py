@@ -1,5 +1,7 @@
 # TODO imports
-from player import Player
+import sys
+sys.path.insert(0, 'C:/Users/niedz/Documents/Python projects/Casino/Python2-Project-Casino')
+from main.player import Player
 from poker.start_poker import Poker_Game
 
 
@@ -114,7 +116,7 @@ class Casino():
 
 
 if __name__ == "__main__":
-    c = Casino("players_file.csv")
+    c = Casino("main/players_file.csv")
     c.start()
 
     

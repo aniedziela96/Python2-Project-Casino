@@ -1,3 +1,5 @@
+import sys
+sys.path.insert(0, 'C:/Users/niedz/Documents/Python projects/Casino/Python2-Project-Casino')
 from poker.deck import Deck
 
 HAND_RANKS = ['High card', 'Pair', 'Two Pair', 'Three of a kind', 

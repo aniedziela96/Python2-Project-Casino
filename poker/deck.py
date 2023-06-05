@@ -1,3 +1,5 @@
+import sys
+sys.path.insert(0, 'C:/Users/niedz/Documents/Python projects/Casino/Python2-Project-Casino')
 from poker.cards import Rank, Suit
 from random import shuffle
 

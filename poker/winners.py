@@ -1,5 +1,9 @@
+import sys
+sys.path.insert(0, 'C:/Users/niedz/Documents/Python projects/Casino/Python2-Project-Casino')
 from poker.hand import Hand, HAND_RANKS
 from poker.poker_player import Poker_Player
+from poker.cards import Suit, Rank
+from poker.deck import Deck
 
 class Winners():
     def __init__(self, poker_player1, poker_player2) -> None:
@@ -96,6 +100,14 @@ class Winners():
     def winner_royal_flush(self):
         return "JACKPOT"
     
-
-                
-        
+      
+if __name__ == "__main__":
+    p1 = Poker_Player("bogus", 1000)
+    p2 = Poker_Player("rysio", 1000)
+    d = Deck()
+    d.shuffle()
+    p1.draw_cards(d.draw(5))
+    p2.draw_cards(d.draw(5))
+    print(p1.hand)
+    print(p2.hand)
+    w = Winners(p1, p2)

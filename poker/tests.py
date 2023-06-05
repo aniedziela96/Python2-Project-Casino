@@ -1,9 +1,11 @@
+import sys
+sys.path.insert(0, 'C:/Users/niedz/Documents/Python projects/Casino/Python2-Project-Casino')
 import unittest
-from deck import Deck
+from poker.deck import Deck
 from poker.cards import Rank, Suit
-from hand import Hand
-from poker_player import Poker_Player
-from player import Player 
+from poker.hand import Hand
+from poker.poker_player import Poker_Player
+from main.player import Player 
 
 class TestDeckMethods(unittest.TestCase):
     def setUp(self) -> None:

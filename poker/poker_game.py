@@ -1,5 +1,7 @@
+import sys
+sys.path.insert(0, 'C:/Users/niedz/Documents/Python projects/Casino/Python2-Project-Casino')
 from poker.hand import Hand, HAND_RANKS
-from player import Player
+from main.player import Player
 from poker.croupier import Croupier
 from poker.winners import Winners
 from poker.poker_human import Poker_human
@@ -16,20 +18,27 @@ class Poker():
     def bet(self, player = True, all_in = False):
         if player:
             if all_in:
-                player_bet = self.player.wallet
-                setattr(self.player, 'wallet', 0)
-            
+                player_bet = self.poker_player.wallet
+                setattr(self.poker_player, 'wallet', 0)
+                self.bet_money += player_bet
+                self.last_bet = player_bet
             else:
                 while True:
                     player_bet = int(input("Place your bet: "))
                     success = self.poker_player.players_bet(player_bet)
                     if success == True:
+                        self.bet_money += player_bet
+                        self.last_bet = player_bet
                         break
                     elif success == "all_in":
-                        print(f"{self.player.name} you wish to go all in, please choose that.")
+                        print(f"{self.player.name} you wish to go all in.")
+                        decision = input("Do you want to continue? (Y/N) ")
+                        if decision in "Yy":
+                            self.bet(player=True, all_in=True)
+                            break
+                            
 
-            self.bet_money += player_bet
-            self.last_bet = player_bet
+            
             
         else:
             pass
@@ -49,8 +58,10 @@ class Poker():
                     self.poker_player.wallet + self.bet_money)
     
     def winner(self):
-        self_rank = self.poker_player.hand.rank()
-        croupier_rank = self.croupier.hand.rank()
+        self.poker_player.hand.rank()
+        self.croupier.hand.rank()
+        self_rank = self.poker_player.rank
+        croupier_rank = self.croupier.rank
         if HAND_RANKS.index(self_rank) > HAND_RANKS.index(croupier_rank):
             return self.poker_player
         elif HAND_RANKS.index(self_rank) < HAND_RANKS.index(croupier_rank):

@@ -1,4 +1,6 @@
-from player import Player
+import sys
+sys.path.insert(0, 'C:/Users/niedz/Documents/Python projects/Casino/Python2-Project-Casino')
+from main.player import Player
 from poker.hand import Hand
 
 class Poker_Player(Player):
