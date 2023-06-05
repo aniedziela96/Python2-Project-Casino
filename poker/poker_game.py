@@ -13,18 +13,24 @@ class Poker():
         self.last_bet = 0
 
 
-    def bet(self, player = True):
+    def bet(self, player = True, all_in = False):
         if player:
-            while True:
-                player_bet = int(input("Place your bet: "))
-                success = self.poker_player.players_bet(player_bet)
-                if success:
-                    break
+            if all_in:
+                player_bet = self.player.wallet
+                setattr(self.player, 'wallet', 0)
+            
+            else:
+                while True:
+                    player_bet = int(input("Place your bet: "))
+                    success = self.poker_player.players_bet(player_bet)
+                    if success == True:
+                        break
+                    elif success == "all_in":
+                        print(f"{self.player.name} you wish to go all in, please choose that.")
 
             self.bet_money += player_bet
             self.last_bet = player_bet
-            setattr(self.player, 'wallet', 
-                    self.player.wallet - player_bet)
+            
         else:
             pass
         #TODO: what croupier does in bet situation
@@ -32,15 +38,15 @@ class Poker():
     def match(self, player = True):
         self.bet_money += self.last_bet
         if player:
-            setattr(self.player, 'wallet',  
-                    self.player.wallet - self.last_bet)
+            setattr(self.poker_player, 'wallet',  
+                    self.poker_player.wallet - self.last_bet)
         
         self.last_bet = 0
 
     def fold(self, player = True):
         if not player:
-            setattr(self.player, 'wallet',  
-                    self.player.wallet + self.bet_money)
+            setattr(self.poker_player, 'wallet',  
+                    self.poker_player.wallet + self.bet_money)
     
     def winner(self):
         self_rank = self.poker_player.hand.rank()

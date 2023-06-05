@@ -19,7 +19,7 @@ class Casino():
     def create_player(self, name, money):
         return Player(name, money)
 
-    def start(self):
+    def login(self):
         print("Welcome to AH Casino!")
         first_time = input("Are you visiting us for the first time? (Y/N) ")
         if first_time in "Yesyes":
@@ -41,21 +41,30 @@ class Casino():
 
         elif first_time in "Nono":
             player_login = input("Login: ")
-            with open(self.file, 'r') as players:
-                for line in players:
-                    line = line.strip('\n')
-                    login, password, money = line.split(';')
-                    if player_login == login:
-                        player_password = get_pass()
-                        if player_password == password:
+            while True:
+                with open(self.file, 'r') as players:
+                    for line in players:
+                        line = line.strip('\n')
+                        login, password, money = line.split(';')
+                        if player_login == login:
+                            player_password = get_pass()
+                            while player_password != password:
+                                print("Invalid password.")
+                                player_password = get_pass()
                             money = int(money)
                             player = self.create_player(login, money)
-                            break
+                            return player
+                print("Sorry I couldn't find that login.")
+                player_login = input("Login: ")
+        
         else:
             print("Are you dumb? YES or NO")
             return None
 
 
+    def start(self):
+        player = self.login()
+        
         while True:
             print("Please choose a game from the list below:")
             for index, game in enumerate(LIST_OF_GAMES):
@@ -71,10 +80,12 @@ class Casino():
 
             elif choice == "2":
                 if player.get_money() < 100:
-                    print("In order to play poker you need to bet 100 tokens \n \
-                          please come back later with the money")
+                    print("In order to play poker you need to bet 100 tokens, "
+                          "please come back later with the money")
                 else:
+                    
                     setattr(player, "wallet", player.get_money() - 100)
+                    print(player.get_money())
                     print("Poker is starting")
                     game = Poker_Game(player)
                     
