@@ -1,9 +1,9 @@
 import unittest
 from deck import Deck
-from cards import Rank, Suit
+from poker.cards import Rank, Suit
 from hand import Hand
 from poker_player import Poker_Player
-from player import Player
+from player import Player 
 
 class TestDeckMethods(unittest.TestCase):
     def setUp(self) -> None:

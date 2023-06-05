@@ -1,4 +1,4 @@
-from deck import Deck
+from poker.deck import Deck
 
 HAND_RANKS = ['High card', 'Pair', 'Two Pair', 'Three of a kind', 
               'Straight', 'Flush', 'Full House', 'Four of a kind', 

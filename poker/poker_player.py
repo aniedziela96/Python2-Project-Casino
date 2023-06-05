@@ -1,5 +1,5 @@
 from player import Player
-from hand import Hand
+from poker.hand import Hand
 
 class Poker_Player(Player):
     def __init__(self, name: str, money: int) -> None:

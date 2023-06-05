@@ -1,5 +1,7 @@
 # TODO imports
 from player import Player
+from poker.start_poker import Poker_Game
+
 
 LIST_OF_GAMES = ["Races", "Poker", "Blackjack", "Roulette", "Bingo"] 
 
@@ -30,7 +32,6 @@ class Casino():
                         if name == login:
                             print("Sorry this login is already taken. \
                                   Please choose another one.")
-                            break
                     break
             password = input("Password: ")
             with open(self.file, 'a') as players:
@@ -69,8 +70,16 @@ class Casino():
                 pass
 
             elif choice == "2":
-                print("Poker is starting")
-                pass
+                if player.get_money() < 100:
+                    print("In order to play poker you need to bet 100 tokens \n \
+                          please come back later with the money")
+                else:
+                    setattr(player, "wallet", player.get_money() - 100)
+                    print("Poker is starting")
+                    game = Poker_Game(player)
+                    
+                    game.start_game()
+                
 
             elif choice == "3":
                 print("BlackJack is starting")

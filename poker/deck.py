@@ -1,4 +1,4 @@
-from cards import Rank, Suit
+from poker.cards import Rank, Suit
 from random import shuffle
 
 class Deck:
