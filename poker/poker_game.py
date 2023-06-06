@@ -1,10 +1,9 @@
-import sys
-sys.path.insert(0, 'C:/Users/niedz/Documents/Python projects/Casino/Python2-Project-Casino')
 from poker.hand import Hand, HAND_RANKS
 from main.player import Player
 from poker.croupier import Croupier
 from poker.winners import Winners
 from poker.poker_human import Poker_human
+from poker.deck import Deck
 
 class Poker():
     def __init__(self, player) -> None:
@@ -36,9 +35,6 @@ class Poker():
                         if decision in "Yy":
                             self.bet(player=True, all_in=True)
                             break
-                            
-
-            
             
         else:
             pass
@@ -60,8 +56,8 @@ class Poker():
     def winner(self):
         self.poker_player.hand.rank()
         self.croupier.hand.rank()
-        self_rank = self.poker_player.rank
-        croupier_rank = self.croupier.rank
+        self_rank = self.poker_player.hand_rank
+        croupier_rank = self.croupier.hand_rank
         if HAND_RANKS.index(self_rank) > HAND_RANKS.index(croupier_rank):
             return self.poker_player
         elif HAND_RANKS.index(self_rank) < HAND_RANKS.index(croupier_rank):
@@ -101,10 +97,21 @@ class Poker():
     
 
 if __name__ == "__main__":
-    rysio = Player("rysio", 1000)
-    p = Poker(rysio)
-    print(type(rysio))
-    print(rysio.wallet)
-    p.bet()
-    print(p.bet_money)
-    print(rysio.wallet)
+    # rysio = Player("rysio", 1000)
+    # p = Poker(rysio)
+    # print(type(rysio))
+    # print(rysio.wallet)
+    # p.bet()
+    # print(p.bet_money)
+    # print(rysio.wallet)
+    rysio = Poker_human("rysio", 1000)
+    bogus = Poker_human("bogus", 2000)
+    d = Deck()
+    d.shuffle
+    rysio.draw_cards(d.draw(5))
+    bogus.draw_cards(d.draw(5))
+    print(rysio.hand)
+    print(rysio.hand_rank)
+    rysio.rank()
+    print(rysio.hand_rank)
+    print(bogus.hand)
