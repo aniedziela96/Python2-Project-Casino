@@ -1,3 +1,5 @@
+import sys
+sys.path.insert(0, 'C:/Users/niedz/Documents/Python projects/Casino/Python2-Project-Casino')
 from poker.hand import Hand, HAND_RANKS
 from main.player import Player
 from poker.croupier import Croupier
@@ -54,8 +56,8 @@ class Poker():
                     self.poker_player.wallet + self.bet_money)
     
     def winner(self):
-        self.poker_player.hand.rank()
-        self.croupier.hand.rank()
+        self.poker_player.rank()
+        self.croupier.rank()
         self_rank = self.poker_player.hand_rank
         croupier_rank = self.croupier.hand_rank
         if HAND_RANKS.index(self_rank) > HAND_RANKS.index(croupier_rank):
@@ -107,11 +109,15 @@ if __name__ == "__main__":
     rysio = Poker_human("rysio", 1000)
     bogus = Poker_human("bogus", 2000)
     d = Deck()
-    d.shuffle
+    d.shuffle()
     rysio.draw_cards(d.draw(5))
     bogus.draw_cards(d.draw(5))
-    print(rysio.hand)
-    print(rysio.hand_rank)
-    rysio.rank()
-    print(rysio.hand_rank)
+    h = Hand()
+    h.add_cards(d.draw(5))
+    p = Poker(rysio)
+    p.poker_player.hand = h
+    print(p.poker_player.hand)
+    print(p.poker_player.hand_rank)
+    p.poker_player.rank()
+    print(p.poker_player.hand_rank)
     print(bogus.hand)

@@ -51,7 +51,7 @@ class Hand():
         else:
             return False
 
-    def rank(self) -> tuple:
+    def rank(self) -> str:
         if not self.is_five:
             raise ValueError ('only possible for 5 cards hands')
         sorted_hand = sorted(self.cards)

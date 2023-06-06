@@ -13,9 +13,9 @@ class Poker_Player(Player):
     def __str__(self) -> str:
         return self.name + str(self.hand)
     
-    def rank(self):
+    def rank(self) -> None:
         if self.hand.is_five():
-            setattr(self.rank, "rank", self.hand.rank())
+            self.hand_rank = self.hand.rank()
 
 
 
