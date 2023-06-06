@@ -43,15 +43,13 @@ class Poker():
     def match(self, player = True):
         self.bet_money += self.last_bet
         if player:
-            setattr(self.poker_player, 'wallet',  
-                    self.poker_player.wallet - self.last_bet)
+            self.poker_player.spend_tokens(self.last_bet)
         
         self.last_bet = 0
 
     def fold(self, player = True):
         if not player:
-            setattr(self.poker_player, 'wallet',  
-                    self.poker_player.wallet + self.bet_money)
+            self.poker_player.add_tokens(self.bet_money)
     
     def winner(self):
         self.poker_player.rank()

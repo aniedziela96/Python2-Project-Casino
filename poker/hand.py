@@ -1,3 +1,5 @@
+import sys
+sys.path.insert(0, 'C:/Users/niedz/Documents/Python projects/Casino/Python2-Project-Casino')
 from poker.deck import Deck
 
 HAND_RANKS = ['High card', 'Pair', 'Two Pair', 'Three of a kind', 
@@ -101,19 +103,37 @@ class Hand():
             return HAND_RANKS[4] # straight 
         else: 
             return HAND_RANKS[0]
-  
+        
+    def show_hand(self) -> str:
+        if self.cards == []:
+            print(" ")
+        else:
+            empyt_row = "|           |   "
+            top = " ___________    "
+            bottom = "|___________|   "
+            n = len(self.cards)
+            rows_fig_top = ""
+            rows_suit = ""
+            rows_fig_bottom = ""
+            for card in self.cards:
+                rows_fig_top = rows_fig_top + "|  " + str(card[0]) + "        |   "
+                rows_suit = rows_suit + "|     " + str(card[1]) + "     |   "
+                rows_fig_bottom = rows_fig_bottom + "|        " + str(card[0]) + "  |   "
+            print(top * n)
+            print(empyt_row * n)
+            print(rows_fig_top)
+            print(empyt_row * n)
+            print(rows_suit)
+            print(empyt_row * n)
+            print(rows_fig_bottom)
+            print(bottom * n)
+    
 
 if __name__ == "__main__":
-    s = set()
-    for i in range(100):
-        d = Deck()
-        d.shuffle()
-        h = Hand()
-        h.add_cards(d.draw(n = 5))
-        r = h.rank()
-        print(h)
-        print(r)
-        
-        s.add(r)
-
-    print(s)
+    
+    d = Deck()
+    d.shuffle()
+    h = Hand()
+    h.add_cards(d.draw(n = 5))
+    print(h)
+    h.show_hand()

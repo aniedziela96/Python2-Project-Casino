@@ -17,6 +17,9 @@ class Poker_Player(Player):
         if self.hand.is_five():
             self.hand_rank = self.hand.rank()
 
+    def show_player_hand(self):
+        self.hand.show_hand()
+
 
 
     

@@ -13,7 +13,6 @@ class Poker_Game():
         print("Drawing two cards...")
         self.poker.poker_player.draw_cards(self.deck.draw(2))
         self.poker.croupier.draw_cards(self.deck.draw(2))
-        print(self.poker.poker_player.hand)
 
 
     def action(self):
@@ -44,8 +43,6 @@ class Poker_Game():
         print("drawing three cards...")
         self.poker.poker_player.draw_cards(self.deck.draw(3))
         self.poker.croupier.draw_cards(self.deck.draw(3))
-        print(self.poker.poker_player.hand)
-
 
     def final(self):
         print(f"Your hand: {self.poker.poker_player.hand}")
@@ -63,6 +60,7 @@ class Poker_Game():
 
         self.round_one()
         while True:
+            self.poker.poker_player.show_player_hand()
             round_one_decision = self.action() 
             if round_one_decision == "bet":
                 break
@@ -77,6 +75,7 @@ class Poker_Game():
                     
         self.round_two()
         while True:
+            self.poker.poker_player.show_player_hand()
             round_two_decision = self.action()
             if round_two_decision == "bet":
                 self.final()
