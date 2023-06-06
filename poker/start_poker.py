@@ -29,7 +29,7 @@ class Poker_Game():
                 return "bet"
             elif action == "2":
                 setattr(self.poker_player, 'wallet', 
-                        self.poker.poker_player.get_money())
+                        self.poker.poker_player.get_tokens())
                 return "fold"
             elif action == "3":
                 self.poker.bet(player=True, all_in=True)
@@ -37,7 +37,7 @@ class Poker_Game():
                 return "all_in"
             elif action == "4":
                 print(f"{self.poker_player.name} you have "
-                      f"{self.poker.poker_player.get_money()} tokens")
+                      f"{self.poker.poker_player.get_tokens()} tokens")
                 return None
 
     def round_two(self):
@@ -52,11 +52,11 @@ class Poker_Game():
         print(f"Croupier's hand: {self.poker.croupier.hand}")
         if self.poker.winner() == self.poker.poker_player:
             print(f"You win {self.poker.bet_money} tokens.")
-            setattr(self.poker_player, 'wallet', 
-                    self.poker.poker_player.get_money() + self.poker.bet_money)
+            setattr(self.poker_player, 'tokens', 
+                    self.poker.poker_player.get_tokens() + self.poker.bet_money)
         else:
-            setattr(self.poker_player, 'wallet', 
-                    self.poker.poker_player.get_money())
+            setattr(self.poker_player, 'tokens', 
+                    self.poker.poker_player.get_tokens())
             print(f"You lose, better luck next time.")
 
     def start_game(self):

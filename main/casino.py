@@ -82,13 +82,12 @@ class Casino():
                 pass
 
             elif choice == "2":
-                if player.get_money() < 100:
+                if player.get_tokens() < 100:
                     print("In order to play poker you need to bet 100 tokens, "
                           "please come back later with the money")
                 else:
                     
-                    setattr(player, "wallet", player.get_money() - 100)
-                    print(player.get_money())
+                    player.spend_tokens(100)
                     print("Poker is starting")
                     game = Poker_Game(player)
                     
@@ -113,7 +112,7 @@ class Casino():
                 break
 
             elif choice == "b":
-                print(f"You have {player.get_money()} tokens")
+                print(f"You have {player.get_tokens()} tokens")
 
     def logout(self):
         pass

@@ -8,7 +8,7 @@ from poker.deck import Deck
 class Poker():
     def __init__(self, player) -> None:
         self.player = player
-        self.poker_player = Poker_human(player.name, player.wallet)
+        self.poker_player = Poker_human(player.name, player.tokens)
         self.croupier = Croupier()
         self.bet_money = 200 #how much money is in the game
         self.last_bet = 0
@@ -17,8 +17,8 @@ class Poker():
     def bet(self, player = True, all_in = False):
         if player:
             if all_in:
-                player_bet = self.poker_player.wallet
-                setattr(self.poker_player, 'wallet', 0)
+                player_bet = self.poker_player.tokens
+                self.poker_player.all_in()
                 self.bet_money += player_bet
                 self.last_bet = player_bet
             else:

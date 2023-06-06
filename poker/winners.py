@@ -25,14 +25,14 @@ class Winners():
             if self.hand2[i][0] == self.hand2[i + 1][0]:
                 pair_card_2 = self.hand2[i + 1]
                 
-            if pair_card_1[0] < pair_card_2[0]:
+        if pair_card_1[0] < pair_card_2[0]:
+            return self.player1
+        elif pair_card_1[0] > pair_card_2[0]:
+            return self.player2
+        else:
+            if self.hand1[4] > self.hand2[4]:
                 return self.player1
-            elif pair_card_1[0] > pair_card_2[0]:
-                return self.player2
-            else:
-                if self.hand1[4] > self.hand2[4]:
-                    return self.player1
-                if self.hand1[4] < self.hand2[4]:
+            if self.hand1[4] < self.hand2[4]:
                     return self.player2
                 
     def winner_two_pairs(self):
@@ -109,3 +109,4 @@ if __name__ == "__main__":
     print(p1.hand)
     print(p2.hand)
     w = Winners(p1, p2)
+    print(w.winner_pair())
