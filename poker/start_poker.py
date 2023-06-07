@@ -45,8 +45,10 @@ class Poker_Game():
         self.poker.croupier.draw_cards(self.deck.draw(3))
 
     def final(self):
-        print(f"Your hand: {self.poker.poker_player.hand}")
+        print("Your hand: ")
+        self.poker.poker_player.show_player_hand()
         print(f"Croupier's hand: {self.poker.croupier.hand}")
+        self.poker.croupier.show_player_hand()
         if self.poker.winner() == self.poker.poker_player:
             print(f"You win {self.poker.bet_money} tokens.")
             setattr(self.poker_player, 'tokens', 

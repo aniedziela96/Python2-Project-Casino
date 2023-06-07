@@ -1,5 +1,5 @@
-from poker.hand import Hand
+from blackjack.blackjack_hand import Black_jack_hand
 
 class Croupier_bj():
     def __init__(self) -> None:
-        self.hand = Hand()
+        self.hand = Black_jack_hand()
