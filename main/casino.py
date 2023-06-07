@@ -2,6 +2,7 @@
 from main.player import Player
 from poker.start_poker import Poker_Game
 from races.races import Races
+import os
 
 
 LIST_OF_GAMES = ["Races", "Poker", "Blackjack", "Roulette", "Bingo"] 
@@ -81,6 +82,7 @@ class Casino():
             if choice == "1":
                 races = Races()
                 races.make_race(player)
+                os.system('cls')
 
             elif choice == "2":
                 if player.get_tokens() < 10:
@@ -93,6 +95,9 @@ class Casino():
                     game = Poker_Game(player)
                     
                     game.start_game()
+                    game.end_game()
+
+                    os.system('cls')
                 
 
             elif choice == "3":

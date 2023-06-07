@@ -58,6 +58,7 @@ class Poker_Game():
                     self.poker.poker_player.get_tokens())
             print(f"You lose, better luck next time.")
 
+
     def start_game(self):
 
         self.round_one()
@@ -90,5 +91,6 @@ class Poker_Game():
                 self.final()
                 break
 
-
+    def end_game(self):
+        input("Press Enter to continue")
         
