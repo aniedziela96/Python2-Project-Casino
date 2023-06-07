@@ -1,6 +1,7 @@
 # TODO imports
 from main.player import Player
 from poker.start_poker import Poker_Game
+from races.races import Races
 
 
 LIST_OF_GAMES = ["Races", "Poker", "Blackjack", "Roulette", "Bingo"] 
@@ -78,16 +79,16 @@ class Casino():
             choice = input("Type a number of a game: ")
 
             if choice == "1":
-                print("Races are starting")
-                pass
+                races = Races()
+                races.make_race(player)
 
             elif choice == "2":
-                if player.get_tokens() < 100:
-                    print("In order to play poker you need to bet 100 tokens, "
+                if player.get_tokens() < 10:
+                    print("In order to play poker you need to bet 10 tokens, "
                           "please come back later with the money")
                 else:
                     
-                    player.spend_tokens(100)
+                    player.spend_tokens(10)
                     print("Poker is starting")
                     game = Poker_Game(player)
                     
