@@ -47,7 +47,7 @@ class Poker_Game():
     def final(self):
         print("Your hand: ")
         self.poker.poker_player.show_player_hand()
-        print(f"Croupier's hand: {self.poker.croupier.hand}")
+        print("Croupier's hand:")
         self.poker.croupier.show_player_hand()
         if self.poker.winner() == self.poker.poker_player:
             print(f"You win {self.poker.bet_money} tokens.")

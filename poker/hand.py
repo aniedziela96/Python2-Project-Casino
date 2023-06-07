@@ -116,9 +116,14 @@ class Hand():
             rows_suit = ""
             rows_fig_bottom = ""
             for card in self.cards:
-                rows_fig_top = rows_fig_top + "|  " + str(card[0]) + "        |   "
-                rows_suit = rows_suit + "|     " + str(card[1]) + "     |   "
-                rows_fig_bottom = rows_fig_bottom + "|        " + str(card[0]) + "  |   "
+                if card[0] != 10:
+                    rows_fig_top = rows_fig_top + "|  " + str(card[0]) + "        |   "
+                    rows_suit = rows_suit + "|     " + str(card[1]) + "     |   "
+                    rows_fig_bottom = rows_fig_bottom + "|        " + str(card[0]) + "  |   "
+                else:
+                    rows_fig_top = rows_fig_top + "|  " + str(card[0]) + "       |   "
+                    rows_suit = rows_suit + "|     " + str(card[1]) + "     |   "
+                    rows_fig_bottom = rows_fig_bottom + "|       " + str(card[0]) + "  |   "
             print(top * n)
             print(empyt_row * n)
             print(rows_fig_top)
