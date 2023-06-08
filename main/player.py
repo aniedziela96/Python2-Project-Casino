@@ -12,12 +12,12 @@ class Player():
     def get_tokens(self) -> int:
         return self.tokens
     
-    def spend_tokens(self, tokens):
+    def spend_tokens(self, tokens: int) -> None:
         self.tokens -= tokens
 
-    def add_tokens(self, tokens):
+    def add_tokens(self, tokens:int) -> None:
         self.tokens += tokens
 
-    def all_in(self):
+    def all_in(self) -> None:
         self.tokens = 0
     
