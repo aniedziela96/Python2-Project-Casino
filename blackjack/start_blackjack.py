@@ -1,46 +1,48 @@
 from blackjack.blackjack_hand import Blackjack_hand
-from blackjack_player import Blackjack_player
+from blackjack.blackjack_player import Blackjack_player
 from blackjack.croupier_bj import Croupier_bj
 from poker.deck import Deck
+from blackjack.blackjack_game import Blackjack
 
 class Strat_blackjack():
-    def __init__(self, player) -> None:
+    def __init__(self, player, bet_money) -> None:
         self.player = player
         self.blackjack_player = Blackjack_player(player.name, player.tokens)
         self.croupier = Croupier_bj()
         self.deck = Deck()
         self.deck.shuffle()
+        self.bet_money = bet_money
 
     def deal(self):
         self.croupier.draw_cards(self.deck.draw(2))
-        self.blackjack_player.add_bet()
-        self.blackjack_player.bets[0].add_cards(self.deck.draw(2))
+        first_bet = Blackjack_hand()
+        first_bet.add_cards(self.deck.draw(2))
+        self.blackjack_player.add_bet(first_bet)
 
-    def action(self):
+    def action(self, bet_number = 1):
         print("1: Stand")
         print("2: Hit")
         print("3: Double down")
-        print("4: Insurance")
-        print("5: Split")
-        action = input("Choose your action: ")
-        if action == "1":
-            self.poker.bet(player = True)
-            self.poker.match(player = False)
-            return "bet"
-        elif action == "2":
-            setattr(self.poker_player, 'wallet', 
-                    self.poker.poker_player.get_tokens())
-            return "fold"
-        elif action == "3":
-            self.poker.bet(player=True, all_in=True)
-            self.poker.match(player=False)
-            return "all_in"
-        elif action == "4":
-            print(f"{self.poker_player.name} you have "
-                          f"{self.poker.poker_player.get_tokens()} tokens")
-            return None
+        if self.croupier.hand.cards[1][0] == 14:
+            print("4: Insurance")
         
-    def final(self, bet_number):
-        self.croupier.set_score()
-        if self.croupier.score > self.blackjack_player.bets[bet_number - 1].score:
-            pass
+        if self.blackjack_player.bets[bet_number - 1].is_pair():
+            print("5: Split")
+        
+        action = input("Choose your action: ")
+
+        return action
+
+    def start_game(self):
+        self.deal()
+
+        game = Blackjack(self.croupier, self.blackjack_player, 
+                         self.bet_money, self.deck, bet_number=1)
+        
+        print("Croupier's hand: ")
+        self.croupier.show_hidden()
+        print("Your hand: ")
+        self.blackjack_player.show_bets()
+
+        self.action()
+    

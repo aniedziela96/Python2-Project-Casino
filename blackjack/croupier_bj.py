@@ -13,11 +13,11 @@ class Croupier_bj():
         empty_row = "|           |   "
         print(" ___________    " * 2)
         print("|   *****   |   " + empty_row)
-        print(f"|  *     *  |   |  {self.hand.cards[0]}        |")
+        print(f"|  *     *  |   |  {self.hand.cards[1][0]}        |")
         print("|      **   |   " + empty_row)
-        print(f"|     *     |   |     {self.hand.cards[1]}     |")
+        print(f"|     *     |   |     {self.hand.cards[1][1]}     |")
         print(empty_row * 2)
-        print(f"|     *     |   |        {self.hand.cards[0]}  |")
+        print(f"|     *     |   |        {self.hand.cards[1][0]}  |")
         print("|___________|   " * 2)
 
     def show_open(self):
@@ -29,8 +29,10 @@ class Croupier_bj():
     def croupiers_move(self, deck: Deck):
         self.set_score()
         while self.score < 17:
+            print("Drawing card... ")
             self.hand.add_cards(deck.draw())
             self.set_score()
+            self.show_open
 
         if self.score > 21:
             self.score = 0

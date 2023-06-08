@@ -18,3 +18,12 @@ class Blackjack_hand(Hand):
                 else:
                     self.score += 1
 
+    def is_pair(self):
+        if len(self.cards) != 2:
+            raise ValueError("Only possible if thera are two cards")
+        
+        if self.cards[0][0] == self.cards[1][0]:
+            return True
+        else:
+            return False
+

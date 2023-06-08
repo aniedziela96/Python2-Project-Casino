@@ -12,6 +12,7 @@ class Blackjack():
         self.bet_number = bet_number
         self.deck = deck
 
+
     def end(self, player_win: bool):
         if player_win:
             return "player wins"

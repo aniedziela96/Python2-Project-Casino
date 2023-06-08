@@ -10,7 +10,7 @@ class Poker():
         self.player = player
         self.poker_player = Poker_human(player.name, player.tokens)
         self.croupier = Croupier()
-        self.bet_money = 200 #how much money is in the game
+        self.bet_money = 20 #how much money is in the game
         self.last_bet = 0
 
 

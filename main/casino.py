@@ -3,6 +3,7 @@ from main.player import Player
 from poker.start_poker import Poker_Game
 from races.races import Races
 import os
+from blackjack.start_blackjack import Strat_blackjack
 
 
 LIST_OF_GAMES = ["Races", "Poker", "Blackjack", "Roulette", "Bingo"] 
@@ -101,8 +102,15 @@ class Casino():
                 
 
             elif choice == "3":
-                print("BlackJack is starting")
-                pass
+                bet = player.get_tokens() + 1
+                while bet > player.get_tokens():
+                    bet = int(input("Place your bet: "))
+                    if bet > player.get_tokens():
+                        print("You don't have enough tokens")
+
+                player.spend_tokens(bet)
+                game = Strat_blackjack(player, bet)
+                game.start_game()
 
             elif choice == "4":
                 print("Roulette is starting")

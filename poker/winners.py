@@ -31,9 +31,9 @@ class Winners():
                 if i == 3:
                     last_pair2 = True
                 
-        if pair_card_1[0] < pair_card_2[0]:
+        if pair_card_1[0] > pair_card_2[0]:
             return self.player1
-        elif pair_card_1[0] > pair_card_2[0]:
+        elif pair_card_1[0] < pair_card_2[0]:
             return self.player2
         else:
             if last_pair1 and last_pair2:
@@ -45,7 +45,7 @@ class Winners():
                 if self.hand1[4] > self.hand2[4]:
                     return self.player1
                 if self.hand1[4] < self.hand2[4]:
-                        return self.player2
+                    return self.player2
                 
     def find_high_card(hand):
         for i in range(4):

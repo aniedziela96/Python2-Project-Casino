@@ -61,17 +61,9 @@ class Blackjack_player(Player):
     def add_bet(self, hand: Blackjack_hand):
         self.bets.append(hand)
 
-    def stand(self):
-        pass
-
-    def double_down(self):
-        pass
-
     def split(self, bet_number):
         pass
 
-    def insurance(self):
-        pass
 
 if __name__ == "__main__":
     d = Deck()
