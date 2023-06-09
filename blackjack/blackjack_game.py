@@ -1,6 +1,7 @@
 from blackjack.blackjack_player import Blackjack_player
 from blackjack.croupier_bj import Croupier_bj
 from poker.deck import Deck
+from blackjack.blackjack_hand import Blackjack_hand
 
 class Blackjack():
     def __init__(self, croupier: Croupier_bj, bj_player: Blackjack_player, 
@@ -28,9 +29,6 @@ class Blackjack():
         else:
             return "success"
         
-    def stand(self):
-        self.croupier.croupiers_move(self.deck)
-        return self.result()
         
     def double_down(self):
         if self.player.get_tokens() < self.bet_money:
@@ -39,30 +37,30 @@ class Blackjack():
             self.bet_money *= 2
             self.player.spend_tokens(self.bet_money)
             res = self.hit()
-            if res == "bust":
-                return res
-            else:
-                return self.result()
+            return res
             
+
     def insurance(self):
         insurance = int(0.5 * self.bet_money)
         if self.player.get_tokens() < insurance:
             return "failed"
         
         self.player.spend_tokens(insurance)
-        self.croupier.set_score
+        self.croupier.set_score()
         if self.croupier.hand.score == 21:
-            self.player.add_tokens(2 * insurance)
-            return self.result()
-        else:
-            self.croupier.croupiers_move(self.deck)
-            return self.result()
+            self.player.add_tokens(3 * insurance)
+    
         
-    def result(self):
-        self.players_bet.calculate_score()
-        if self.players_bet.score > self.croupier.score:
-            return "player wins"
-        elif self.players_bet.score < self.croupier.score:
-            return "player lost"
+    def split(self):
+        if self.player.get_tokens() < self.bet_money:
+            return "failed"
         else:
-            return "draw"
+            self.player.spend_tokens(self.bet_money)
+            card_splitted = self.players_bet.card_split()
+            new_bet = Blackjack_hand()
+            new_bet.add_cards([card_splitted, self.deck.draw()[0]])
+            self.player.add_bet(new_bet)
+            self.players_bet.add_cards(self.deck.draw())
+            return Blackjack(self.croupier, self.player, self.bet_money,
+                             self.deck, len(self.player.bets))
+            

@@ -18,13 +18,21 @@ class Blackjack_hand(Hand):
                     self.score += 11
                 else:
                     self.score += 1
+                    
 
     def is_pair(self):
         if len(self.cards) != 2:
-            raise ValueError("Only possible if thera are two cards")
+            raise ValueError("Only possible if there are two cards")
         
         if self.cards[0][0] == self.cards[1][0]:
             return True
         else:
             return False
+        
+    def card_split(self):
+        if len(self.cards) != 2:
+            raise ValueError("Only possible if there are two cards")
+        
+        card_splitted = self.cards.pop()
+        return card_splitted
 

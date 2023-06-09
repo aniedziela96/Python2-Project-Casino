@@ -1,5 +1,6 @@
 from blackjack.blackjack_hand import Blackjack_hand
 from poker.deck import Deck
+from time import sleep
 
 class Croupier_bj():
     def __init__(self) -> None:
@@ -43,10 +44,12 @@ class Croupier_bj():
 
         while self.score < 17:
             print(self.score)
-            print("Drawing card... ")
+            print("Croupier is drawing a card... ")
             self.hand.add_cards(deck.draw())
             self.set_score()
             self.hand.show_hand()
+            sleep(1)
 
         if self.score > 21:
+            print("Crupier busted!")
             self.score = 0
