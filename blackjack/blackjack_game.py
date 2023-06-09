@@ -25,6 +25,8 @@ class Blackjack():
         self.players_bet.calculate_score()
         if self.players_bet.score > 21:
             return "bust"
+        else:
+            return "success"
         
     def stand(self):
         self.croupier.croupiers_move(self.deck)
@@ -43,7 +45,7 @@ class Blackjack():
                 return self.result()
             
     def insurance(self):
-        insurance = int(0.5 * self.bet_money) + 1
+        insurance = int(0.5 * self.bet_money)
         if self.player.get_tokens() < insurance:
             return "failed"
         
@@ -59,8 +61,8 @@ class Blackjack():
     def result(self):
         self.players_bet.calculate_score()
         if self.players_bet.score > self.croupier.score:
-            return self.end(player_win = True)
+            return "player wins"
         elif self.players_bet.score < self.croupier.score:
-            return self.end(player_win = False)
+            return "player lost"
         else:
             return "draw"

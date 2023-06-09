@@ -13,26 +13,40 @@ class Croupier_bj():
         empty_row = "|           |   "
         print(" ___________    " * 2)
         print("|   *****   |   " + empty_row)
-        print(f"|  *     *  |   |  {self.hand.cards[1][0]}        |")
-        print("|      **   |   " + empty_row)
-        print(f"|     *     |   |     {self.hand.cards[1][1]}     |")
-        print(empty_row * 2)
-        print(f"|     *     |   |        {self.hand.cards[1][0]}  |")
-        print("|___________|   " * 2)
+        if self.hand.cards[1][0] != 10:
+            print(f"|  *     *  |   |  {self.hand.cards[1][0]}        |")
+            print("|      **   |   " + empty_row)
+            print(f"|     *     |   |     {self.hand.cards[1][1]}     |")
+            print(empty_row * 2)
+            print(f"|     *     |   |        {self.hand.cards[1][0]}  |")
+            print("|___________|   " * 2)
+        else:
+            print(f"|  *     *  |   |  {self.hand.cards[1][0]}       |")
+            print("|      **   |   " + empty_row)
+            print(f"|     *     |   |     {self.hand.cards[1][1]}     |")
+            print(empty_row * 2)
+            print(f"|     *     |   |       {self.hand.cards[1][0]}  |")
+            print("|___________|   " * 2)
+            
 
     def show_open(self):
         self.hand.show_hand()
 
     def set_score(self):
-        self.score = self.hand.calculate_score()
+        self.hand.calculate_score()
+        self.score = self.hand.score
 
     def croupiers_move(self, deck: Deck):
         self.set_score()
+        print("Croupier's hand: ")
+        self.hand.show_hand()
+
         while self.score < 17:
+            print(self.score)
             print("Drawing card... ")
             self.hand.add_cards(deck.draw())
             self.set_score()
-            self.show_open
+            self.hand.show_hand()
 
         if self.score > 21:
             self.score = 0

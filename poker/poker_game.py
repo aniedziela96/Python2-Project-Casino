@@ -6,7 +6,7 @@ from poker.poker_human import Poker_human
 from poker.deck import Deck
 
 class Poker():
-    def __init__(self, player) -> None:
+    def __init__(self, player: Player) -> None:
         self.player = player
         self.poker_player = Poker_human(player.name, player.tokens)
         self.croupier = Croupier()

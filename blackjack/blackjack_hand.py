@@ -7,6 +7,7 @@ class Blackjack_hand(Hand):
         self.score = 0
 
     def calculate_score(self):
+        self.score = 0
         for card in sorted(self.cards):
             if card[0].value < 10:
                 self.score += card[0].value

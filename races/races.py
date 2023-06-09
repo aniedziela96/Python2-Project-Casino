@@ -95,7 +95,7 @@ class Races:
     def sum_up(self, bet, winners, player, other_bets):
         if not winners:
             player.add_tokens(self.enter_price)
-            print("Because there is no winner, your tokens comes back to you!")
+            print("Because there is no winner, your tokens come back to you!")
             return
         elif bet-1 in winners:
             counter = 1

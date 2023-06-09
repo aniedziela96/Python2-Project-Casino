@@ -112,6 +112,8 @@ class Casino():
                 game = Strat_blackjack(player, bet)
                 game.start_game()
 
+                os.system('cls')
+
             elif choice == "4":
                 print("Roulette is starting")
                 pass
