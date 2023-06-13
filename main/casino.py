@@ -83,8 +83,8 @@ class Casino():
             choice = input("Type a number of a game: ")
 
             if choice == "1":
-                races = Races(player)
-                races.make_race()
+                races = Races()
+                races.make_race(player)
                 os.system('cls')
 
             elif choice == "2":
@@ -135,9 +135,24 @@ class Casino():
             elif choice == "b":
                 print(f"You have {player.get_tokens()} tokens")
 
-    def logout(self):
-        pass
+    def logout(self, player):
+        players = open(self.file, "r")
+        new_version = ""
 
+        for line in players:
+            line = line.strip()
+            login, password, money = line.split(';')
+            if player.get_name() == login:
+                new_line = line.replace(money, str(player.get_tokens()))
+            else:
+                new_line = line
+            replaced_content = replaced_content + new_line + "\n"
+    
+        players.close()
+        new_players = open(self.file, "w")
+        new_players.write(replaced_content)
+        new_players.close()
+        
 
 if __name__ == "__main__":
     c = Casino("main/players_file.csv")
