@@ -5,7 +5,7 @@ from races.races import Races
 import os
 from blackjack.start_blackjack import Strat_blackjack
 from bingo.bingo import Bingo
-from roulette.roulette import Roulette
+# from roulette.roulette import Roulette
 
 
 LIST_OF_GAMES = ["Races", "Poker", "Blackjack", "Roulette", "Bingo"] 
@@ -83,8 +83,8 @@ class Casino():
             choice = input("Type a number of a game: ")
 
             if choice == "1":
-                races = Races()
-                races.make_race(player)
+                races = Races(player)
+                races.make_race()
                 os.system('cls')
 
             elif choice == "2":
@@ -118,8 +118,8 @@ class Casino():
 
             elif choice == "4":
                 print("Roulette is starting")
-                r = Roulette(player)
-                r.start_roulette()
+                # r = Roulette(player)
+                # r.start_roulette()
 
             elif choice == "5":
                 print("Bingo is starting")

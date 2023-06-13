@@ -1,3 +1,5 @@
+from tabulate import tabulate
+
 class Board:
     def __init__(self, columns: list) -> None:
         self.columns = columns
