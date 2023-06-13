@@ -18,6 +18,13 @@ class Strat_blackjack():
         self.list_of_games = []
 
     def deal(self):
+        """Deals cards and creates new blackjack bet
+
+        ### Parameters
+
+        ### Returns 
+        
+        """
         self.croupier.draw_cards(self.deck.draw(2))
         first_bet = Blackjack_hand()
         first_bet.add_cards(self.deck.draw(2))
