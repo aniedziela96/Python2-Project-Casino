@@ -4,6 +4,8 @@ from poker.start_poker import Poker_Game
 from races.races import Races
 import os
 from blackjack.start_blackjack import Strat_blackjack
+from bingo.bingo import Bingo
+from roulette.roulette import Roulette
 
 
 LIST_OF_GAMES = ["Races", "Poker", "Blackjack", "Roulette", "Bingo"] 
@@ -116,11 +118,14 @@ class Casino():
 
             elif choice == "4":
                 print("Roulette is starting")
-                pass
+                r = Roulette(player)
+                r.start_roulette()
 
             elif choice == "5":
                 print("Bingo is starting")
-                pass
+                b = Bingo(player)
+                b.start_game()
+
 
             elif choice == "q":
                 print("Thank you for playing, hope to see you soon!")

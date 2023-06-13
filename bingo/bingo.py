@@ -1,5 +1,5 @@
 from random import sample, randrange, uniform
-from player import Player
+from main.player import Player
 from tabulate import tabulate
 from time import perf_counter
 from bingo.board import Board

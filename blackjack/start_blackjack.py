@@ -8,6 +8,12 @@ from poker.cards import Rank, Suit
 
 class Strat_blackjack():
     def __init__(self, player: Player, bet_money) -> None:
+        """AI is creating summary for __init__
+
+        Args:
+            player (Player): [description]
+            bet_money ([type]): [description]
+        """
         self.player = player
         self.blackjack_player = Blackjack_player(player.name, player.tokens)
         self.croupier = Croupier_bj()
@@ -18,13 +24,7 @@ class Strat_blackjack():
         self.list_of_games = []
 
     def deal(self):
-        """Deals cards and creates new blackjack bet
-
-        ### Parameters
-
-        ### Returns 
         
-        """
         self.croupier.draw_cards(self.deck.draw(2))
         first_bet = Blackjack_hand()
         first_bet.add_cards(self.deck.draw(2))
