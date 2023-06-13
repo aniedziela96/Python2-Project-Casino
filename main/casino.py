@@ -1,4 +1,3 @@
-# TODO imports
 from main.player import Player
 from poker.start_poker import Poker_Game
 from races.races import Races
@@ -83,8 +82,8 @@ class Casino():
             choice = input("Type a number of a game: ")
 
             if choice == "1":
-                races = Races()
-                races.make_race(player)
+                races = Races(player)
+                races.make_race()
                 os.system('cls')
 
             elif choice == "2":
@@ -129,15 +128,15 @@ class Casino():
 
             elif choice == "q":
                 print("Thank you for playing, hope to see you soon!")
-                self.logout()
+                self.logout(player)
                 break
 
             elif choice == "b":
                 print(f"You have {player.get_tokens()} tokens")
 
-    def logout(self, player):
+    def logout(self, player: Player):
         players = open(self.file, "r")
-        new_version = ""
+        replaced_content = ""
 
         for line in players:
             line = line.strip()
