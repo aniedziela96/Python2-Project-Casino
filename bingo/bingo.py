@@ -34,10 +34,10 @@ class Bingo:
         return BingoGame((self.player, fake_players[0], fake_players[1]),
                          [self.make_bingo_board(), self.make_bingo_board(), self.make_bingo_board()])
 
-    def make_times(self, number_of_fake_players) -> list:
+    def make_times(self, number_of_fake_players, time) -> list:
         times = []
         for _ in range(number_of_fake_players):
-                times.append(round(uniform(3, 11), 5))
+                times.append(round(uniform(time-2, time+3), 5))
         return times
 
     def pay_prize(self) -> None:
@@ -116,7 +116,7 @@ class Bingo:
                     elif number_of_bingos == 2:
                         time = round(t1-t0, 5)
                         other_winner = game.get_bingo_players()[bingos[1]]
-                        other_time = self.make_times(1)[0]
+                        other_time = self.make_times(1, time)[0]
                         if time < other_time[0]:
                             print(f"Congratulations! You win over {other_winner}!")
                             print("")
@@ -138,7 +138,7 @@ class Bingo:
                     else:
                         time = round(t1-t0, 5)
                         other_winners = [game.get_bingo_players()[bingos[1]], game.get_bingo_players()[bingos[2]]]
-                        other_times = self.make_times(2)
+                        other_times = self.make_times(2, time)
                         if time < min(other_times):
                             print("Congratulations! You win!")
                             print(f"Your time: {time} s")
@@ -191,7 +191,7 @@ class Bingo:
                         elif number_of_bingos == 3:
                             winners = [game.get_bingo_players()[bingos[1]], game.get_bingo_players()[bingos[2]]]
                             print(f"{winners[0]} and {winners[1]} have bingo!")
-                            times = self.make_times(2)
+                            times = self.make_times(2, 3.5)
                             if times[0] < times[1]:
                                 print(f"{winners[0]} wins!")
                             elif times[1] < times[0]:
@@ -220,7 +220,7 @@ class Bingo:
                         else:
                             winners = [game.get_bingo_players()[bingos[0]], game.get_bingo_players()[bingos[1]]]
                             print(f"{winners[0]} and {winners[1]} have bingo!")
-                            times = self.make_times(2)
+                            times = self.make_times(2, 3.5)
                             if times[0] < times[1]:
                                 print(f"{winners[0]} wins!")
                             elif times[1] < times[0]:
