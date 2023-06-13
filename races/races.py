@@ -8,13 +8,14 @@ from races.race import Race
 
 
 class Races:
-    def __init__(self) -> None:
+    def __init__(self, player) -> None:
         self.names = ("Całeczka", "Pochodniusia", "Różniczka", "Miareczka", "Sumka", "Dystrybuantka", "Transformatka",
                       "Bazunia", "Graniczka", "Metryczka", "Potęgusia")
         self.tracks = ("flat", "rising", "sloping")
         self.converters = (4, 2, 1.5, 1.2, 1.1)
         self.enter_price = 10
         self.gamblers = ("Darek", "Rysiek", "Piotrek", "Boguś")
+        self.player = player
 
     # losujemy zakłady pozostałych graczy
     def other_bets(self, number_of_gamblers):
@@ -25,7 +26,7 @@ class Races:
         for i in range(len(self.gamblers)):
             print(f"{self.gamblers[i]} bets on number {other_bets[i]+1}.")
 
-    def make_bet(self, player):
+    def make_bet(self):
         ok = False
         favorite = None
 
@@ -43,11 +44,11 @@ class Races:
             else:
                 ok = True
 
-        player.spend_tokens(self.enter_price)
+        self.player.spend_tokens(self.enter_price)
 
         return favorite
 
-    def make_race(self, player):
+    def make_race(self):
         print("Let the races begin!")
         print("")
 
@@ -73,7 +74,7 @@ class Races:
         print("")
 
         # po prezentacji prosimy gracza o zrobienie zakładu
-        bet = self.make_bet(player)
+        bet = self.make_bet()
         times = race.start_race()
         print("")
 
@@ -83,7 +84,7 @@ class Races:
         print("")
 
         # podsumowujemy zakłady i prezentujemy wyniki
-        self.sum_up(bet, winners, player, other_bets)
+        self.sum_up(bet, winners, other_bets)
         print("")
         print("Do you wish to see full table of parameters('no' for no, anything else for yes)?")
         ans = input("")
@@ -91,29 +92,31 @@ class Races:
             race.show_full_stats()
         print("")
         print("Feel free to play again!")
+        print("")
+        input("Press ENTER to come back to main menu ")
 
-    def sum_up(self, bet, winners, player, other_bets):
+    def sum_up(self, bet, winners, other_bets):
         if not winners:
-            player.add_tokens(self.enter_price)
-            print("Because there is no winner, your tokens come back to you!")
+            self.player.add_tokens(self.enter_price)
+            print("Because there is no winner, your tokens comes back to you!")
             return
         elif bet-1 in winners:
             counter = 1
             if bet-1 in other_bets:
                 counter += other_bets.count(bet-1)
             if counter == 1:
-                print(f"There is only 1 good bet! You win {self.enter_price * self.converters[0]}$!")
-                player.add_tokens(self.enter_price * self.converters[0])
+                print(f"There is only 1 good bet! You win {int(self.enter_price * self.converters[0])} tokens!")
+                self.player.add_tokens(int(self.enter_price * self.converters[0]))
             else:
-                print(f"There are {counter} good bets! You win {self.enter_price * self.converters[counter-1]}$!")
-                player.add_tokens(self.enter_price * self.converters[counter-1])
+                print(f"There are {counter} good bets! You win {int(self.enter_price * self.converters[counter-1])} tokens!")
+                self.player.add_tokens(int(self.enter_price * self.converters[counter-1]))
         else:
             print("This was not you lucky race...")
         print("")
-        print(f"Your current wallet balance is: {player.get_tokens()} tokens")
+        print(f"Your current wallet balance is: {self.player.get_tokens()} tokens")
 
 
 if __name__ == "__main__":
     player1 = Player("Misiek", 100)
-    races = Races()
-    races.make_race(player1)
+    races = Races(player1)
+    races.make_race()
