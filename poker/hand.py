@@ -5,15 +5,15 @@ HAND_RANKS = ['High card', 'Pair', 'Two Pair', 'Three of a kind',
            'Straight Flush', 'Royal Flush']
 
 class Hand():
+    """Class representing a hand, with cards.
+    """
     def __init__(self) -> None:
         self.cards = []
-
 
     def add_cards(self, cards: list) -> None:
         for card in cards:
             self.cards.append(card)
     
-
     def __str__(self) -> str:
         cards_str = ""
         for card in self.cards:
