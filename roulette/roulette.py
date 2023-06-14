@@ -111,6 +111,7 @@ class Roulette:
         draws a random number, shows it and
         adds tokens to the player's account after the eventual win."""
 
+        print("")
         print("Let the roulette spin!")
         print("")
         self.show_available_bets()
@@ -175,9 +176,3 @@ class Roulette:
         print(f"Your current wallet balance is: {self.player.get_tokens()} tokens")
         print("")
         print("Feel free to play again!")
-
-
-if __name__ == "__main__":
-    player1 = Player("Misiek", 1000)
-    roulette = Roulette(player1)
-    roulette.start_roulette()
