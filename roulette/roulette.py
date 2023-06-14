@@ -16,7 +16,7 @@ class Roulette:
     A class used to play the roulette.
 
     :param player: The player who plays the game
-    :type player: Player
+    :type player: class: `main.Player`
     :param bet_weights: A tuple with weights of different bets (constant)
     :type bet_weights: tuple
     :param bet_names: A tuple with names of different bets (constant)

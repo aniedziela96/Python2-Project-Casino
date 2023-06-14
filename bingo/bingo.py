@@ -8,7 +8,22 @@ import os
 
 
 class Bingo:
+    """
+    A class used to play the bingo.
+
+    :param player: The player who plays the game
+    :type player: class: `main.Player`
+    :param gamblers: A tuple with names of fake players
+    :type bet_weights: tuple
+    :param enter_price: A price the player must pay to play the game (constant)
+    :type enter_price: int
+    :param winner_prize: A prize to win (constant)
+    :type winner_prize: int
+    """
     def __init__(self, player: Player) -> None:
+        """
+        Constructor method.
+        """
         self.player = player
         self.gamblers = ("Darek", "Rysiek", "Piotrek", "Boguś")
         self.enter_price = 10
@@ -16,6 +31,13 @@ class Bingo:
 
     @staticmethod
     def make_bingo_board() -> Board:
+        """
+        Makes bingo board by creating columns with random numbers (and a circle in the center field).
+
+        :return: A bingo board
+        :rtype: class: `bingo.Board`
+        """
+
         columns = []
         start = 1
         stop = 16
@@ -30,22 +52,45 @@ class Bingo:
         return Board(columns)
 
     def make_bingo_game(self) -> BingoGame:
+        """
+        Makes bingo game based on player, 2 random fake players and 3 random bingo boards.
+
+        :return: A single bingo game
+        :rtype: class: `bingo.BingoGame`
+        """
         fake_players = sample(self.gamblers, 2)
-        # tworzymy układ do naszego bingo - trzech graczy (w tym jeden to prawdziwy), każdy ma swoją planszę
         return BingoGame((self.player, fake_players[0], fake_players[1]),
                          [self.make_bingo_board(), self.make_bingo_board(), self.make_bingo_board()])
 
     @staticmethod
     def make_times(number_of_fake_players: int, time: float) -> list:
+        """
+        Makes reaction times for fake player(s) based on player's time.
+
+        :param number_of_fake_players: A number of fake players who have the bingo
+        at the same time.
+        :type number_of_fake_players: int
+        :param time: A time of reaction of a player
+        :type time: float
+
+        :return: A list with times
+        :rtype: list
+        """
         times = []
         for _ in range(number_of_fake_players):
                 times.append(round(uniform(time-2, time+3), 5))
         return times
 
     def pay_prize(self) -> None:
+        """
+        Pays the prize when the player wins.
+        """
         self.player.add_tokens(self.winner_prize)
 
     def sum_up(self) -> None:
+        """
+        Shows ballance and endtapes after the game.
+        """
         print("")
 
         print(f"Your current wallet balance is: {self.player.get_tokens()} tokens")
@@ -54,6 +99,13 @@ class Bingo:
         input("Press ENTER to come back to main menu ")
 
     def start_game(self):
+        """
+        Operates the entire game by the if/elif/else conditions and printing board.
+        Communicates with bingo's player, spends his tokens,
+        draws a random number for each round, shows it, checks it, check if
+        fake players have bingo and waits for the player's input.
+        Adds tokens to the player's account after the eventual win.
+        """
         self.player.spend_tokens(self.enter_price)
         print("Let the bingo begins!")
         print("")

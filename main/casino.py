@@ -86,7 +86,7 @@ class Casino():
                 if self.check_tokens(10, player):
                     races = Races(player)
                     races.make_race()
-                    os.system('cls')
+                    os.system('cls' if os.name == 'nt' else 'clear')
 
             elif choice == "2":
                 if self.check_tokens(10, player):
@@ -97,7 +97,7 @@ class Casino():
                     game.start_game()
                     game.end_game()
 
-                    os.system('cls')
+                    os.system('cls' if os.name == 'nt' else 'clear')
                 
 
             elif choice == "3":
@@ -111,7 +111,7 @@ class Casino():
                 game = Strat_blackjack(player, bet)
                 game.start_game()
 
-                os.system('cls')
+                os.system('cls' if os.name == 'nt' else 'clear')
 
             elif choice == "4":
                 print("Roulette is starting")
