@@ -87,6 +87,7 @@ class Blackjack():
 
         :return: "failed" if player didn't have enough money to play insurance.
         """
+    def insurance(self) -> Union[str, None]:
         insurance = int(0.5 * self.bet_money)
         if self.player.get_tokens() < insurance:
             return "failed"
