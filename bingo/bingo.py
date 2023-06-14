@@ -100,11 +100,12 @@ class Bingo:
 
     def start_game(self):
         """
-        Operates the entire game by the if/elif/else conditions and printing board.
-        Communicates with bingo's player, spends his tokens,
-        draws a random number for each round, shows it, checks it, check if
-        fake players have bingo and waits for the player's input.
-        Adds tokens to the player's account after the eventual win.
+        Operates the entire game by the while loop, if/elif/else conditions.
+        At first, spends player's tokens.
+        Then starts the game.
+        Every round is drawing random number, showing it, checking it on boards, printing 
+        player's board, check if players have bingo and waits for the player's input.
+        The function also handles adding tokens to the player's account after the eventual win.
         """
         self.player.spend_tokens(self.enter_price)
         print("Let the bingo begins!")
