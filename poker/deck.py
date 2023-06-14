@@ -1,6 +1,8 @@
 from poker.cards import Rank, Suit
 from random import shuffle
 
+# The Deck class represents a deck of cards and provides methods for shuffling, checking if it's
+# empty, and drawing cards from it.
 class Deck:
     def __init__(self) -> None:
         self.card_list = []
@@ -26,18 +28,5 @@ class Deck:
                 raise IndexError ('Deck is empty')
                 
         return drawn_cards
-
-if __name__ == "__main__":
-    d = Deck()
-    # print(d.card_list)
-    d.shuffle()
-    # print(d.card_list)
-    # print('-' * 20)
-    # print(d.is_empty())
-    # print(d.draw(n = 5))
-    # print('-' * 20)
-    # print(len(d.card_list))
-    c = d.draw()
-    print(c[0][0].name)
 
 

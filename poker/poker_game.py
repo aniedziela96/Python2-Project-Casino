@@ -92,28 +92,3 @@ class Poker():
             
             if self_rank == "Royal Flush":
                 return w.winner_royal_flush()
-    
-
-if __name__ == "__main__":
-    # rysio = Player("rysio", 1000)
-    # p = Poker(rysio)
-    # print(type(rysio))
-    # print(rysio.wallet)
-    # p.bet()
-    # print(p.bet_money)
-    # print(rysio.wallet)
-    rysio = Poker_human("rysio", 1000)
-    bogus = Poker_human("bogus", 2000)
-    d = Deck()
-    d.shuffle()
-    rysio.draw_cards(d.draw(5))
-    bogus.draw_cards(d.draw(5))
-    h = Hand()
-    h.add_cards(d.draw(5))
-    p = Poker(rysio)
-    p.poker_player.hand = h
-    print(p.poker_player.hand)
-    print(p.poker_player.hand_rank)
-    p.poker_player.rank()
-    print(p.poker_player.hand_rank)
-    print(bogus.hand)

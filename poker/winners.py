@@ -117,15 +117,3 @@ class Winners():
     def winner_royal_flush(self):
         return "JACKPOT"
     
-      
-if __name__ == "__main__":
-    p1 = Poker_Player("bogus", 1000)
-    p2 = Poker_Player("rysio", 1000)
-    d = Deck()
-    d.shuffle()
-    p1.draw_cards(d.draw(5))
-    p2.draw_cards(d.draw(5))
-    print(p1.hand)
-    print(p2.hand)
-    w = Winners(p1, p2)
-    print(w.winner_pair())

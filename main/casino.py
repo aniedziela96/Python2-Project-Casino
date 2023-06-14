@@ -152,9 +152,4 @@ class Casino():
         new_players.write(replaced_content)
         new_players.close()
         
-
-if __name__ == "__main__":
-    c = Casino("main/players_file.csv")
-    c.start()
-
     

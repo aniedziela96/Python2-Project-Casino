@@ -19,7 +19,3 @@ class Poker_Player(Player):
 
     def show_player_hand(self):
         self.hand.show_hand()
-
-
-
-    

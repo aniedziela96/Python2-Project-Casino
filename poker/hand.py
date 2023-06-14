@@ -131,12 +131,3 @@ class Hand():
             print(rows_fig_bottom)
             print(bottom * n)
     
-
-if __name__ == "__main__":
-    
-    d = Deck()
-    d.shuffle()
-    h = Hand()
-    h.add_cards(d.draw(n = 5))
-    print(h)
-    h.show_hand()
