@@ -14,7 +14,8 @@ class Bingo:
         self.enter_price = 10
         self.winner_prize = 20
 
-    def make_bingo_board(self) -> Board:
+    @staticmethod
+    def make_bingo_board() -> Board:
         columns = []
         start = 1
         stop = 16
@@ -34,7 +35,8 @@ class Bingo:
         return BingoGame((self.player, fake_players[0], fake_players[1]),
                          [self.make_bingo_board(), self.make_bingo_board(), self.make_bingo_board()])
 
-    def make_times(self, number_of_fake_players, time) -> list:
+    @staticmethod
+    def make_times(number_of_fake_players: int, time: float) -> list:
         times = []
         for _ in range(number_of_fake_players):
                 times.append(round(uniform(time-2, time+3), 5))
@@ -117,7 +119,7 @@ class Bingo:
                         time = round(t1-t0, 5)
                         other_winner = game.get_bingo_players()[bingos[1]]
                         other_time = self.make_times(1, time)[0]
-                        if time < other_time[0]:
+                        if time < other_time:
                             print(f"Congratulations! You win over {other_winner}!")
                             print("")
                             print(f"Your time: {time} s")
@@ -236,9 +238,3 @@ class Bingo:
 
             round_number += 1
             os.system('cls' if os.name == 'nt' else 'clear')
-
-
-if __name__ == "__main__":
-    player1 = Player("Misiek", 1000)
-    bingo = Bingo(player1)
-    bingo.start_game()

@@ -1,7 +1,6 @@
 import enum
 
-# This is a Python class that defines the four suits in a deck of cards and provides a method to
-# return the corresponding Unicode symbol for each suit.
+
 class Suit(enum.IntEnum):
     HEARTS = 1
     DIAMONDS = 2
@@ -20,9 +19,6 @@ class Suit(enum.IntEnum):
 
         return suit
 
-
-# The Rank class defines a set of enumerated values for playing card ranks and provides a string
-# representation for each rank.
 class Rank(enum.IntEnum):
     TWO = 2
     THREE = 3
@@ -38,7 +34,7 @@ class Rank(enum.IntEnum):
     KING = 13
     ACE = 14
 
-    def __str__(self):
+    def __str__(self) -> str:
         if self.value == 14:
             rank = "A"
         elif self.value == 13:

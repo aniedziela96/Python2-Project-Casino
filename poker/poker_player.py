@@ -7,7 +7,7 @@ class Poker_Player(Player):
         self.hand = Hand()
         self.hand_rank = None
 
-    def draw_cards(self, cards: list):
+    def draw_cards(self, cards: list) -> None:
         self.hand.add_cards(cards)
 
     def __str__(self) -> str:
@@ -17,5 +17,5 @@ class Poker_Player(Player):
         if self.hand.is_five():
             self.hand_rank = self.hand.rank()
 
-    def show_player_hand(self):
+    def show_player_hand(self) -> None:
         self.hand.show_hand()

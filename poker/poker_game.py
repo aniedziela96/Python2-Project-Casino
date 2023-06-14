@@ -14,7 +14,7 @@ class Poker():
         self.last_bet = 0
 
 
-    def bet(self, player = True, all_in = False):
+    def bet(self, player = True, all_in = False) -> None:
         if player:
             if all_in:
                 player_bet = self.poker_player.tokens
@@ -40,7 +40,7 @@ class Poker():
             pass
         #TODO: what croupier does in bet situation
 
-    def match(self, player = True):
+    def match(self, player = True) -> None:
         self.bet_money += self.last_bet
         if player:
             self.poker_player.spend_tokens(self.last_bet)

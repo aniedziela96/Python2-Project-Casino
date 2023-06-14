@@ -15,7 +15,7 @@ class Player():
     def spend_tokens(self, tokens: int) -> None:
         self.tokens -= tokens
 
-    def add_tokens(self, tokens:int) -> None:
+    def add_tokens(self, tokens: int) -> None:
         self.tokens += tokens
 
     def all_in(self) -> None:

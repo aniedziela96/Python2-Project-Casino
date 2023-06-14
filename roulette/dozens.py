@@ -6,7 +6,7 @@ class Dozens(Bet):
         super().__init__(2, [1, 2, 3])
         self.option = self.correct_option(option)
 
-    def is_in_bet(self, number) -> bool:
+    def is_in_bet(self, number: int) -> bool:
         if self.option == 1:
             if 0 < number < 13:
                 return True

@@ -5,12 +5,12 @@ class Board:
         self.columns = columns
 
     # funkcja zaznaczająca pole na planszy; jeśli danego pola nie ma, funkcja nic nie robi
-    def check(self, number: int):
+    def check(self, number: int) -> None:
         for column in self.columns:
             for i in range(5):
                 if column[i] == number:
                     column[i] = '\N{BLACK CIRCLE}'
-                    return
+                    return None
 
     def is_bingo(self) -> bool:
         # sprawdzamy, czy bingo jest w którejś kolumnie

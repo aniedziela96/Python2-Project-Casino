@@ -24,11 +24,6 @@ class Hand():
             cards_str = cards_str + rank + suit + ", "
 
         return cards_str.removesuffix(", ")
-    
-
-    def highest_hards(self) -> tuple:
-        return max(self.cards)
-    
 
     def is_one_color(self) -> bool:
         for i in range(len(self.cards) - 1):
@@ -102,7 +97,7 @@ class Hand():
         else: 
             return HAND_RANKS[0]
         
-    def show_hand(self) -> str:
+    def show_hand(self) -> None:
         if self.cards == []:
             print(" ")
         else:

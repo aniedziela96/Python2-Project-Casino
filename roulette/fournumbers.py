@@ -19,7 +19,7 @@ class FourNumbers(Bet):
                       int(input("The third of four numbers: ")), int(input("The fourth of four numbers: "))]
         return option
 
-    def is_in_bet(self, number) -> bool:
+    def is_in_bet(self, number: int) -> bool:
         if number in self.option:
             return True
         return False

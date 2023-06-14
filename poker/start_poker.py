@@ -1,21 +1,22 @@
 from poker.deck import Deck
 from poker.poker_game import Poker
+from main.player import Player
 
 
 class Poker_Game():
-    def __init__(self, player) -> None:
+    def __init__(self, player: Player) -> None:
         self.poker_player = player
         self.deck = Deck()
         self.poker = Poker(player)
         
-    def round_one(self):
+    def round_one(self) -> None:
         self.deck.shuffle()
         print("Drawing two cards...")
         self.poker.poker_player.draw_cards(self.deck.draw(2))
         self.poker.croupier.draw_cards(self.deck.draw(2))
 
 
-    def action(self):
+    def action(self) -> None | str:
         while True:
             print("1: Bet")
             print("2: Fold")
@@ -27,7 +28,7 @@ class Poker_Game():
                 self.poker.match(player = False)
                 return "bet"
             elif action == "2":
-                setattr(self.poker_player, 'wallet', 
+                setattr(self.poker_player, 'tokens', 
                         self.poker.poker_player.get_tokens())
                 return "fold"
             elif action == "3":
@@ -39,12 +40,12 @@ class Poker_Game():
                       f"{self.poker.poker_player.get_tokens()} tokens")
                 return None
 
-    def round_two(self):
+    def round_two(self) -> None:
         print("drawing three cards...")
         self.poker.poker_player.draw_cards(self.deck.draw(3))
         self.poker.croupier.draw_cards(self.deck.draw(3))
 
-    def final(self):
+    def final(self) -> None:
         print("Your hand: ")
         self.poker.poker_player.show_player_hand()
         print("Croupier's hand:")
@@ -59,7 +60,7 @@ class Poker_Game():
             print(f"You lose, better luck next time.")
 
 
-    def start_game(self):
+    def start_game(self) -> None:
 
         self.round_one()
         while True:
@@ -91,6 +92,7 @@ class Poker_Game():
                 self.final()
                 break
 
-    def end_game(self):
+    @staticmethod
+    def end_game():
         input("Press Enter to continue")
         

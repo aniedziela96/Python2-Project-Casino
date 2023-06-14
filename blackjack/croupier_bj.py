@@ -7,10 +7,10 @@ class Croupier_bj():
         self.hand = Blackjack_hand()
         self.score = 0
 
-    def draw_cards(self, cards: list):
+    def draw_cards(self, cards: list) -> None:
         self.hand.add_cards(cards)
 
-    def show_hidden(self):
+    def show_hidden(self) -> None:
         empty_row = "|           |   "
         print(" ___________    " * 2)
         print("|   *****   |   " + empty_row)
@@ -30,14 +30,14 @@ class Croupier_bj():
             print("|___________|   " * 2)
             
 
-    def show_open(self):
+    def show_open(self) -> None:
         self.hand.show_hand()
 
-    def set_score(self):
+    def set_score(self) -> None:
         self.hand.calculate_score()
         self.score = self.hand.score
 
-    def croupiers_move(self, deck: Deck):
+    def croupiers_move(self, deck: Deck) -> None:
         self.set_score()
         print("Croupier's hand: ")
         self.hand.show_hand()

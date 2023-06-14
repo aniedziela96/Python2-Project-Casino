@@ -1,13 +1,13 @@
 class Mouse:
     def __init__(self, name: str, speed: float, stamina: float, preference: str,
-                 daily_well_being: float):
+                 daily_well_being: float) -> None:
         self.name = name
         self.speed = speed
         self.stamina = stamina
         self.preference = preference
         self.daily_well_being = daily_well_being
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.name}, {self.speed}, {self.stamina}, {self.preference}, {self.daily_well_being}"
 
     def get_name(self) -> str:

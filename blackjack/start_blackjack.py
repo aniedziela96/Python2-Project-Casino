@@ -7,13 +7,7 @@ from main.player import Player
 from poker.cards import Rank, Suit
 
 class Strat_blackjack():
-    def __init__(self, player: Player, bet_money) -> None:
-        """AI is creating summary for __init__
-
-        Args:
-            player (Player): [description]
-            bet_money ([type]): [description]
-        """
+    def __init__(self, player: Player, bet_money: int) -> None:
         self.player = player
         self.blackjack_player = Blackjack_player(player.name, player.tokens)
         self.croupier = Croupier_bj()
@@ -23,7 +17,7 @@ class Strat_blackjack():
         self.tokens_bet = bet_money
         self.list_of_games = []
 
-    def deal(self):
+    def deal(self) -> None:
         
         self.croupier.draw_cards(self.deck.draw(2))
         first_bet = Blackjack_hand()
@@ -32,7 +26,7 @@ class Strat_blackjack():
         self.list_of_games.append(Blackjack(self.croupier, self.blackjack_player, 
                                             self.bet_money, self.deck))
 
-    def action(self, bet_number = 1, first = False):
+    def action(self, bet_number = 1, first = False) -> str:
         print(f"Playing bet number {bet_number}")
         print("1: Stand")
         print("2: Hit")
@@ -50,7 +44,7 @@ class Strat_blackjack():
 
         return action
     
-    def game_status(self, hidden = True):
+    def game_status(self, hidden = True) -> None:
         if hidden:
             print("Croupier's hand: ")
             self.croupier.show_hidden()
@@ -62,12 +56,12 @@ class Strat_blackjack():
         self.blackjack_player.show_bets()
 
         
-    def play_bet(self, game: Blackjack, split=False):
+    def play_bet(self, game: Blackjack, split=False) -> None:
         self.game_status(hidden=True)
         self.decision(game, if_first=True, split=split)
             
 
-    def decision(self, game: Blackjack, if_first=False, split = False):
+    def decision(self, game: Blackjack, if_first=False) -> None:
         chosen_action = self.action(first=if_first, 
                                     bet_number=game.bet_number)
 
@@ -87,8 +81,8 @@ class Strat_blackjack():
         elif chosen_action == "3":
             result = game.double_down()
             if result == "failed":
-                self.decision(game)
                 print("You don't have enough money for double down")
+                self.decision(game)
             else:
                 self.player.spend_tokens(self.tokens_bet)
                 if result == "bust":
@@ -127,7 +121,7 @@ class Strat_blackjack():
         return scores
 
 
-    def final(self):
+    def final(self) -> None:
         players_score = self.players_score()
         for i in range(len(self.list_of_games)):
             if players_score[i] > 21 or players_score[i] < self.croupier.score:

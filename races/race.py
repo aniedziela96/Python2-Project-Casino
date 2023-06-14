@@ -5,7 +5,7 @@ from tabulate import tabulate
 
 
 class Race:
-    def __init__(self, track: Track, runners: list):
+    def __init__(self, track: Track, runners: list) -> None:
         self.track = track
         self.runners = runners
 
@@ -61,7 +61,7 @@ class Race:
                 times.append("has not finished the race!")
         return times
 
-    def show_full_stats(self):
+    def show_full_stats(self) -> None:
         print("-------------------------------FULL TABLE OF PARAMETERS------------------------------")
         table = [["number", "name", "speed", "stamina", "preference", "daily well-being"]]
         for i in range(5):
@@ -74,7 +74,7 @@ class Race:
         print(tabulate(table, headers='firstrow', tablefmt='fancy_grid'))
 
     # number_to_show to liczba atrybutów, które mają się wyświetlić graczowi(nie licząc numeru i imienia)
-    def show_random_stats(self, number_to_show: int):
+    def show_random_stats(self, number_to_show: int) -> None:
         print("-----------------------------------LIST OF RUNNERS-----------------------------------")
         table = [["number", "name", "speed", "stamina", "preference", "daily well-being"]]
 
@@ -102,7 +102,8 @@ class Race:
             table.append(atributes_to_show)
         print(tabulate(table, headers='firstrow', tablefmt='fancy_grid'))
 
-    def get_winners(self, times: list) -> list:
+    @staticmethod
+    def get_winners(times: list) -> list:
         winner_time = np.inf
         for i in times:
             if type(i) == str:
@@ -117,7 +118,7 @@ class Race:
                     winners.append(i)
         return winners
 
-    def show_results(self, times: list, winners: list):
+    def show_results(self, times: list, winners: list) -> None:
         print("----------------RESULTS----------------")
         table = [["number", "name", "time"]]
 

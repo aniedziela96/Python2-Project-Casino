@@ -1,3 +1,4 @@
+from typing import Union
 from blackjack.blackjack_player import Blackjack_player
 from blackjack.croupier_bj import Croupier_bj
 from poker.deck import Deck
@@ -5,7 +6,7 @@ from blackjack.blackjack_hand import Blackjack_hand
 
 class Blackjack():
     def __init__(self, croupier: Croupier_bj, bj_player: Blackjack_player, 
-                 bet_money, deck: Deck, bet_number = 1) -> None:
+                 bet_money: int, deck: Deck, bet_number = 1) -> None:
         self.croupier = croupier
         self.player = bj_player 
         self.players_bet = bj_player.bets[bet_number - 1]
@@ -14,13 +15,13 @@ class Blackjack():
         self.deck = deck
 
 
-    def end(self, player_win: bool):
+    def end(self, player_win: bool) -> str:
         if player_win:
             return "player wins"
         else:
             return "player lost"
 
-    def hit(self):
+    def hit(self) -> str:
         card = self.deck.draw()
         self.player.player_hit(card, self.bet_number)
         self.players_bet.calculate_score()
@@ -30,7 +31,7 @@ class Blackjack():
             return "success"
         
         
-    def double_down(self):
+    def double_down(self) -> str:
         if self.player.get_tokens() < self.bet_money:
             return "failed"
         else:
@@ -40,7 +41,7 @@ class Blackjack():
             return res
             
 
-    def insurance(self):
+    def insurance(self) -> str | None:
         insurance = int(0.5 * self.bet_money)
         if self.player.get_tokens() < insurance:
             return "failed"
@@ -51,7 +52,7 @@ class Blackjack():
             self.player.add_tokens(3 * insurance)
     
         
-    def split(self):
+    def split(self) -> Union[str, 'Blackjack']:
         if self.player.get_tokens() < self.bet_money:
             return "failed"
         else:

@@ -8,7 +8,7 @@ from races.race import Race
 
 
 class Races:
-    def __init__(self, player) -> None:
+    def __init__(self, player: Player) -> None:
         self.names = ("Całeczka", "Pochodniusia", "Różniczka", "Miareczka", "Sumka", "Dystrybuantka", "Transformatka",
                       "Bazunia", "Graniczka", "Metryczka", "Potęgusia")
         self.tracks = ("flat", "rising", "sloping")
@@ -18,15 +18,16 @@ class Races:
         self.player = player
 
     # losujemy zakłady pozostałych graczy
-    def other_bets(self, number_of_gamblers):
+    @staticmethod
+    def other_bets(number_of_gamblers) -> list:
         others = [randrange(0, number_of_gamblers) for _ in range(4)]
         return others
 
-    def show_other_bets(self, other_bets):
+    def show_other_bets(self, other_bets: list) -> None:
         for i in range(len(self.gamblers)):
             print(f"{self.gamblers[i]} bets on number {other_bets[i]+1}.")
 
-    def make_bet(self):
+    def make_bet(self) -> int:
         ok = False
         favorite = None
 
@@ -48,7 +49,7 @@ class Races:
 
         return favorite
 
-    def make_race(self):
+    def make_race(self) -> None:
         print("Let the races begin!")
         print("")
 
@@ -95,7 +96,7 @@ class Races:
         print("")
         input("Press ENTER to come back to main menu ")
 
-    def sum_up(self, bet, winners, other_bets):
+    def sum_up(self, bet: int, winners: list, other_bets: list) -> None:
         if not winners:
             self.player.add_tokens(self.enter_price)
             print("Because there is no winner, your tokens comes back to you!")
@@ -114,9 +115,3 @@ class Races:
             print("This was not you lucky race...")
         print("")
         print(f"Your current wallet balance is: {self.player.get_tokens()} tokens")
-
-
-if __name__ == "__main__":
-    player1 = Player("Misiek", 100)
-    races = Races(player1)
-    races.make_race()

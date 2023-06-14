@@ -20,7 +20,7 @@ class Blackjack_hand(Hand):
                     self.score += 1
                     
 
-    def is_pair(self):
+    def is_pair(self) -> bool:
         if len(self.cards) != 2:
             raise ValueError("Only possible if there are two cards")
         
@@ -29,7 +29,7 @@ class Blackjack_hand(Hand):
         else:
             return False
         
-    def card_split(self):
+    def card_split(self) -> tuple:
         if len(self.cards) != 2:
             raise ValueError("Only possible if there are two cards")
         

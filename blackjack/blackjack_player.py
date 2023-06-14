@@ -8,7 +8,7 @@ class Blackjack_player(Player):
         super().__init__(name, tokens)
         self.bets = [] #list of blackjack hands
 
-    def show_bets(self):
+    def show_bets(self) -> None:
         if len(self.bets) == 0:
             print(" ")
         else:
@@ -55,31 +55,9 @@ class Blackjack_player(Player):
             print(bottoms)
 
 
-    def player_hit(self, card, hand_number = 1):
+    def player_hit(self, card: list, hand_number = 1) -> None:
         self.bets[hand_number - 1].add_cards(card)
 
-    def add_bet(self, hand: Blackjack_hand):
+    def add_bet(self, hand: Blackjack_hand) -> None:
         self.bets.append(hand)
-
-    def split(self, bet_number):
-        pass
-
-
-if __name__ == "__main__":
-    d = Deck()
-    d.shuffle()
-    h1 = Blackjack_hand()
-    h2 = Blackjack_hand()
-    h3 = Blackjack_hand()
-    h1.add_cards(d.draw(2))
-    print(h1)
-    h2.add_cards(d.draw(3))
-    print(h2)
-    h3.add_cards(d.draw(2))
-    print(h3)
-    p = Blackjack_player("rysio", 1000)
-    p.add_bet(h1)
-    p.add_bet(h2)
-    p.add_bet(h3)
-    p.show_bets()
-        
+  

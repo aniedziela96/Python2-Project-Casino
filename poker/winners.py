@@ -10,15 +10,15 @@ class Winners():
         self.player2 = poker_player2
         self.hand2 = sorted(poker_player2.hand.cards)
 
-    def winner_high_card(self):
+    def winner_high_card(self) -> Poker_Player:
         for i in range(5):
-            if self.hand1[i] > self.hand2[i]:
+            if self.hand1[i][0] > self.hand2[i][0]:
                 return self.player1
             else:
                 return self.player2
 
         
-    def winner_pair(self):
+    def winner_pair(self) -> Poker_Player:
         last_pair1 = False
         last_pair2 = False
         for i in range(4):
@@ -46,8 +46,9 @@ class Winners():
                     return self.player1
                 if self.hand1[4] < self.hand2[4]:
                     return self.player2
-                
-    def find_high_card(hand):
+
+    @staticmethod        
+    def find_high_card(hand: Hand) -> tuple:
         for i in range(4):
             if hand[i][0] != hand[i + 1][0]:
                 if i == 0:
@@ -56,7 +57,7 @@ class Winners():
                     return hand[i + 1]
                 
          
-    def winner_two_pairs(self):
+    def winner_two_pairs(self) -> Poker_Player:
         if self.hand1[3][0] > self.hand2[3][0]:
             return self.player1
         elif self.hand1[3][0] < self.hand2[3][0]:
@@ -72,19 +73,19 @@ class Winners():
                 else:
                     return self.player2
                 
-    def winner_three_of_a_kind(self):
+    def winner_three_of_a_kind(self) -> Poker_Player:
         if self.hand1[2] > self.hand2[2]:
             return self.player1
         elif self.hand1[2] < self.hand2[2]:
             return self.player2
     
-    def winner_straight(self):
+    def winner_straight(self) -> Poker_Player:
         if self.hand1[4][0] > self.hand2[4][0]:
             return self.player1
         elif self.hand1[4][0] < self.hand2[4][0]:
             return self.player2
         
-    def winner_flush(self):
+    def winner_flush(self) -> Poker_Player:
         for i in range(5):
             if self.hand1[i][0] > self.hand2[i][0]:
                 return self.player1
@@ -96,24 +97,24 @@ class Winners():
         else:
             return self.player2
         
-    def winner_full_house(self):
+    def winner_full_house(self) -> Poker_Player:
         if self.hand1[2] > self.hand2[2]:
             return self.player1
         else:
             return self.player2
         
-    def winner_four_of_a_kind(self):
+    def winner_four_of_a_kind(self) -> Poker_Player:
         if self.hand1[2] > self.hand2[2]:
             return self.player1
         else:
             return self.player2
         
-    def winner_straight_flush(self):
+    def winner_straight_flush(self) -> Poker_Player:
         if self.hand1[4] > self.hand2[4]:
             return self.player1
         else:
             return self.player2
         
-    def winner_royal_flush(self):
+    def winner_royal_flush(self) -> str:
         return "JACKPOT"
     
