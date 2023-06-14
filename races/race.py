@@ -27,30 +27,29 @@ class Race:
                 if 1.0 - daily_well_being > uniform(0, 1):
                     times.append("has not finished the race!")
                     continue
-            # Jeśli myszka jest wypoczęta i ma dobry dzień, startuje szybciej.
-            # W przeciwnym razie zaczyna wolniej.
+            # If a mouse has a good day, she starts faster. If not, starts slower.
             speed = speed * daily_well_being
             if stamina != 0.0:
                 if self.track == "flat":
                     if preference == "flat":
-                        # jeśli myszka lubi dany typ toru, biegnie chętniej,
+                        # If a mouse likes current type of a track, she runs faster
                         stamina += 0.1
-                    # wzór wyprowadzony na podstawie opisu ruchu jednostajnie przyspieszonego (lub opóźnionego)
+                    # This formula is based on the uniformly accelerated/retraded motion equation
                     time = (-speed + ((speed ** 2.0 + 2.0 * stamina * distance) ** 0.5)) / stamina
                 elif self.track == "rising":
                     if preference == "rising":
                         stamina += 0.1
-                    # wzór wyprowadzony na podstawie opisu ruchu jednostajnie przyspieszonego (lub opóźnionego) na równi
-                    # pochyłej o nachyleniu 30 stopni, czyli od przyspieszenia odejmujemy g*sin(30), gdzie g to
-                    # przyspieszenie ziemskie
+                    # This formula is based on the uniformly accelerated/retraded motion equation
+                    # on an inclined plane with an angle of inclination of 30 degrees, 
+                    # so we subtract g*sin(30) from the acceleration, where g is the acceleration due to gravity
                     time = (-speed +
                             ((speed ** 2.0 + 2.0 * (stamina - 9.81 * 0.5) * distance) ** 0.5)) / (stamina - 9.81 * 0.5)
                 else:
                     if preference == "sloping":
                         stamina += 0.1
-                    # wzór wyprowadzony na podstawie opisu ruchu jednostajnie przyspieszonego (lub opóźnionego) na równi
-                    # pochyłej o nachyleniu 30 stopni, czyli do przyspieszenia dodajemy g*sin(30), gdzie g to
-                    # przyspieszenie ziemskie
+                    # This formula is based on the uniformly accelerated/retraded motion equation
+                    # on an inclined plane with an angle of inclination of 30 degrees, 
+                    # so we add g*sin(30) from the acceleration, where g is the acceleration due to gravity
                     time = (-speed +
                             ((speed ** 2.0 + 2.0 * (stamina + 9.81 * 0.5) * distance) ** 0.5)) / (stamina + 9.81 * 0.5)
             else:
@@ -65,41 +64,41 @@ class Race:
         print("-------------------------------FULL TABLE OF PARAMETERS------------------------------")
         table = [["number", "name", "speed", "stamina", "preference", "daily well-being"]]
         for i in range(5):
-            # tworzymy krotkę z atrybutami myszki
+            # making a tuple with mouse attributes
             runners = self.runners
-            mouse_atributes = (i+1, runners[i].get_name(), runners[i].get_speed(),
+            mouse_attributes = (i+1, runners[i].get_name(), runners[i].get_speed(),
                                runners[i].get_stamina(), runners[i].get_preference(), runners[i].get_daily_well_being())
-            # dodajemy ją do tabeli
-            table.append(mouse_atributes)
+            # adding it to the table
+            table.append(mouse_attributes)
         print(tabulate(table, headers='firstrow', tablefmt='fancy_grid'))
 
-    # number_to_show to liczba atrybutów, które mają się wyświetlić graczowi(nie licząc numeru i imienia)
+    # number_to_show is a number of attributes to show the player (a number and a name of a mouse not included)
     def show_random_stats(self, number_to_show: int) -> None:
         print("-----------------------------------LIST OF RUNNERS-----------------------------------")
         table = [["number", "name", "speed", "stamina", "preference", "daily well-being"]]
 
-        # z all_atributes będziemy losować numery atrybutów, które gracz zobaczy
-        all_atributes = [i for i in range(4)]
+        # drawing the number of attributes from all_attributes
+        all_attributes = [i for i in range(4)]
 
         for i in range(5):
-            # losujemy numery atrybutów to pokazania
-            numbers_to_show = sample(all_atributes, number_to_show)
+            # drawing numbers of attributes to show
+            numbers_to_show = sample(all_attributes, number_to_show)
 
-            # tworzymy krotkę z atrybutami myszki
+            # making a tuple with mouse attributes
             runners = self.runners
-            mouse_atributes = (i+1, runners[i].get_name(), runners[i].get_speed(), runners[i].get_stamina(),
+            mouse_attributes = (i+1, runners[i].get_name(), runners[i].get_speed(), runners[i].get_stamina(),
                                runners[i].get_preference(), runners[i].get_daily_well_being())
 
-            # dodajemy atrybuty stałe - numer i imię
-            atributes_to_show = list(mouse_atributes[0:2])
+            # adding a number and a name of a mouse
+            attributes_to_show = list(mouse_attributes[0:2])
 
-            # uzupełniamy dalszą część tabeli
+            # filling the rest of the table
             for j in range(4):
                 if j in numbers_to_show:
-                    atributes_to_show.append(mouse_atributes[j+2])
+                    attributes_to_show.append(mouse_attributes[j+2])
                 else:
-                    atributes_to_show.append(" ")
-            table.append(atributes_to_show)
+                    attributes_to_show.append(" ")
+            table.append(attributes_to_show)
         print(tabulate(table, headers='firstrow', tablefmt='fancy_grid'))
 
     @staticmethod
@@ -110,7 +109,7 @@ class Race:
                 continue
             if i < winner_time:
                 winner_time = i
-        # winners to lista numerów zwycięzców
+        # winners is a list of winners' numbers
         winners = []
         for i in range(5):
             if type(times[i]) != str:
