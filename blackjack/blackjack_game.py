@@ -8,13 +8,13 @@ class Blackjack():
     """Class representing one blackjack bet.
 
     :param croupier: Croupier playing current bet.
-    :type croupier: class:`blackjack.Croupier_bj`
+    :type croupier: class:`blackjack.croupier_bj.Croupier_bj`
     :param bj_player: Blackjack player playing current bet.
-    :type bj_player: class:`blackjack.Blackjack_player`
+    :type bj_player: class:`blackjack.blackjack_player.Blackjack_player`
     :param bet_money: Number of tokens that player paid to play current bet.
     :type bet_money: int
     :param deck: Deck, with which the bet is played
-    :type deck: class:`poker.Deck`
+    :type deck: class:`poker.deck.Deck`
     :param bet_number: Deck, with which the bet is played, defaults to 1.
     :type bet_number: int
     """
@@ -38,7 +38,7 @@ class Blackjack():
         :type player_win: bool
         ...
         :return: string "player wins" or "player lost"
-        :rtype: string
+        :rtype: str
         """
         if player_win:
             return "player wins"
@@ -51,7 +51,7 @@ class Blackjack():
             greater than 21 player is busted if not the hit was a success.
         
         :return: "bust" or "success" depending on result of hit action
-        :rtype: string
+        :rtype: str
         """
         card = self.deck.draw()
         self.player.player_hit(card, self.bet_number)
@@ -70,7 +70,7 @@ class Blackjack():
 
         :return: "failed" if player didn't have enough tokens, "bust" if player busted,
             "success" if the double down was successful
-        :rtype: string
+        :rtype: str
         """
         if self.player.get_tokens() < self.bet_money:
             return "failed"

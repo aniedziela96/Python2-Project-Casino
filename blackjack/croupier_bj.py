@@ -53,10 +53,10 @@ class Croupier_bj():
     def croupiers_move(self, deck: Deck) -> None:
         """Plays a croupier move, draws cards from the `deck` and calculates score until croupier's
             score reaches 17, if a score is greater than 21 prints a message that 
-            the croupier busted and changes it to 0
+            the croupier busted and changes score to 0
 
             :param deck: Deck from wich croupier will draw cards
-            :type deck: class:`poker.Deck`
+            :type deck: class:`poker.deck.Deck`
             """
         self.set_score()
         print("Croupier's hand: ")

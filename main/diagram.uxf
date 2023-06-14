@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>6</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>510</x><y>633</y><w>288</w><h>96</h></coordinates><panel_attributes>*Casino*
+<diagram program="umletino" version="15.1"><zoom_level>4</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>340</x><y>424</y><w>192</w><h>64</h></coordinates><panel_attributes>*Casino*
 --
 + file: str
 --
@@ -6,7 +6,7 @@
 + login(): Player
 + start(): None
 + logout(player: Player): None
-+ check_tokens(tokens: int, player: Player, blackjack: bool): bool </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>324</x><y>681</y><w>126</w><h>114</h></coordinates><panel_attributes>*Player*
++ check_tokens(tokens: int, player: Player, blackjack: bool): bool </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>216</x><y>456</y><w>84</w><h>76</h></coordinates><panel_attributes>*Player*
 --
 + name: str
 + tokens: int
@@ -15,7 +15,7 @@
 + get_tokens(): int
 + spend_tokens(tokens: int): None
 + add_tokens(tokens: int): None
-+ all_in(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>495</y><w>240</w><h>132</h></coordinates><panel_attributes>*Bingo*
++ all_in(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>160</x><y>332</y><w>160</w><h>88</h></coordinates><panel_attributes>*Bingo*
 --
 + player: Player
 + gamblers: tuple
@@ -28,7 +28,7 @@ _+ make_bingo_board(): Board_
 _+ make_times(number_of_fake_players: int, time: float): float[ ]_
 + pay_prize(): None
 + sum_up(): None
-+ start_game(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>387</y><w>222</w><h>90</h></coordinates><panel_attributes>*BingoGame*
++ start_game(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>20</x><y>260</y><w>148</w><h>60</h></coordinates><panel_attributes>*BingoGame*
 --
 + bingo_players: tuple
 + boards: Board[ ]
@@ -38,14 +38,14 @@ _+ make_times(number_of_fake_players: int, time: float): float[ ]_
 + check_boards(number: int): None
 + is_bingos(): int[ ]
 + show_players_boards(): None
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>579</y><w>216</w><h>72</h></coordinates><panel_attributes>*Board*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>388</y><w>144</w><h>48</h></coordinates><panel_attributes>*Board*
 --
 + columns: list
 --
 + __init__(columns: list): None
 + check(number: int): None
 + is_bingo(): bool
-+ show(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>408</x><y>825</y><w>372</w><h>138</h></coordinates><panel_attributes>*Blackjack*
++ show(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>272</x><y>552</y><w>248</w><h>92</h></coordinates><panel_attributes>*Blackjack*
 --
 + croupier: Croupier_bj
 + player: Blackjack_player
@@ -60,19 +60,19 @@ _+ make_times(number_of_fake_players: int, time: float): float[ ]_
 + double_down(): str
 + insurance(): str/None
 + split(): str/Blackjack
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>432</x><y>981</y><w>126</w><h>72</h></coordinates><panel_attributes>*Blackjack_hand*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>288</x><y>656</y><w>84</w><h>48</h></coordinates><panel_attributes>*Blackjack_hand*
 --
 + score: int
 --
 + calculate_score(): None
 + is_pair(): bool
-+ split(): tuple</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>618</x><y>987</y><w>180</w><h>78</h></coordinates><panel_attributes>*Blackjack_player*
++ split(): tuple</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>412</x><y>660</y><w>120</w><h>52</h></coordinates><panel_attributes>*Blackjack_player*
 --
 + bets: Hand[ ]
 --
 + show_bets(): None
 + player_hit(card: list, hand_number = int): None 
-+ add_bet(hand: Blackjack_hand): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>816</x><y>831</y><w>222</w><h>174</h></coordinates><panel_attributes>*Start_blackjack*
++ add_bet(hand: Blackjack_hand): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>544</x><y>556</y><w>148</w><h>116</h></coordinates><panel_attributes>*Start_blackjack*
 --
 + player: Player
 + blackjack_player: Blackjack_player
@@ -92,7 +92,7 @@ _+ make_times(number_of_fake_players: int, time: float): float[ ]_
 + final(): None
 + start_game(): None
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>852</x><y>1023</y><w>126</w><h>90</h></coordinates><panel_attributes>*Croupier_bj*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>568</x><y>684</y><w>84</w><h>60</h></coordinates><panel_attributes>*Croupier_bj*
 --
 + hand: Blackjack_hand
 + score: int
@@ -101,7 +101,7 @@ _+ make_times(number_of_fake_players: int, time: float): float[ ]_
 + show_hidden(): None
 + show_open(): None
 + set_score(): None
-+ cropiers_move(deck: Deck): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>522</x><y>417</y><w>216</w><h>132</h></coordinates><panel_attributes>*Races*
++ cropiers_move(deck: Deck): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>348</x><y>280</y><w>144</w><h>88</h></coordinates><panel_attributes>*Races*
 --
 + names: tuple
 + tracks: tuple
@@ -116,7 +116,7 @@ _+ other_bets(number_of_gamblers: int): str[]_
 + make_bet(): int
 + make_race(): None
 + sum_up(bet: int, winners: int[], other_bets: int[]): None
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>690</x><y>261</y><w>318</w><h>132</h></coordinates><panel_attributes>*Mouse*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>460</x><y>176</y><w>212</w><h>88</h></coordinates><panel_attributes>*Mouse*
 --
 + name: str
 + speed: float
@@ -129,7 +129,7 @@ _+ other_bets(number_of_gamblers: int): str[]_
 + get_speed(): float
 + get_stamina(): float
 + get_preference(): str
-+ get_daily_well_being(): float</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>342</x><y>267</y><w>186</w><h>126</h></coordinates><panel_attributes>*Race*
++ get_daily_well_being(): float</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>228</x><y>180</y><w>124</w><h>84</h></coordinates><panel_attributes>*Race*
 --
 + track: Track
 + runners: Mouse[ ] 
@@ -141,24 +141,24 @@ _+ other_bets(number_of_gamblers: int): str[]_
 + show_full_stats(): None
 + show_random_stats(number_to_show: int): None
 _+ get_winners(times: float[ ]): int[ ]_
-+ show_results(times: float[ ], winners: int [ ]): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>546</x><y>243</y><w>126</w><h>72</h></coordinates><panel_attributes>*Track*
++ show_results(times: float[ ], winners: int [ ]): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>364</x><y>164</y><w>84</w><h>48</h></coordinates><panel_attributes>*Track*
 --
 + track_type: str
 + distance: int
 --
 + get_track_type(): str
 + get_distance(): int
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1242</x><y>597</y><w>132</w><h>48</h></coordinates><panel_attributes>*Croupier*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>828</x><y>400</y><w>88</w><h>32</h></coordinates><panel_attributes>*Croupier*
 --
 --
 + croupier_bet: None
-+ croupier_match(last_bet: int): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1212</x><y>1041</y><w>60</w><h>18</h></coordinates><panel_attributes>Rank</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1212</x><y>1077</y><w>60</w><h>18</h></coordinates><panel_attributes>Suit</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1062</x><y>975</y><w>126</w><h>60</h></coordinates><panel_attributes>*Deck*
++ croupier_match(last_bet: int): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>808</x><y>696</y><w>40</w><h>12</h></coordinates><panel_attributes>Rank</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>808</x><y>720</y><w>40</w><h>12</h></coordinates><panel_attributes>Suit</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>708</x><y>652</y><w>84</w><h>40</h></coordinates><panel_attributes>*Deck*
 --
 card_list: tuple[ ]
 --
 + shuffle(): None
 + is_empyt(): bool
-+ draw(n: int): tuple[ ] </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1278</x><y>903</y><w>126</w><h>90</h></coordinates><panel_attributes>*Hand*
++ draw(n: int): tuple[ ] </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>852</x><y>604</y><w>84</w><h>60</h></coordinates><panel_attributes>*Hand*
 --
 + cards: tuple[ ]
 --
@@ -167,7 +167,7 @@ card_list: tuple[ ]
 + is_straight(): bool
 + is_five(): bool
 + rank(): str
-+ show_hand(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>954</x><y>663</y><w>162</w><h>114</h></coordinates><panel_attributes>*Poker*
++ show_hand(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>636</x><y>444</y><w>108</w><h>76</h></coordinates><panel_attributes>*Poker*
 --
 + player: Player
 + poker_player: Poker_human
@@ -179,10 +179,10 @@ card_list: tuple[ ]
 + bet(player: bool, all_in: bool) -&gt; None
 + match(player: bool): None
 + fold(player: bool): None
-+ winner(): Poker_human/Croupier</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1242</x><y>663</y><w>126</w><h>36</h></coordinates><panel_attributes>*Poker_human*
++ winner(): Poker_human/Croupier</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>828</x><y>444</y><w>84</w><h>24</h></coordinates><panel_attributes>*Poker_human*
 --
 --
-+ players_bet(tokens: int): bool/str</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1032</x><y>567</y><w>156</w><h>78</h></coordinates><panel_attributes>*Poker_player*
++ players_bet(tokens: int): bool/str</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>688</x><y>380</y><w>104</w><h>52</h></coordinates><panel_attributes>*Poker_player*
 --
 + hand: Hand
 + hand_rank: None/str
@@ -190,7 +190,7 @@ card_list: tuple[ ]
 + __init__(nams: str, money: int): None
 + draw_cards(tuple[ ]): None
 + rank(): None
-+ show_player_hand(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1134</x><y>723</y><w>126</w><h>114</h></coordinates><panel_attributes>*Poker_Game*
++ show_player_hand(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>756</x><y>484</y><w>84</w><h>76</h></coordinates><panel_attributes>*Poker_Game*
 --
 + poker_player: Player
 + deck: Deck
@@ -202,7 +202,7 @@ card_list: tuple[ ]
 + round_two(): None
 + final(): None
 + start_game(): None
-_+ end_game(): None_</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1440</x><y>867</y><w>156</w><h>162</h></coordinates><panel_attributes>*Winners*
+_+ end_game(): None_</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>960</x><y>580</y><w>104</w><h>108</h></coordinates><panel_attributes>*Winners*
 --
 + player1: Poker_player
 + hand1: tuple[ ]
@@ -219,7 +219,7 @@ _+ find_high_card(hand: Hand): tuple_
 + winner_full_house(): Poker_player
 + winner_four_of_a_kind(): Poker_player
 + winner_straigh_flush(): Poker_player
-+ winner_royal_flush(): str</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1104</x><y>279</y><w>156</w><h>78</h></coordinates><panel_attributes>*Bet*
++ winner_royal_flush(): str</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>736</x><y>188</y><w>104</w><h>52</h></coordinates><panel_attributes>*Bet*
 --
 + weight: int
 + options: int[ ]
@@ -227,48 +227,48 @@ _+ find_high_card(hand: Hand): tuple_
 +__init__(weight: int, options: int[ ]): None
 + is_option_ok(option: int): bool
 + correct_option(option: int): int
-+ winner_prize(tokens: int): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1308</x><y>525</y><w>126</w><h>54</h></coordinates><panel_attributes>*Dozens*
++ winner_prize(tokens: int): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>872</x><y>352</y><w>84</w><h>36</h></coordinates><panel_attributes>*Dozens*
 --
 + option: int
 --
 + __init__(option: int): None
-+ is_in_bet(number: int): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1308</x><y>261</y><w>126</w><h>54</h></coordinates><panel_attributes>*Eighteens*
++ is_in_bet(number: int): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>872</x><y>176</y><w>84</w><h>36</h></coordinates><panel_attributes>*Eighteens*
 --
 + option: int
 --
 + __init__(option: int): None
-+ is_in_bet(number: int): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1308</x><y>321</y><w>126</w><h>54</h></coordinates><panel_attributes>*EvenOdd*
++ is_in_bet(number: int): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>872</x><y>216</y><w>84</w><h>36</h></coordinates><panel_attributes>*EvenOdd*
 --
 + option: int
 --
 + __init__(option: int): None
-+ is_in_bet(number: int): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1308</x><y>189</y><w>126</w><h>66</h></coordinates><panel_attributes>*FourNumbers*
++ is_in_bet(number: int): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>872</x><y>128</y><w>84</w><h>44</h></coordinates><panel_attributes>*FourNumbers*
 --
 + option: int[ ]
 --
 + __init__(option: int): None
 + is_in_bet(number: int): bool
 + is_option_ok(option: int[ ]): bool
-+ correst_option(option: int[ ]): int[ ]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1308</x><y>465</y><w>126</w><h>48</h></coordinates><panel_attributes>*OneNumber*
++ correst_option(option: int[ ]): int[ ]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>872</x><y>312</y><w>84</w><h>32</h></coordinates><panel_attributes>*OneNumber*
 --
 + option: int
 --
 + __init__(option: int): None
-+ is_in_bet(number: int): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1308</x><y>387</y><w>126</w><h>72</h></coordinates><panel_attributes>*ThreeNumbers*
++ is_in_bet(number: int): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>872</x><y>260</y><w>84</w><h>48</h></coordinates><panel_attributes>*ThreeNumbers*
 --
 + option: int[ ]
 --
 + __init__(option: int): None
 + is_in_bet(number: int): bool
 + is_option_ok(option: int[ ]): bool
-+ correst_option(option: int[ ]): int[ ]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1308</x><y>111</y><w>126</w><h>72</h></coordinates><panel_attributes>*TwoNumbers*
++ correst_option(option: int[ ]): int[ ]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>872</x><y>76</y><w>84</w><h>48</h></coordinates><panel_attributes>*TwoNumbers*
 --
 + option: int[ ]
 --
 + __init__(option: int): None
 + is_in_bet(number: int): bool
 + is_option_ok(option: int[ ]): bool
-+ correst_option(option: int[ ]): int[ ]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>924</x><y>447</y><w>126</w><h>90</h></coordinates><panel_attributes>*Roulette*
++ correst_option(option: int[ ]): int[ ]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>616</x><y>300</y><w>84</w><h>60</h></coordinates><panel_attributes>*Roulette*
 --
 + player: Player
 + bet_weights: tuple
@@ -278,12 +278,12 @@ _+ find_high_card(hand: Hand): tuple_
 + show_available_bets(): None
 + make_bet(): tuple
 + start_roulette(): None
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1188</x><y>351</y><w>132</w><h>210</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;330;200;330</additional_attributes></element><element><id>Relation</id><coordinates><x>1212</x><y>351</y><w>108</w><h>150</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;230;160;230</additional_attributes></element><element><id>Relation</id><coordinates><x>1236</x><y>351</y><w>84</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;140;120;140</additional_attributes></element><element><id>Relation</id><coordinates><x>1254</x><y>351</y><w>66</w><h>18</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1254</x><y>297</y><w>66</w><h>18</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1212</x><y>219</y><w>108</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;100;10;10;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1164</x><y>165</y><w>156</w><h>126</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;190;10;10;240;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1032</x><y>303</y><w>84</w><h>156</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
-m2=1..*</panel_attributes><additional_attributes>10;240;10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>471</y><w>156</w><h>174</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>792</x><y>236</y><w>88</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;330;200;330</additional_attributes></element><element><id>Relation</id><coordinates><x>808</x><y>236</y><w>72</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;230;160;230</additional_attributes></element><element><id>Relation</id><coordinates><x>824</x><y>236</y><w>56</w><h>64</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;140;120;140</additional_attributes></element><element><id>Relation</id><coordinates><x>836</x><y>236</y><w>44</w><h>12</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>836</x><y>200</y><w>44</w><h>12</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>808</x><y>148</y><w>72</w><h>48</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;100;10;10;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>776</x><y>112</y><w>104</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;190;10;10;240;10</additional_attributes></element><element><id>Relation</id><coordinates><x>688</x><y>204</y><w>56</w><h>104</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1..*</panel_attributes><additional_attributes>10;240;10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>316</y><w>104</w><h>116</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m2=1
 
 
 
 
-</panel_attributes><additional_attributes>10;270;10;30;240;30</additional_attributes></element><element><id>Relation</id><coordinates><x>672</x><y>363</y><w>114</w><h>24</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>10;270;10;30;240;30</additional_attributes></element><element><id>Relation</id><coordinates><x>448</x><y>244</y><w>76</w><h>16</h></coordinates><panel_attributes>lt=&lt;-
 m1=0..n</panel_attributes><additional_attributes>10;10;170;10</additional_attributes></element></diagram>

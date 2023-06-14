@@ -82,7 +82,7 @@ class Blackjack_player(Player):
         """Adds a new bet to the list of blackjack hands.
 
             :param hand: A new `Blackjack_hand` representing a bet
-            :type hand: class:`blackjack.Blackjack_hand`
+            :type hand: class:`blackjack.blackjack_hand.Blackjack_hand`
         """
         self.bets.append(hand)
   
