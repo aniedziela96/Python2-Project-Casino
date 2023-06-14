@@ -19,9 +19,11 @@ class Strat_blackjack():
 
     def deal(self) -> None:
         
-        self.croupier.draw_cards(self.deck.draw(2))
+        # self.croupier.draw_cards(self.deck.draw(2))
+        self.croupier.draw_cards([(Rank.KING, Suit.CLUBS), (Rank.ACE, Suit.DIAMONDS)])
         first_bet = Blackjack_hand()
         first_bet.add_cards(self.deck.draw(2))
+        # first_bet.add_cards([(Rank.FIVE, Suit.CLUBS), (Rank.FIVE, Suit.DIAMONDS)])
         self.blackjack_player.add_bet(first_bet)
         self.list_of_games.append(Blackjack(self.croupier, self.blackjack_player, 
                                             self.bet_money, self.deck))
@@ -58,7 +60,7 @@ class Strat_blackjack():
         
     def play_bet(self, game: Blackjack, split=False) -> None:
         self.game_status(hidden=True)
-        self.decision(game, if_first=True, split=split)
+        self.decision(game, if_first=True)
             
 
     def decision(self, game: Blackjack, if_first=False) -> None:
@@ -107,6 +109,7 @@ class Strat_blackjack():
             if result == "failed":
                 self.decision(game)
             else:
+                setattr(self.player, 'tokens', self.blackjack_player.get_tokens())
                 self.list_of_games.append(result)
                 self.play_bet(game)
 

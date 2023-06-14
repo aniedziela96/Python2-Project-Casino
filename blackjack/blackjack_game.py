@@ -50,6 +50,9 @@ class Blackjack():
         self.croupier.set_score()
         if self.croupier.hand.score == 21:
             self.player.add_tokens(3 * insurance)
+            print("You won insurance")
+        else:
+            print("You lost insurance")
     
         
     def split(self) -> Union[str, 'Blackjack']:
