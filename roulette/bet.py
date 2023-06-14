@@ -1,36 +1,15 @@
 class Bet:
     """
     A class used to represent a bet (basis for all types of bets).
-    ...
 
-    Attributes
-    ----------
-    weight : int
-        the weight of the bet
-    options : list
-        the list with available options for the bet
-
-
-    Methods
-    -------
-    is_option_ok(option: int)
-        Checks if the chosen option is acceptable.
-        Returns a bool which answers the title question (True if the option is ok, False if it is not).
-    correct_option(option: int)
-        Takes an option as long as it is not acceptable.
-        If the first try is ok, does nothing but return.
-        Returns the correct option(int).
-    winner_prize(tokens: int)
-        Returns a winner's prize in tokens(int).
+    :param weight: The weight of the bet
+    :type weight: int
+    :param options: The list with available options for the bet
+    :type options: list
     """
     def __init__(self, weight: int, options: list) -> None:
         """
-        Parameters
-        ----------
-        weight : int
-            the weight of the bet
-        options : list
-            the list with available options for the bet
+        Constructor method
         """
         self.weight = weight
         self.options = options
@@ -38,15 +17,11 @@ class Bet:
     def is_option_ok(self, option: int) -> bool:
         """Checks if the chosen option is acceptable.
 
-        Parameters
-        ----------
-        option: int
-            The number of the option the player has chosen
+        :param option: The number of the option the player has chosen
+        :type option: int
 
-        Returns
-        -------
-        bool
-            a bool which answers the title question (True if the option is ok, False if it is not)
+        :return: A bool which answers the title question (True if the option is ok, False if it is not)
+        :rtype: bool
         """
         if option in self.options:
             return True
@@ -56,15 +31,11 @@ class Bet:
         """Takes an option as long as it is not acceptable.
         If the first try is ok, does nothing but return.
 
-        Parameters
-        ----------
-        option: int
-            The number of the option the player has chosen
+        :param option: The number of the option the player has chosen
+        :type option: int
 
-        Returns
-        -------
-        option
-            the acceptable option
+        :return: An acceptable option
+        :rtype: bool
         """
         while not self.is_option_ok(option):
             option = int(input("This option is not permissible! Try again: "))
@@ -74,14 +45,10 @@ class Bet:
         """Takes an option as long as it is not acceptable.
         If the first try is ok, does nothing but return.
 
-        Parameters
-        ----------
-        tokens: int
-            the number of tokens that were placed in the bet
+        :param tokens: The number of tokens that were placed in the bet
+        :type tokens: int
 
-        Returns
-        -------
-        int
-            the winner's prize in tokens
+        :return: The winner's prize in tokens
+        :rtype: int
         """
         return tokens*self.weight

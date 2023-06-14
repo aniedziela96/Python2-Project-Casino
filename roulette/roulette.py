@@ -14,36 +14,17 @@ from roulette.onenumber import OneNumber
 class Roulette:
     """
     A class used to play the roulette.
-    ...
 
-    Attributes
-    ----------
-    player : Player
-        the player who plays the game
-    bet_weights : tuple
-        the tuple with weights of different bets (constant)
-    bet_names : tuple
-        the tuple with names of different bets (constant)
-
-    Methods
-    -------
-    show_available_bets()
-        Shows available bets as a table.
-    make_bet()
-        Makes a bet by the interaction with a user.
-        Returns a type of the bet and a number of tokens to bet as a tuple.
-    start_roulette()
-        Operates the entire game by if/elif/else conditions.
-        Communicates with roulette's player, spends his tokens, takes bet,
-        draws a random number, shows it and
-        adds tokens to the player's account after the eventual win.
+    :param player: The player who plays the game
+    :type player: Player
+    :param bet_weights: A tuple with weights of different bets (constant)
+    :type bet_weights: tuple
+    :param bet_names: A tuple with names of different bets (constant)
+    :type bet_names: tuple
     """
     def __init__(self, player: Player) -> None:
         """
-        Parameters
-        ----------
-        player : Player
-            the player who plays the game
+        Constructor method.
         """
         self.player = player
         self.bet_weights = (1, 1, 2, 8, 11, 17, 35)
@@ -51,7 +32,9 @@ class Roulette:
                           "three numbers", "two numbers", "one number")
 
     def show_available_bets(self) -> None:
-        """Shows available bets as a table."""
+        """
+        Shows available bets as a table.
+        """
 
         print("-------------AVAILABLE BETS------------")
         table = [["number", "name", "weights"]]
@@ -61,12 +44,11 @@ class Roulette:
         print(tabulate(table, headers='firstrow', tablefmt='fancy_grid'))
 
     def make_bet(self) -> tuple:
-        """Makes a bet by the interaction with a user.
+        """
+        Makes a bet by the interaction with a user.
 
-        Returns
-        -------
-        tuple
-            a tuple of the type of the bet and a number of tokens to bet
+        :return: A tuple of the type of the bet and a number of tokens to bet
+        :rtype: tuple
         """
 
         ok = False
@@ -106,10 +88,12 @@ class Roulette:
         return choice, tokens
 
     def start_roulette(self) -> None:
-        """Operates the entire game by the if/elif/else conditions.
+        """
+        Operates the entire game by the if/elif/else conditions.
         Communicates with roulette's player, spends his tokens, takes bet,
         draws a random number, shows it and
-        adds tokens to the player's account after the eventual win."""
+        adds tokens to the player's account after the eventual win.
+        """
 
         print("")
         print("Let the roulette spin!")
