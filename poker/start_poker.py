@@ -1,7 +1,7 @@
 from poker.deck import Deck
 from poker.poker_game import Poker
 from main.player import Player
-
+from typing import Union
 
 class Poker_Game():
     def __init__(self, player: Player) -> None:
@@ -16,7 +16,7 @@ class Poker_Game():
         self.poker.croupier.draw_cards(self.deck.draw(2))
 
 
-    def action(self) -> None | str:
+    def action(self) -> Union[None , str]:
         while True:
             print("1: Bet")
             print("2: Fold")

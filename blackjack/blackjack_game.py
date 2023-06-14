@@ -41,7 +41,7 @@ class Blackjack():
             return res
             
 
-    def insurance(self) -> str | None:
+    def insurance(self) -> Union[str, None]:
         insurance = int(0.5 * self.bet_money)
         if self.player.get_tokens() < insurance:
             return "failed"
