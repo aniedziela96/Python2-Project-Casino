@@ -125,11 +125,11 @@ class Bingo:
         round_number = 1
 
         while True:
-            # rozpoczęcie nowej tury
+            # begging of a new round
             print("")
             print(f"ROUND {round_number}.")
 
-            # losujemy liczbę, aź dostaniemy taką, której jeszcze nie było
+            # drawing a new number (takes as long as the number is not unique)
             drawn = randrange(1, 76)
             while True:
                 if drawn not in drawns:
@@ -139,34 +139,34 @@ class Bingo:
 
             print(f"The drawn number is: {drawn}")
             print("")
-            # zaznaczamy liczbę na planszach
+            # checking the drawn number on the boards
             game.check_boards(drawn)
 
-            # pokazujemy graczowi jego planszę i prosimy o reakcję
+            # showing player's the board and taking the reaction
             game.show_players_board()
             print("")
             t0 = perf_counter()
             reaction = input("If you have bingo, write 'bingo' as fast as you can! If not, press ENTER: ")
             t1 = perf_counter()
 
-            # tworzymy listę graczy, którzy mają bingo (być może pustą)
+            # making list of players with bingo (maybe empty)
             bingos = game.is_bingos()
             number_of_bingos = len(bingos)
 
-            # gracz zgłosił, że ma bingo
+            # player reported bingo
             if reaction == "bingo":
 
-                # gracz ma bingo
+                # player has bingo
                 if 0 in bingos:
 
-                    # tylko gracz ma bingo
+                    # player is the only one with bingos
                     if number_of_bingos == 1:
                         print("Congratulations! You win!")
                         self.pay_prize()
                         self.sum_up()
                         break
 
-                    # inny gracz też ma bingo
+                    # other player also has bingo
                     elif number_of_bingos == 2:
                         time = round(t1-t0, 5)
                         other_winner = game.get_bingo_players()[bingos[1]]
@@ -188,7 +188,7 @@ class Bingo:
                             self.sum_up()
                             break
 
-                    # wszyscy gracze mają bingo:
+                    # all players have bingo
                     else:
                         time = round(t1-t0, 5)
                         other_winners = [game.get_bingo_players()[bingos[1]], game.get_bingo_players()[bingos[2]]]
@@ -217,23 +217,23 @@ class Bingo:
                             self.sum_up()
                             break
 
-                # gracz nie ma bingo
+                # player does not have bingo
                 else:
                     print("There's no bingo on your board! Sorry, you lose.")
                     self.sum_up()
                     break
 
-            # gracz nie zgłosił, że ma bingo
+            # player was not report bingo
             else:
 
-                # ktoś ma bingo
+                # there is bingo on some board
                 if bingos:
 
-                    # gracz ma bingo, ale tego nie zgłosił
+                    # player has bingo but was not report it
                     if 0 in bingos:
-                        # jeśli nikt poza graczem nie ma bingo, ale gracz go nie zgłosił, gra toczy się dalej
+                        # if it is the only bingo, the game is continued
 
-                        # jednocześnie inny gracz ma bingo
+                        # other player has bingo
                         if number_of_bingos == 2:
                             winner = game.get_bingo_players()[bingos[1]]
                             print(f"{winner} has bingo!")
@@ -241,7 +241,7 @@ class Bingo:
                             self.sum_up()
                             break
 
-                        # obaj pozostali gracze mają bingo
+                        # all players have bingo
                         elif number_of_bingos == 3:
                             winners = [game.get_bingo_players()[bingos[1]], game.get_bingo_players()[bingos[2]]]
                             print(f"{winners[0]} and {winners[1]} have bingo!")
@@ -259,10 +259,10 @@ class Bingo:
                             self.sum_up()
                             break
 
-                    # gracz nie ma bingo, ale ktoś inny ma
+                    # player do not have bingo, but other player has
                     else:
 
-                        # inny gracz ma bingo
+                        # one of other players has bingo
                         if number_of_bingos == 1:
                             winner = game.get_bingo_players()[bingos[0]]
                             print(f"{winner} has bingo!")
@@ -270,7 +270,7 @@ class Bingo:
                             self.sum_up()
                             break
 
-                        # obaj pozostali gracze mają bingo
+                        # both other players have bingo
                         else:
                             winners = [game.get_bingo_players()[bingos[0]], game.get_bingo_players()[bingos[1]]]
                             print(f"{winners[0]} and {winners[1]} have bingo!")
