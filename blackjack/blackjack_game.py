@@ -81,13 +81,16 @@ class Blackjack():
             return res
             
 
-    def insurance(self) -> str | None:
-        """Plays insurance for half the tokens that where spent to play the game. If 
-        player has required tokens 
-
-        :return: "failed" if player didn't have enough money to play insurance.
-        """
     def insurance(self) -> Union[str, None]:
+        """Plays insurance for half the tokens that where spent to play the game. If 
+            player has required tokens calculates the score of croupier's hand. If croupier 
+            has the score of 21, meaning he has a blackjack player wins twice the insurance 
+            tokens if not he loses the insurance bet. The suitable message is printed.
+
+        :return: "failed" if player didn't have enough money to play insurance or None
+            if player had required tokens.
+        :rtype: str or NoneType
+        """ 
         insurance = int(0.5 * self.bet_money)
         if self.player.get_tokens() < insurance:
             return "failed"
@@ -98,10 +101,18 @@ class Blackjack():
             self.player.add_tokens(3 * insurance)
             print("You won insurance")
         else:
-            print("You lost insurance")
+            print("You lost insurance")   
     
         
     def split(self) -> Union[str, 'Blackjack']:
+        """Plays split action. Splits the bet into two separate bets and creates 
+            new Blackjack with one card from the bet that was splitted and one
+            that is drawn from the deck.
+
+            :return: "failed" if player didn't have enough tokens to create new bet
+                or the Blackjack bet that was created
+            :rtype: str or class:`blackjack.Blackjack`
+        """
         if self.player.get_tokens() < self.bet_money:
             return "failed"
         else:

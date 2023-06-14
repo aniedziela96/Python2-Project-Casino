@@ -3,14 +3,24 @@ from poker.deck import Deck
 from time import sleep
 
 class Croupier_bj():
+    """Class representing a blackjack croupier
+    """
     def __init__(self) -> None:
+        """Croupier_bj constructor
+        """
         self.hand = Blackjack_hand()
         self.score = 0
 
     def draw_cards(self, cards: list) -> None:
+        """Adds cards to croupier's hand.
+            :param cards: List of cards that will be added to croupier's hand
+            :type cards: list
+        """
         self.hand.add_cards(cards)
 
     def show_hidden(self) -> None:
+        """Prints a representation of croupiers hand, when first card is hidden
+        """
         empty_row = "|           |   "
         print(" ___________    " * 2)
         print("|   *****   |   " + empty_row)
@@ -31,13 +41,23 @@ class Croupier_bj():
             
 
     def show_open(self) -> None:
+        """Shows croupier's cards
+        """
         self.hand.show_hand()
 
     def set_score(self) -> None:
+        """Calculates and sets croupier's hand score, according to blackjack rules"""
         self.hand.calculate_score()
         self.score = self.hand.score
 
     def croupiers_move(self, deck: Deck) -> None:
+        """Plays a croupier move, draws cards from the `deck` and calculates score until croupier's
+            score reaches 17, if a score is greater than 21 prints a message that 
+            the croupier busted and changes it to 0
+
+            :param deck: Deck from wich croupier will draw cards
+            :type deck: class:`poker.Deck`
+            """
         self.set_score()
         print("Croupier's hand: ")
         self.hand.show_hand()
