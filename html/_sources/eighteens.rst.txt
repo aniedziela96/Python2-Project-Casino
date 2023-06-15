@@ -1,0 +1,7 @@
+eighteens module
+================
+
+.. automodule:: eighteens
+   :members:
+   :undoc-members:
+   :show-inheritance:

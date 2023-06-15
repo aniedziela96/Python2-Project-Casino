@@ -1,0 +1,7 @@
+evenodd module
+==============
+
+.. automodule:: evenodd
+   :members:
+   :undoc-members:
+   :show-inheritance:

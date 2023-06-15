@@ -1,0 +1,7 @@
+croupier module
+===============
+
+.. automodule:: croupier
+   :members:
+   :undoc-members:
+   :show-inheritance:

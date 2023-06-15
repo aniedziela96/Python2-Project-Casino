@@ -1,0 +1,7 @@
+casino module
+=============
+
+.. automodule:: casino
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>poker_game module &mdash; Casino 1.00 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="poker_human module" href="poker_human.html" />
+    <link rel="prev" title="player module" href="player.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Casino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">CasinoDocumentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bet.html">bet module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bingo.html">bingo module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bingogame.html">bingogame module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blackjack_game.html">blackjack_game module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blackjack_hand.html">blackjack_hand module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blackjack_player.html">blackjack_player module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="board.html">board module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cards.html">cards module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casino.html">casino module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="croupier.html">croupier module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="croupier_bj.html">croupier_bj module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deck.html">deck module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dozens.html">dozens module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eighteens.html">eighteens module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="evenodd.html">evenodd module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fournumbers.html">fournumbers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hand.html">hand module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mouse.html">mouse module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onenumber.html">onenumber module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="player.html">player module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">poker_game module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#poker_game.Poker"><code class="docutils literal notranslate"><span class="pre">Poker</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#poker_game.Poker.bet"><code class="docutils literal notranslate"><span class="pre">Poker.bet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poker_game.Poker.fold"><code class="docutils literal notranslate"><span class="pre">Poker.fold()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poker_game.Poker.match"><code class="docutils literal notranslate"><span class="pre">Poker.match()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poker_game.Poker.winner"><code class="docutils literal notranslate"><span class="pre">Poker.winner()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="poker_human.html">poker_human module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poker_player.html">poker_player module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="race.html">race module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="races.html">races module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roulette.html">roulette module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run.html">run module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start_blackjack.html">start_blackjack module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start_poker.html">start_poker module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="threenumbers.html">threenumbers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="track.html">track module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twonumbers.html">twonumbers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="winners.html">winners module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Casino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">CasinoDocumentation</a></li>
+      <li class="breadcrumb-item active">poker_game module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/poker_game.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-poker_game">
+<span id="poker-game-module"></span><h1>poker_game module<a class="headerlink" href="#module-poker_game" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="poker_game.Poker">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poker_game.</span></span><span class="sig-name descname"><span class="pre">Poker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="player.html#player.Player" title="player.Player"><span class="pre">Player</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poker_game.Poker" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class contaning methods that handle possible poker actions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>player</strong> (<a class="reference internal" href="player.html#player.Player" title="player.Player"><em>Player</em></a>) – Player playing poker</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="poker_game.Poker.bet">
+<span class="sig-name descname"><span class="pre">bet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_in</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#poker_game.Poker.bet" title="Permalink to this definition"></a></dt>
+<dd><p>Plays the action of bet in poker game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>player</strong> (<em>bool</em>) – If <cite>True</cite> player plays the bet, if False <cite>Croupier</cite> is playing
+Croupier move - under construction</p></li>
+<li><p><strong>all_in</strong> (<em>bool</em>) – <cite>True</cite> if player wants to bet all his tokens</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poker_game.Poker.fold">
+<span class="sig-name descname"><span class="pre">fold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poker_game.Poker.fold" title="Permalink to this definition"></a></dt>
+<dd><p>Plays the fold</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>player</strong> (<em>bool</em>) – If <cite>True</cite> nothing happens - allows the game to end, if <cite>False</cite> player
+wins all the tokens because Croupier is automatically loses</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poker_game.Poker.match">
+<span class="sig-name descname"><span class="pre">match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#poker_game.Poker.match" title="Permalink to this definition"></a></dt>
+<dd><p>Plays the match action in poker game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>player</strong> (<em>bool</em>) – If <cite>True</cite> player plays the bet, if False <cite>Croupier</cite> is playing
+Croupier move - under construction</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poker_game.Poker.winner">
+<span class="sig-name descname"><span class="pre">winner</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="poker_human.html#poker_human.Poker_human" title="poker_human.Poker_human"><span class="pre">Poker_human</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="croupier.html#croupier.Croupier" title="croupier.Croupier"><span class="pre">Croupier</span></a></span></span><a class="headerlink" href="#poker_game.Poker.winner" title="Permalink to this definition"></a></dt>
+<dd><p>Establishes a winner of the poker game. First checks the rank of player and 
+croupier, than compares it. If both ranks are the same uses a <cite>winner</cite> class 
+to determine the winner</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>player or croupier, depending on who one the poker game</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="poker_human.html#poker_human.Poker_human" title="poker_human.Poker_human">Poker_human</a> or <a class="reference internal" href="croupier.html#croupier.Croupier" title="croupier.Croupier">Croupier</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="player.html" class="btn btn-neutral float-left" title="player module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="poker_human.html" class="btn btn-neutral float-right" title="poker_human module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Aleksandra Niedziela, Helena Sekowska-Sloka.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

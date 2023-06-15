@@ -1,0 +1,7 @@
+blackjack\_player module
+========================
+
+.. automodule:: blackjack_player
+   :members:
+   :undoc-members:
+   :show-inheritance:

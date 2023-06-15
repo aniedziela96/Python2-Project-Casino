@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CasinoDocumentation &mdash; Casino 1.00 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="bet module" href="bet.html" />
+    <link rel="prev" title="Welcome to Casino’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Casino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CasinoDocumentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bet.html">bet module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bingo.html">bingo module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bingogame.html">bingogame module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blackjack_game.html">blackjack_game module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blackjack_hand.html">blackjack_hand module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blackjack_player.html">blackjack_player module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="board.html">board module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cards.html">cards module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casino.html">casino module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="croupier.html">croupier module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="croupier_bj.html">croupier_bj module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deck.html">deck module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dozens.html">dozens module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eighteens.html">eighteens module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="evenodd.html">evenodd module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fournumbers.html">fournumbers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hand.html">hand module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mouse.html">mouse module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onenumber.html">onenumber module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="player.html">player module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poker_game.html">poker_game module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poker_human.html">poker_human module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poker_player.html">poker_player module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="race.html">race module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="races.html">races module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roulette.html">roulette module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run.html">run module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start_blackjack.html">start_blackjack module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start_poker.html">start_poker module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="threenumbers.html">threenumbers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="track.html">track module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twonumbers.html">twonumbers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="winners.html">winners module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Casino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">CasinoDocumentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="casinodocumentation">
+<h1>CasinoDocumentation<a class="headerlink" href="#casinodocumentation" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bet.html">bet module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bet.html#bet.Bet"><code class="docutils literal notranslate"><span class="pre">Bet</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="bet.html#bet.Bet.correct_option"><code class="docutils literal notranslate"><span class="pre">Bet.correct_option()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="bet.html#bet.Bet.is_option_ok"><code class="docutils literal notranslate"><span class="pre">Bet.is_option_ok()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="bet.html#bet.Bet.winner_prize"><code class="docutils literal notranslate"><span class="pre">Bet.winner_prize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bingo.html">bingo module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bingo.html#bingo.Bingo"><code class="docutils literal notranslate"><span class="pre">Bingo</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="bingo.html#bingo.Bingo.make_bingo_board"><code class="docutils literal notranslate"><span class="pre">Bingo.make_bingo_board()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="bingo.html#bingo.Bingo.make_bingo_game"><code class="docutils literal notranslate"><span class="pre">Bingo.make_bingo_game()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="bingo.html#bingo.Bingo.make_times"><code class="docutils literal notranslate"><span class="pre">Bingo.make_times()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="bingo.html#bingo.Bingo.pay_prize"><code class="docutils literal notranslate"><span class="pre">Bingo.pay_prize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="bingo.html#bingo.Bingo.start_game"><code class="docutils literal notranslate"><span class="pre">Bingo.start_game()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="bingo.html#bingo.Bingo.sum_up"><code class="docutils literal notranslate"><span class="pre">Bingo.sum_up()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bingogame.html">bingogame module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bingogame.html#bingogame.BingoGame"><code class="docutils literal notranslate"><span class="pre">BingoGame</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="bingogame.html#bingogame.BingoGame.check_boards"><code class="docutils literal notranslate"><span class="pre">BingoGame.check_boards()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="bingogame.html#bingogame.BingoGame.get_bingo_players"><code class="docutils literal notranslate"><span class="pre">BingoGame.get_bingo_players()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="bingogame.html#bingogame.BingoGame.is_bingos"><code class="docutils literal notranslate"><span class="pre">BingoGame.is_bingos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="bingogame.html#bingogame.BingoGame.show_players_board"><code class="docutils literal notranslate"><span class="pre">BingoGame.show_players_board()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="blackjack_game.html">blackjack_game module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="blackjack_game.html#blackjack_game.Blackjack"><code class="docutils literal notranslate"><span class="pre">Blackjack</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="blackjack_game.html#blackjack_game.Blackjack.double_down"><code class="docutils literal notranslate"><span class="pre">Blackjack.double_down()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="blackjack_game.html#blackjack_game.Blackjack.end"><code class="docutils literal notranslate"><span class="pre">Blackjack.end()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="blackjack_game.html#blackjack_game.Blackjack.hit"><code class="docutils literal notranslate"><span class="pre">Blackjack.hit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="blackjack_game.html#blackjack_game.Blackjack.insurance"><code class="docutils literal notranslate"><span class="pre">Blackjack.insurance()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="blackjack_game.html#blackjack_game.Blackjack.split"><code class="docutils literal notranslate"><span class="pre">Blackjack.split()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="blackjack_hand.html">blackjack_hand module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="blackjack_hand.html#blackjack_hand.Blackjack_hand"><code class="docutils literal notranslate"><span class="pre">Blackjack_hand</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="blackjack_hand.html#blackjack_hand.Blackjack_hand.calculate_score"><code class="docutils literal notranslate"><span class="pre">Blackjack_hand.calculate_score()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="blackjack_hand.html#blackjack_hand.Blackjack_hand.card_split"><code class="docutils literal notranslate"><span class="pre">Blackjack_hand.card_split()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="blackjack_hand.html#blackjack_hand.Blackjack_hand.is_pair"><code class="docutils literal notranslate"><span class="pre">Blackjack_hand.is_pair()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="blackjack_player.html">blackjack_player module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="blackjack_player.html#blackjack_player.Blackjack_player"><code class="docutils literal notranslate"><span class="pre">Blackjack_player</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="blackjack_player.html#blackjack_player.Blackjack_player.add_bet"><code class="docutils literal notranslate"><span class="pre">Blackjack_player.add_bet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="blackjack_player.html#blackjack_player.Blackjack_player.player_hit"><code class="docutils literal notranslate"><span class="pre">Blackjack_player.player_hit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="blackjack_player.html#blackjack_player.Blackjack_player.show_bets"><code class="docutils literal notranslate"><span class="pre">Blackjack_player.show_bets()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="board.html">board module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="board.html#board.Board"><code class="docutils literal notranslate"><span class="pre">Board</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="board.html#board.Board.check"><code class="docutils literal notranslate"><span class="pre">Board.check()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="board.html#board.Board.is_bingo"><code class="docutils literal notranslate"><span class="pre">Board.is_bingo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="board.html#board.Board.show"><code class="docutils literal notranslate"><span class="pre">Board.show()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cards.html">cards module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cards.html#cards.Rank"><code class="docutils literal notranslate"><span class="pre">Rank</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cards.html#cards.Rank.ACE"><code class="docutils literal notranslate"><span class="pre">Rank.ACE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cards.html#cards.Rank.EIGHT"><code class="docutils literal notranslate"><span class="pre">Rank.EIGHT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cards.html#cards.Rank.FIVE"><code class="docutils literal notranslate"><span class="pre">Rank.FIVE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cards.html#cards.Rank.FOUR"><code class="docutils literal notranslate"><span class="pre">Rank.FOUR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cards.html#cards.Rank.JACK"><code class="docutils literal notranslate"><span class="pre">Rank.JACK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cards.html#cards.Rank.KING"><code class="docutils literal notranslate"><span class="pre">Rank.KING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cards.html#cards.Rank.NINE"><code class="docutils literal notranslate"><span class="pre">Rank.NINE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cards.html#cards.Rank.QUEEN"><code class="docutils literal notranslate"><span class="pre">Rank.QUEEN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cards.html#cards.Rank.SEVEN"><code class="docutils literal notranslate"><span class="pre">Rank.SEVEN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cards.html#cards.Rank.SIX"><code class="docutils literal notranslate"><span class="pre">Rank.SIX</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cards.html#cards.Rank.TEN"><code class="docutils literal notranslate"><span class="pre">Rank.TEN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cards.html#cards.Rank.THREE"><code class="docutils literal notranslate"><span class="pre">Rank.THREE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cards.html#cards.Rank.TWO"><code class="docutils literal notranslate"><span class="pre">Rank.TWO</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cards.html#cards.Suit"><code class="docutils literal notranslate"><span class="pre">Suit</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cards.html#cards.Suit.CLUBS"><code class="docutils literal notranslate"><span class="pre">Suit.CLUBS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cards.html#cards.Suit.DIAMONDS"><code class="docutils literal notranslate"><span class="pre">Suit.DIAMONDS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cards.html#cards.Suit.HEARTS"><code class="docutils literal notranslate"><span class="pre">Suit.HEARTS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cards.html#cards.Suit.SPADES"><code class="docutils literal notranslate"><span class="pre">Suit.SPADES</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="casino.html">casino module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="casino.html#casino.Casino"><code class="docutils literal notranslate"><span class="pre">Casino</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="casino.html#casino.Casino.check_tokens"><code class="docutils literal notranslate"><span class="pre">Casino.check_tokens()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="casino.html#casino.Casino.create_player"><code class="docutils literal notranslate"><span class="pre">Casino.create_player()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="casino.html#casino.Casino.login"><code class="docutils literal notranslate"><span class="pre">Casino.login()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="casino.html#casino.Casino.logout"><code class="docutils literal notranslate"><span class="pre">Casino.logout()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="casino.html#casino.Casino.start"><code class="docutils literal notranslate"><span class="pre">Casino.start()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="casino.html#casino.get_pass"><code class="docutils literal notranslate"><span class="pre">get_pass()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="croupier.html">croupier module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="croupier.html#croupier.Croupier"><code class="docutils literal notranslate"><span class="pre">Croupier</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="croupier.html#croupier.Croupier.croupier_bet"><code class="docutils literal notranslate"><span class="pre">Croupier.croupier_bet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="croupier.html#croupier.Croupier.croupier_match"><code class="docutils literal notranslate"><span class="pre">Croupier.croupier_match()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="croupier_bj.html">croupier_bj module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="croupier_bj.html#croupier_bj.Croupier_bj"><code class="docutils literal notranslate"><span class="pre">Croupier_bj</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="croupier_bj.html#croupier_bj.Croupier_bj.croupiers_move"><code class="docutils literal notranslate"><span class="pre">Croupier_bj.croupiers_move()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="croupier_bj.html#croupier_bj.Croupier_bj.draw_cards"><code class="docutils literal notranslate"><span class="pre">Croupier_bj.draw_cards()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="croupier_bj.html#croupier_bj.Croupier_bj.set_score"><code class="docutils literal notranslate"><span class="pre">Croupier_bj.set_score()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="croupier_bj.html#croupier_bj.Croupier_bj.show_hidden"><code class="docutils literal notranslate"><span class="pre">Croupier_bj.show_hidden()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="croupier_bj.html#croupier_bj.Croupier_bj.show_open"><code class="docutils literal notranslate"><span class="pre">Croupier_bj.show_open()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deck.html">deck module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deck.html#deck.Deck"><code class="docutils literal notranslate"><span class="pre">Deck</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="deck.html#deck.Deck.draw"><code class="docutils literal notranslate"><span class="pre">Deck.draw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="deck.html#deck.Deck.is_empty"><code class="docutils literal notranslate"><span class="pre">Deck.is_empty()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="deck.html#deck.Deck.shuffle"><code class="docutils literal notranslate"><span class="pre">Deck.shuffle()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dozens.html">dozens module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dozens.html#dozens.Dozens"><code class="docutils literal notranslate"><span class="pre">Dozens</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dozens.html#dozens.Dozens.is_in_bet"><code class="docutils literal notranslate"><span class="pre">Dozens.is_in_bet()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="eighteens.html">eighteens module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="eighteens.html#eighteens.Eighteens"><code class="docutils literal notranslate"><span class="pre">Eighteens</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="eighteens.html#eighteens.Eighteens.is_in_bet"><code class="docutils literal notranslate"><span class="pre">Eighteens.is_in_bet()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="evenodd.html">evenodd module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="evenodd.html#evenodd.EvenOdd"><code class="docutils literal notranslate"><span class="pre">EvenOdd</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="evenodd.html#evenodd.EvenOdd.is_in_bet"><code class="docutils literal notranslate"><span class="pre">EvenOdd.is_in_bet()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fournumbers.html">fournumbers module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fournumbers.html#fournumbers.FourNumbers"><code class="docutils literal notranslate"><span class="pre">FourNumbers</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fournumbers.html#fournumbers.FourNumbers.correct_option"><code class="docutils literal notranslate"><span class="pre">FourNumbers.correct_option()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fournumbers.html#fournumbers.FourNumbers.is_in_bet"><code class="docutils literal notranslate"><span class="pre">FourNumbers.is_in_bet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fournumbers.html#fournumbers.FourNumbers.is_option_ok"><code class="docutils literal notranslate"><span class="pre">FourNumbers.is_option_ok()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hand.html">hand module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hand.html#hand.Hand"><code class="docutils literal notranslate"><span class="pre">Hand</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hand.html#hand.Hand.add_cards"><code class="docutils literal notranslate"><span class="pre">Hand.add_cards()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="hand.html#hand.Hand.is_five"><code class="docutils literal notranslate"><span class="pre">Hand.is_five()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="hand.html#hand.Hand.is_one_color"><code class="docutils literal notranslate"><span class="pre">Hand.is_one_color()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="hand.html#hand.Hand.is_straight"><code class="docutils literal notranslate"><span class="pre">Hand.is_straight()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="hand.html#hand.Hand.rank"><code class="docutils literal notranslate"><span class="pre">Hand.rank()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="hand.html#hand.Hand.show_hand"><code class="docutils literal notranslate"><span class="pre">Hand.show_hand()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mouse.html">mouse module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mouse.html#mouse.Mouse"><code class="docutils literal notranslate"><span class="pre">Mouse</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mouse.html#mouse.Mouse.get_daily_well_being"><code class="docutils literal notranslate"><span class="pre">Mouse.get_daily_well_being()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mouse.html#mouse.Mouse.get_name"><code class="docutils literal notranslate"><span class="pre">Mouse.get_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mouse.html#mouse.Mouse.get_preference"><code class="docutils literal notranslate"><span class="pre">Mouse.get_preference()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mouse.html#mouse.Mouse.get_speed"><code class="docutils literal notranslate"><span class="pre">Mouse.get_speed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mouse.html#mouse.Mouse.get_stamina"><code class="docutils literal notranslate"><span class="pre">Mouse.get_stamina()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="onenumber.html">onenumber module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="onenumber.html#onenumber.OneNumber"><code class="docutils literal notranslate"><span class="pre">OneNumber</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="onenumber.html#onenumber.OneNumber.is_in_bet"><code class="docutils literal notranslate"><span class="pre">OneNumber.is_in_bet()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="player.html">player module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="player.html#player.Player"><code class="docutils literal notranslate"><span class="pre">Player</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="player.html#player.Player.add_tokens"><code class="docutils literal notranslate"><span class="pre">Player.add_tokens()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="player.html#player.Player.all_in"><code class="docutils literal notranslate"><span class="pre">Player.all_in()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="player.html#player.Player.get_name"><code class="docutils literal notranslate"><span class="pre">Player.get_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="player.html#player.Player.get_tokens"><code class="docutils literal notranslate"><span class="pre">Player.get_tokens()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="player.html#player.Player.spend_tokens"><code class="docutils literal notranslate"><span class="pre">Player.spend_tokens()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="poker_game.html">poker_game module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="poker_game.html#poker_game.Poker"><code class="docutils literal notranslate"><span class="pre">Poker</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="poker_game.html#poker_game.Poker.bet"><code class="docutils literal notranslate"><span class="pre">Poker.bet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="poker_game.html#poker_game.Poker.fold"><code class="docutils literal notranslate"><span class="pre">Poker.fold()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="poker_game.html#poker_game.Poker.match"><code class="docutils literal notranslate"><span class="pre">Poker.match()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="poker_game.html#poker_game.Poker.winner"><code class="docutils literal notranslate"><span class="pre">Poker.winner()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="poker_human.html">poker_human module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="poker_human.html#poker_human.Poker_human"><code class="docutils literal notranslate"><span class="pre">Poker_human</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="poker_human.html#poker_human.Poker_human.players_bet"><code class="docutils literal notranslate"><span class="pre">Poker_human.players_bet()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="poker_player.html">poker_player module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="poker_player.html#poker_player.Poker_Player"><code class="docutils literal notranslate"><span class="pre">Poker_Player</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="poker_player.html#poker_player.Poker_Player.draw_cards"><code class="docutils literal notranslate"><span class="pre">Poker_Player.draw_cards()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="poker_player.html#poker_player.Poker_Player.rank"><code class="docutils literal notranslate"><span class="pre">Poker_Player.rank()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="poker_player.html#poker_player.Poker_Player.show_player_hand"><code class="docutils literal notranslate"><span class="pre">Poker_Player.show_player_hand()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="race.html">race module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="race.html#race.Race"><code class="docutils literal notranslate"><span class="pre">Race</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="race.html#race.Race.get_runners"><code class="docutils literal notranslate"><span class="pre">Race.get_runners()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="race.html#race.Race.get_track"><code class="docutils literal notranslate"><span class="pre">Race.get_track()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="race.html#race.Race.get_winners"><code class="docutils literal notranslate"><span class="pre">Race.get_winners()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="race.html#race.Race.show_full_stats"><code class="docutils literal notranslate"><span class="pre">Race.show_full_stats()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="race.html#race.Race.show_random_stats"><code class="docutils literal notranslate"><span class="pre">Race.show_random_stats()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="race.html#race.Race.show_results"><code class="docutils literal notranslate"><span class="pre">Race.show_results()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="race.html#race.Race.start_race"><code class="docutils literal notranslate"><span class="pre">Race.start_race()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="races.html">races module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="races.html#races.Races"><code class="docutils literal notranslate"><span class="pre">Races</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="races.html#races.Races.make_bet"><code class="docutils literal notranslate"><span class="pre">Races.make_bet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="races.html#races.Races.make_race"><code class="docutils literal notranslate"><span class="pre">Races.make_race()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="races.html#races.Races.other_bets"><code class="docutils literal notranslate"><span class="pre">Races.other_bets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="races.html#races.Races.show_other_bets"><code class="docutils literal notranslate"><span class="pre">Races.show_other_bets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="races.html#races.Races.sum_up"><code class="docutils literal notranslate"><span class="pre">Races.sum_up()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="roulette.html">roulette module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="roulette.html#roulette.Roulette"><code class="docutils literal notranslate"><span class="pre">Roulette</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="roulette.html#roulette.Roulette.make_bet"><code class="docutils literal notranslate"><span class="pre">Roulette.make_bet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="roulette.html#roulette.Roulette.show_available_bets"><code class="docutils literal notranslate"><span class="pre">Roulette.show_available_bets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="roulette.html#roulette.Roulette.start_roulette"><code class="docutils literal notranslate"><span class="pre">Roulette.start_roulette()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="run.html">run module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="start_blackjack.html">start_blackjack module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="start_blackjack.html#start_blackjack.Strat_blackjack"><code class="docutils literal notranslate"><span class="pre">Strat_blackjack</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="start_blackjack.html#start_blackjack.Strat_blackjack.action"><code class="docutils literal notranslate"><span class="pre">Strat_blackjack.action()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="start_blackjack.html#start_blackjack.Strat_blackjack.deal"><code class="docutils literal notranslate"><span class="pre">Strat_blackjack.deal()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="start_blackjack.html#start_blackjack.Strat_blackjack.decision"><code class="docutils literal notranslate"><span class="pre">Strat_blackjack.decision()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="start_blackjack.html#start_blackjack.Strat_blackjack.final"><code class="docutils literal notranslate"><span class="pre">Strat_blackjack.final()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="start_blackjack.html#start_blackjack.Strat_blackjack.game_status"><code class="docutils literal notranslate"><span class="pre">Strat_blackjack.game_status()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="start_blackjack.html#start_blackjack.Strat_blackjack.play_bet"><code class="docutils literal notranslate"><span class="pre">Strat_blackjack.play_bet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="start_blackjack.html#start_blackjack.Strat_blackjack.players_score"><code class="docutils literal notranslate"><span class="pre">Strat_blackjack.players_score()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="start_blackjack.html#start_blackjack.Strat_blackjack.start_game"><code class="docutils literal notranslate"><span class="pre">Strat_blackjack.start_game()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="start_poker.html">start_poker module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="start_poker.html#start_poker.Poker_Game"><code class="docutils literal notranslate"><span class="pre">Poker_Game</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="start_poker.html#start_poker.Poker_Game.action"><code class="docutils literal notranslate"><span class="pre">Poker_Game.action()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="start_poker.html#start_poker.Poker_Game.end_game"><code class="docutils literal notranslate"><span class="pre">Poker_Game.end_game()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="start_poker.html#start_poker.Poker_Game.final"><code class="docutils literal notranslate"><span class="pre">Poker_Game.final()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="start_poker.html#start_poker.Poker_Game.round_one"><code class="docutils literal notranslate"><span class="pre">Poker_Game.round_one()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="start_poker.html#start_poker.Poker_Game.round_two"><code class="docutils literal notranslate"><span class="pre">Poker_Game.round_two()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="start_poker.html#start_poker.Poker_Game.start_game"><code class="docutils literal notranslate"><span class="pre">Poker_Game.start_game()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="threenumbers.html">threenumbers module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="threenumbers.html#threenumbers.ThreeNumbers"><code class="docutils literal notranslate"><span class="pre">ThreeNumbers</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="threenumbers.html#threenumbers.ThreeNumbers.correct_option"><code class="docutils literal notranslate"><span class="pre">ThreeNumbers.correct_option()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="threenumbers.html#threenumbers.ThreeNumbers.is_in_bet"><code class="docutils literal notranslate"><span class="pre">ThreeNumbers.is_in_bet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="threenumbers.html#threenumbers.ThreeNumbers.is_option_ok"><code class="docutils literal notranslate"><span class="pre">ThreeNumbers.is_option_ok()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="track.html">track module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="track.html#track.Track"><code class="docutils literal notranslate"><span class="pre">Track</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="track.html#track.Track.get_distance"><code class="docutils literal notranslate"><span class="pre">Track.get_distance()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="track.html#track.Track.get_track_type"><code class="docutils literal notranslate"><span class="pre">Track.get_track_type()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="twonumbers.html">twonumbers module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="twonumbers.html#twonumbers.TwoNumbers"><code class="docutils literal notranslate"><span class="pre">TwoNumbers</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="twonumbers.html#twonumbers.TwoNumbers.correct_option"><code class="docutils literal notranslate"><span class="pre">TwoNumbers.correct_option()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="twonumbers.html#twonumbers.TwoNumbers.is_in_bet"><code class="docutils literal notranslate"><span class="pre">TwoNumbers.is_in_bet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="twonumbers.html#twonumbers.TwoNumbers.is_option_ok"><code class="docutils literal notranslate"><span class="pre">TwoNumbers.is_option_ok()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="winners.html">winners module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="winners.html#winners.Winners"><code class="docutils literal notranslate"><span class="pre">Winners</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="winners.html#winners.Winners.find_high_card"><code class="docutils literal notranslate"><span class="pre">Winners.find_high_card()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="winners.html#winners.Winners.winner_flush"><code class="docutils literal notranslate"><span class="pre">Winners.winner_flush()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="winners.html#winners.Winners.winner_four_of_a_kind"><code class="docutils literal notranslate"><span class="pre">Winners.winner_four_of_a_kind()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="winners.html#winners.Winners.winner_full_house"><code class="docutils literal notranslate"><span class="pre">Winners.winner_full_house()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="winners.html#winners.Winners.winner_high_card"><code class="docutils literal notranslate"><span class="pre">Winners.winner_high_card()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="winners.html#winners.Winners.winner_pair"><code class="docutils literal notranslate"><span class="pre">Winners.winner_pair()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="winners.html#winners.Winners.winner_royal_flush"><code class="docutils literal notranslate"><span class="pre">Winners.winner_royal_flush()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="winners.html#winners.Winners.winner_straight"><code class="docutils literal notranslate"><span class="pre">Winners.winner_straight()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="winners.html#winners.Winners.winner_straight_flush"><code class="docutils literal notranslate"><span class="pre">Winners.winner_straight_flush()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="winners.html#winners.Winners.winner_three_of_a_kind"><code class="docutils literal notranslate"><span class="pre">Winners.winner_three_of_a_kind()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="winners.html#winners.Winners.winner_two_pairs"><code class="docutils literal notranslate"><span class="pre">Winners.winner_two_pairs()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Casino’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bet.html" class="btn btn-neutral float-right" title="bet module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Aleksandra Niedziela, Helena Sekowska-Sloka.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

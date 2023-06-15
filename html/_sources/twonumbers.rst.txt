@@ -1,0 +1,7 @@
+twonumbers module
+=================
+
+.. automodule:: twonumbers
+   :members:
+   :undoc-members:
+   :show-inheritance:

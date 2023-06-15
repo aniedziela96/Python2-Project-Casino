@@ -1,0 +1,7 @@
+races module
+============
+
+.. automodule:: races
+   :members:
+   :undoc-members:
+   :show-inheritance:

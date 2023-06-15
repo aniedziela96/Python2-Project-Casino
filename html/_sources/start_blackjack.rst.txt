@@ -1,0 +1,7 @@
+start\_blackjack module
+=======================
+
+.. automodule:: start_blackjack
+   :members:
+   :undoc-members:
+   :show-inheritance:

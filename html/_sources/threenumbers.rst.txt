@@ -1,0 +1,7 @@
+threenumbers module
+===================
+
+.. automodule:: threenumbers
+   :members:
+   :undoc-members:
+   :show-inheritance:

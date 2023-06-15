@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>roulette module &mdash; Casino 1.00 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="run module" href="run.html" />
+    <link rel="prev" title="races module" href="races.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Casino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">CasinoDocumentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bet.html">bet module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bingo.html">bingo module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bingogame.html">bingogame module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blackjack_game.html">blackjack_game module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blackjack_hand.html">blackjack_hand module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blackjack_player.html">blackjack_player module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="board.html">board module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cards.html">cards module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casino.html">casino module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="croupier.html">croupier module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="croupier_bj.html">croupier_bj module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deck.html">deck module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dozens.html">dozens module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eighteens.html">eighteens module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="evenodd.html">evenodd module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fournumbers.html">fournumbers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hand.html">hand module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mouse.html">mouse module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onenumber.html">onenumber module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="player.html">player module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poker_game.html">poker_game module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poker_human.html">poker_human module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poker_player.html">poker_player module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="race.html">race module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="races.html">races module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">roulette module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#roulette.Roulette"><code class="docutils literal notranslate"><span class="pre">Roulette</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#roulette.Roulette.make_bet"><code class="docutils literal notranslate"><span class="pre">Roulette.make_bet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#roulette.Roulette.show_available_bets"><code class="docutils literal notranslate"><span class="pre">Roulette.show_available_bets()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#roulette.Roulette.start_roulette"><code class="docutils literal notranslate"><span class="pre">Roulette.start_roulette()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="run.html">run module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start_blackjack.html">start_blackjack module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start_poker.html">start_poker module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="threenumbers.html">threenumbers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="track.html">track module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twonumbers.html">twonumbers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="winners.html">winners module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Casino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">CasinoDocumentation</a></li>
+      <li class="breadcrumb-item active">roulette module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/roulette.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-roulette">
+<span id="roulette-module"></span><h1>roulette module<a class="headerlink" href="#module-roulette" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="roulette.Roulette">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">roulette.</span></span><span class="sig-name descname"><span class="pre">Roulette</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="player.html#player.Player" title="player.Player"><span class="pre">Player</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#roulette.Roulette" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class used to play the roulette.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>player</strong> (<a class="reference internal" href="player.html#player.Player" title="player.Player"><em>Player</em></a>) – The player who plays the game</p></li>
+<li><p><strong>bet_weights</strong> (<em>tuple</em>) – A tuple with weights of different bets (constant: (1, 1, 2, 8, 11, 17, 35) )</p></li>
+<li><p><strong>bet_names</strong> (<em>tuple</em>) – A tuple with names of different bets (constant: (“even/odd”, “eighteens”, “dozens”, “four numbers”,
+“three numbers”, “two numbers”, “one number”))</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="roulette.Roulette.make_bet">
+<span class="sig-name descname"><span class="pre">make_bet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#roulette.Roulette.make_bet" title="Permalink to this definition"></a></dt>
+<dd><p>Makes a bet by the interaction with a user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple of the type of the bet and a number of tokens to bet</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="roulette.Roulette.show_available_bets">
+<span class="sig-name descname"><span class="pre">show_available_bets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#roulette.Roulette.show_available_bets" title="Permalink to this definition"></a></dt>
+<dd><p>Shows available bets as a table.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="roulette.Roulette.start_roulette">
+<span class="sig-name descname"><span class="pre">start_roulette</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#roulette.Roulette.start_roulette" title="Permalink to this definition"></a></dt>
+<dd><p>Operates the entire game by the if/elif/else conditions.
+Communicates with roulette’s player, spends his tokens, takes bet,
+draws a random number, shows it and
+adds tokens to the player’s account after the eventual win.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="races.html" class="btn btn-neutral float-left" title="races module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="run.html" class="btn btn-neutral float-right" title="run module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Aleksandra Niedziela, Helena Sekowska-Sloka.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

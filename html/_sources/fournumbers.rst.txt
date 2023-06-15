@@ -1,0 +1,7 @@
+fournumbers module
+==================
+
+.. automodule:: fournumbers
+   :members:
+   :undoc-members:
+   :show-inheritance:

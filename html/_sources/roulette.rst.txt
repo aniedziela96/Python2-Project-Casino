@@ -1,0 +1,7 @@
+roulette module
+===============
+
+.. automodule:: roulette
+   :members:
+   :undoc-members:
+   :show-inheritance:

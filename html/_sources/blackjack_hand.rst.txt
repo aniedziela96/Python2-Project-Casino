@@ -1,0 +1,7 @@
+blackjack\_hand module
+======================
+
+.. automodule:: blackjack_hand
+   :members:
+   :undoc-members:
+   :show-inheritance:

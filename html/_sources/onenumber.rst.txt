@@ -1,0 +1,7 @@
+onenumber module
+================
+
+.. automodule:: onenumber
+   :members:
+   :undoc-members:
+   :show-inheritance:

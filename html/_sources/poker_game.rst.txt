@@ -1,0 +1,7 @@
+poker\_game module
+==================
+
+.. automodule:: poker_game
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cards module &mdash; Casino 1.00 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="casino module" href="casino.html" />
+    <link rel="prev" title="board module" href="board.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Casino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">CasinoDocumentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bet.html">bet module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bingo.html">bingo module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bingogame.html">bingogame module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blackjack_game.html">blackjack_game module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blackjack_hand.html">blackjack_hand module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blackjack_player.html">blackjack_player module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="board.html">board module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">cards module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cards.Rank"><code class="docutils literal notranslate"><span class="pre">Rank</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cards.Rank.ACE"><code class="docutils literal notranslate"><span class="pre">Rank.ACE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cards.Rank.EIGHT"><code class="docutils literal notranslate"><span class="pre">Rank.EIGHT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cards.Rank.FIVE"><code class="docutils literal notranslate"><span class="pre">Rank.FIVE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cards.Rank.FOUR"><code class="docutils literal notranslate"><span class="pre">Rank.FOUR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cards.Rank.JACK"><code class="docutils literal notranslate"><span class="pre">Rank.JACK</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cards.Rank.KING"><code class="docutils literal notranslate"><span class="pre">Rank.KING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cards.Rank.NINE"><code class="docutils literal notranslate"><span class="pre">Rank.NINE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cards.Rank.QUEEN"><code class="docutils literal notranslate"><span class="pre">Rank.QUEEN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cards.Rank.SEVEN"><code class="docutils literal notranslate"><span class="pre">Rank.SEVEN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cards.Rank.SIX"><code class="docutils literal notranslate"><span class="pre">Rank.SIX</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cards.Rank.TEN"><code class="docutils literal notranslate"><span class="pre">Rank.TEN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cards.Rank.THREE"><code class="docutils literal notranslate"><span class="pre">Rank.THREE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cards.Rank.TWO"><code class="docutils literal notranslate"><span class="pre">Rank.TWO</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cards.Suit"><code class="docutils literal notranslate"><span class="pre">Suit</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cards.Suit.CLUBS"><code class="docutils literal notranslate"><span class="pre">Suit.CLUBS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cards.Suit.DIAMONDS"><code class="docutils literal notranslate"><span class="pre">Suit.DIAMONDS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cards.Suit.HEARTS"><code class="docutils literal notranslate"><span class="pre">Suit.HEARTS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cards.Suit.SPADES"><code class="docutils literal notranslate"><span class="pre">Suit.SPADES</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="casino.html">casino module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="croupier.html">croupier module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="croupier_bj.html">croupier_bj module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deck.html">deck module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dozens.html">dozens module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eighteens.html">eighteens module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="evenodd.html">evenodd module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fournumbers.html">fournumbers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hand.html">hand module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mouse.html">mouse module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onenumber.html">onenumber module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="player.html">player module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poker_game.html">poker_game module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poker_human.html">poker_human module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poker_player.html">poker_player module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="race.html">race module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="races.html">races module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roulette.html">roulette module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run.html">run module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start_blackjack.html">start_blackjack module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start_poker.html">start_poker module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="threenumbers.html">threenumbers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="track.html">track module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twonumbers.html">twonumbers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="winners.html">winners module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Casino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">CasinoDocumentation</a></li>
+      <li class="breadcrumb-item active">cards module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/cards.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-cards">
+<span id="cards-module"></span><h1>cards module<a class="headerlink" href="#module-cards" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="cards.Rank">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cards.</span></span><span class="sig-name descname"><span class="pre">Rank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cards.Rank" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>Class representing card ranks</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cards.Rank.ACE">
+<span class="sig-name descname"><span class="pre">ACE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">14</span></em><a class="headerlink" href="#cards.Rank.ACE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cards.Rank.EIGHT">
+<span class="sig-name descname"><span class="pre">EIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#cards.Rank.EIGHT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cards.Rank.FIVE">
+<span class="sig-name descname"><span class="pre">FIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#cards.Rank.FIVE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cards.Rank.FOUR">
+<span class="sig-name descname"><span class="pre">FOUR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#cards.Rank.FOUR" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cards.Rank.JACK">
+<span class="sig-name descname"><span class="pre">JACK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em><a class="headerlink" href="#cards.Rank.JACK" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cards.Rank.KING">
+<span class="sig-name descname"><span class="pre">KING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">13</span></em><a class="headerlink" href="#cards.Rank.KING" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cards.Rank.NINE">
+<span class="sig-name descname"><span class="pre">NINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#cards.Rank.NINE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cards.Rank.QUEEN">
+<span class="sig-name descname"><span class="pre">QUEEN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#cards.Rank.QUEEN" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cards.Rank.SEVEN">
+<span class="sig-name descname"><span class="pre">SEVEN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#cards.Rank.SEVEN" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cards.Rank.SIX">
+<span class="sig-name descname"><span class="pre">SIX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#cards.Rank.SIX" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cards.Rank.TEN">
+<span class="sig-name descname"><span class="pre">TEN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#cards.Rank.TEN" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cards.Rank.THREE">
+<span class="sig-name descname"><span class="pre">THREE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#cards.Rank.THREE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cards.Rank.TWO">
+<span class="sig-name descname"><span class="pre">TWO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#cards.Rank.TWO" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="cards.Suit">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cards.</span></span><span class="sig-name descname"><span class="pre">Suit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cards.Suit" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>Class representing card suits</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cards.Suit.CLUBS">
+<span class="sig-name descname"><span class="pre">CLUBS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#cards.Suit.CLUBS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cards.Suit.DIAMONDS">
+<span class="sig-name descname"><span class="pre">DIAMONDS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#cards.Suit.DIAMONDS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cards.Suit.HEARTS">
+<span class="sig-name descname"><span class="pre">HEARTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#cards.Suit.HEARTS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cards.Suit.SPADES">
+<span class="sig-name descname"><span class="pre">SPADES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#cards.Suit.SPADES" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="board.html" class="btn btn-neutral float-left" title="board module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="casino.html" class="btn btn-neutral float-right" title="casino module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Aleksandra Niedziela, Helena Sekowska-Sloka.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+dozens module
+=============
+
+.. automodule:: dozens
+   :members:
+   :undoc-members:
+   :show-inheritance:

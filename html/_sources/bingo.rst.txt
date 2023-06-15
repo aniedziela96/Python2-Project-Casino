@@ -1,0 +1,7 @@
+bingo module
+============
+
+.. automodule:: bingo
+   :members:
+   :undoc-members:
+   :show-inheritance:

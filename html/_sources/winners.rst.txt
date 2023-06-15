@@ -1,0 +1,7 @@
+winners module
+==============
+
+.. automodule:: winners
+   :members:
+   :undoc-members:
+   :show-inheritance:
