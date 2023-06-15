@@ -5,13 +5,13 @@ from poker.deck import Deck
 
 class Blackjack_player(Player):
     """Class representing a blackjack player. Blackjack player has a list of, 
-        Blackjack_hands which is representing the bets that the player is currently 
-        playing.
+    Blackjack_hands which is representing the bets that the player is currently 
+    playing.
 
-        :param name: Players name.
-        :type name: str
-        :param tokens: The amount of tokens the player has
-        :type tokens: int
+    :param name: Players name.
+    :type name: str
+    :param tokens: The amount of tokens the player has
+    :type tokens: int
     """
     def __init__(self, name: str, tokens: int) -> None:
         """Blackjack_player constructor
@@ -71,18 +71,18 @@ class Blackjack_player(Player):
     def player_hit(self, card: list, hand_number = 1) -> None:
         """Adds a card to the `hand_number` hand.
 
-            :param card: A card we wanto to add
-            :type card: tuple
-            :param hand_number: Number of bet to wich we will add a `card`
-            :type hand_number: int
+        :param card: A card we wanto to add
+        :type card: tuple
+        :param hand_number: Number of bet to wich we will add a `card`
+        :type hand_number: int
         """
         self.bets[hand_number - 1].add_cards(card)
 
     def add_bet(self, hand: Blackjack_hand) -> None:
         """Adds a new bet to the list of blackjack hands.
 
-            :param hand: A new `Blackjack_hand` representing a bet
-            :type hand: class:`blackjack.blackjack_hand.Blackjack_hand`
+        :param hand: A new `Blackjack_hand` representing a bet
+        :type hand: class:`blackjack.blackjack_hand.Blackjack_hand`
         """
         self.bets.append(hand)
   
