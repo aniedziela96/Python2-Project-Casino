@@ -14,7 +14,7 @@ def get_pass():
     Creates a window that allows user to type the password without showing letters.
 
     :return: A password that the player has typed.
-    :rtype: class: str
+    :rtype: str
     """
     import tkinter
     import tkinter.simpledialog

@@ -8,26 +8,67 @@ from races.race import Race
 
 
 class Races:
+    """
+    A class used to represent races and operate whole races game.
+
+    :param names: A tuple with names for runners (constant: ("Całeczka", "Pochodniusia", "Różniczka", "Miareczka", "Sumka", "Dystrybuantka", "Transformatka",
+                      "Bazunia", "Graniczka", "Metryczka", "Potęgusia"))
+    :type names: tuple
+    :param tracks: A tuple with types of tracks (constant: ("flat", "rising", "sloping"))
+    :type tracks: tuple
+    :param converters: A tuple with prize converters (constant: (4, 2, 1.5, 1.2, 1.1))
+    :type converters: tuple
+    :param enter_price: An enter price 
+    :type enter_price: int
+    :param gamblers: A tuple with fake players (constant: ("Darek", "Rysiek", "Piotrek", "Bodzio"))
+    :type gamblers: tuple
+    :param player: The player who plays races
+    :type player: class: `main.Player`    
+    """
     def __init__(self, player: Player) -> None:
+        """
+        Constructor method.
+        """
         self.names = ("Całeczka", "Pochodniusia", "Różniczka", "Miareczka", "Sumka", "Dystrybuantka", "Transformatka",
                       "Bazunia", "Graniczka", "Metryczka", "Potęgusia")
         self.tracks = ("flat", "rising", "sloping")
         self.converters = (4, 2, 1.5, 1.2, 1.1)
         self.enter_price = 10
-        self.gamblers = ("Darek", "Rysiek", "Piotrek", "Boguś")
+        self.gamblers = ("Darek", "Rysiek", "Piotrek", "Bodzio")
         self.player = player
 
-    # losujemy zakłady pozostałych graczy
+    # taking random gamblers
     @staticmethod
     def other_bets(number_of_gamblers) -> list:
+        """"
+        Makes fake players' bets.
+
+        :param number_of_gamblers: A number of fake players
+        :type number_of_gamblers: int
+
+        :return: A list with other bets
+        :rtype: list
+        """
         others = [randrange(0, number_of_gamblers) for _ in range(4)]
         return others
 
     def show_other_bets(self, other_bets: list) -> None:
+        """"
+        Show fake players' bets.
+
+        :param other_bets: A list with fake players' bets.
+        :type other_bets: list
+        """
         for i in range(len(self.gamblers)):
             print(f"{self.gamblers[i]} bets on number {other_bets[i]+1}.")
 
     def make_bet(self) -> int:
+        """"
+        Allows the player to make a bet by the interaction.
+
+        :return: A bet as an number of player's favourite mouse
+        :rtype: int
+        """
         ok = False
         favorite = None
 
@@ -50,16 +91,22 @@ class Races:
         return favorite
 
     def make_race(self) -> None:
+        """
+        Operates the races.
+        Makes the whole race, operates bets and sums up the race.
+        """
+
+        print("")
         print("Let the races begin!")
         print("")
 
-        # tworzymy nowy tor; typ trasy losujemy z tracks,
-        # zaś dystans to liczba całkowita z przedziału 5-8 włącznie (w metrach)
+        # making new track;
+        # distance is an int (in meters)
         track = Track(choice(self.tracks), randrange(5, 9))
         runners = []
         lst_of_names = sample(self.names, k=5)
 
-        # losujemy zawodników i prezentujemy ich graczowi
+        # making runners
         for i in range(5):
             mouse = Mouse(lst_of_names[i], round(uniform(0.2, 0.3), 5), round(uniform(-.25, .25), 5),
                           choice(self.tracks), round(abs(np.random.normal(1, 0.2, 1)[0]), 5))
@@ -69,22 +116,22 @@ class Races:
         print(race.get_track())
         print("")
 
-        # losujemy i prezentujemy inne zakłady
+        # making other bets
         other_bets = self.other_bets(5)
         self.show_other_bets(other_bets)
         print("")
 
-        # po prezentacji prosimy gracza o zrobienie zakładu
+        # making player's bet
         bet = self.make_bet()
         times = race.start_race()
         print("")
 
-        # wyłaniamy zwycięzców i prezentujemy wyniki
+        # getting the winners
         winners = race.get_winners(times)
         race.show_results(times, winners)
         print("")
 
-        # podsumowujemy zakłady i prezentujemy wyniki
+        # summing up and results
         self.sum_up(bet, winners, other_bets)
         print("")
         print("Do you wish to see full table of parameters('no' for no, anything else for yes)?")
@@ -97,6 +144,16 @@ class Races:
         input("Press ENTER to come back to main menu ")
 
     def sum_up(self, bet: int, winners: list, other_bets: list) -> None:
+        """
+        Sums up the races. Adds tokens in a case of winning a bet.
+        
+        :param bet: A player's favourite mouse (number)
+        :type bet: int
+        :param winners: A list of winners
+        :type winners: list
+        :param other_bets: A list with fake players' bets
+        :type other_bets: list
+        """
         if not winners:
             self.player.add_tokens(self.enter_price)
             print("Because there is no winner, your tokens comes back to you!")

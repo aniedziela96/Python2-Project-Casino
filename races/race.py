@@ -42,7 +42,8 @@ class Race:
         """
         Runs the races. Calculates times based on the list of runners.
 
-        :return: 
+        :return: A list of times
+        :rtype: list
         """
         times = []
         for i in range(5):
@@ -89,6 +90,9 @@ class Race:
         return times
 
     def show_full_stats(self) -> None:
+        """
+        Shows full runners' stats as a table (from module tabulate).
+        """
         print("-------------------------------FULL TABLE OF PARAMETERS------------------------------")
         table = [["number", "name", "speed", "stamina", "preference", "daily well-being"]]
         for i in range(5):
@@ -102,6 +106,12 @@ class Race:
 
     # number_to_show is a number of attributes to show the player (a number and a name of a mouse not included)
     def show_random_stats(self, number_to_show: int) -> None:
+        """
+        Shows runners' random stats as a table (from module tabulate).
+
+        :param number_to_show: A number of attributes to show.
+        :type number_to_show: int
+        """
         print("-----------------------------------LIST OF RUNNERS-----------------------------------")
         table = [["number", "name", "speed", "stamina", "preference", "daily well-being"]]
 
@@ -131,6 +141,15 @@ class Race:
 
     @staticmethod
     def get_winners(times: list) -> list:
+        """
+        Gets winners based on a list of times.
+
+        :param times: A list of times
+        :type times: list
+
+        :return: A list of winners
+        :rtype: list
+        """
         winner_time = np.inf
         for i in times:
             if type(i) == str:
@@ -146,6 +165,14 @@ class Race:
         return winners
 
     def show_results(self, times: list, winners: list) -> None:
+        """
+        Shows results of the race.
+
+        :param times: A list of times
+        :type times: list
+        :param winners: A list of winners
+        :type winners: list
+        """
         print("----------------RESULTS----------------")
         table = [["number", "name", "time"]]
 

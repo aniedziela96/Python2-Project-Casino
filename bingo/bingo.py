@@ -9,15 +9,15 @@ import os
 
 class Bingo:
     """
-    A class used to play the bingo.
+    A class used to play the `bingo`.
 
     :param player: The player who plays the game
     :type player: class: `main.Player`
     :param gamblers: A tuple with names of fake players
     :type bet_weights: tuple
-    :param enter_price: A price the player must pay to play the game (constant)
+    :param enter_price: A price the `player` must pay to play the game (constant: 10)
     :type enter_price: int
-    :param winner_prize: A prize to win (constant)
+    :param winner_prize: A prize to win (constant: 20)
     :type winner_prize: int
     """
     def __init__(self, player: Player) -> None:
@@ -25,7 +25,7 @@ class Bingo:
         Constructor method.
         """
         self.player = player
-        self.gamblers = ("Darek", "Rysiek", "Piotrek", "Boguś")
+        self.gamblers = ("Darek", "Rysiek", "Piotrek", "Bodzio")
         self.enter_price = 10
         self.winner_prize = 20
 
@@ -53,7 +53,7 @@ class Bingo:
 
     def make_bingo_game(self) -> BingoGame:
         """
-        Makes bingo game based on player, 2 random fake players and 3 random bingo boards.
+        Makes bingo game based on `player`, 2 random fake players and 3 random bingo boards.
 
         :return: A single bingo game
         :rtype: class: `bingo.BingoGame`
@@ -126,7 +126,7 @@ class Bingo:
         round_number = 1
 
         while True:
-            # begging of a new round
+            # beggining of a new round
             print("")
             print(f"ROUND {round_number}.")
 

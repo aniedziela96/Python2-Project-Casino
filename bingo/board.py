@@ -2,7 +2,7 @@ from tabulate import tabulate
 
 class Board:
     """
-    A class used to represent and operate the bingo board.
+    A class used to represent the bingo board and operate on it.
 
     :param columns: Columns of the board
     :type columns: list
