@@ -5,17 +5,45 @@ from tabulate import tabulate
 
 
 class Race:
+    """
+    A class used to operate a single race.
+
+    :param track: The track of the race
+    :type track: class: `races.Track`
+    :param runners: A list of runners (mice)
+    :type runners: list
+    """
     def __init__(self, track: Track, runners: list) -> None:
+        """
+        Constructor method.
+        """
         self.track = track
         self.runners = runners
 
     def get_runners(self) -> list:
+        """
+        Runners' getter.
+
+        :return: A list of runners (mice)
+        :rtype: list
+        """
         return self.runners
 
     def get_track(self) -> Track:
+        """
+        Track's getter.
+
+        :return: The track of the race
+        :rtype: class: `races.Track`
+        """
         return self.track
 
     def start_race(self) -> list:
+        """
+        Runs the races. Calculates times based on the list of runners.
+
+        :return: 
+        """
         times = []
         for i in range(5):
             speed = self.runners[i].get_speed()

@@ -17,9 +17,10 @@ class Roulette:
 
     :param player: The player who plays the game
     :type player: class: `main.Player`
-    :param bet_weights: A tuple with weights of different bets (constant)
+    :param bet_weights: A tuple with weights of different bets (constant: (1, 1, 2, 8, 11, 17, 35) )
     :type bet_weights: tuple
-    :param bet_names: A tuple with names of different bets (constant)
+    :param bet_names: A tuple with names of different bets (constant: ("even/odd", "eighteens", "dozens", "four numbers",
+                          "three numbers", "two numbers", "one number"))
     :type bet_names: tuple
     """
     def __init__(self, player: Player) -> None:
