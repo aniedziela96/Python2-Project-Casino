@@ -4,12 +4,20 @@ from main.player import Player
 from typing import Union
 
 class Poker_Game():
+    """Class responsible for playing the poker game.
+    :param player: Player that will be playing the game
+    :type player: class:`main.player.Player`
+    """
     def __init__(self, player: Player) -> None:
+        """Constructor method
+        """
         self.poker_player = player
         self.deck = Deck()
         self.poker = Poker(player)
         
     def round_one(self) -> None:
+        """Plays round one of poker, shuffles the deck, croupier and 
+            player draw two cards"""
         self.deck.shuffle()
         print("Drawing two cards...")
         self.poker.poker_player.draw_cards(self.deck.draw(2))
@@ -17,6 +25,12 @@ class Poker_Game():
 
 
     def action(self) -> Union[None , str]:
+        """Allows player to choose a action and plays it.
+        
+        :return: string representing chosen action or None if player wants
+            to check their tokens
+        :rtype: NoneType or str
+        """
         while True:
             print("1: Bet")
             print("2: Fold")
@@ -41,11 +55,16 @@ class Poker_Game():
                 return None
 
     def round_two(self) -> None:
+        """Plays round two of poker game, player and croupier draw three cards
+        """
         print("drawing three cards...")
         self.poker.poker_player.draw_cards(self.deck.draw(3))
         self.poker.croupier.draw_cards(self.deck.draw(3))
 
     def final(self) -> None:
+        """Shows the player croupier's hand and determines the winner and adds
+            tokens to the player account
+        """
         print("Your hand: ")
         self.poker.poker_player.show_player_hand()
         print("Croupier's hand:")
@@ -61,7 +80,8 @@ class Poker_Game():
 
 
     def start_game(self) -> None:
-
+        """Plays the whole poker game.
+        """
         self.round_one()
         while True:
             self.poker.poker_player.show_player_hand()
@@ -94,5 +114,6 @@ class Poker_Game():
 
     @staticmethod
     def end_game():
+        """Inupt that allows player to end the game"""
         input("Press Enter to continue")
         

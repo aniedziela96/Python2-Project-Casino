@@ -4,6 +4,7 @@ from poker.croupier import Croupier
 from poker.winners import Winners
 from poker.poker_human import Poker_human
 from poker.deck import Deck
+from typing import Union
 
 class Poker():
     """Class contaning methods that handle possible poker actions
@@ -11,6 +12,8 @@ class Poker():
     :type player: class:`main.player.Player`
     """
     def __init__(self, player: Player) -> None:
+        """Constructor method
+        """
         self.player = player
         self.poker_player = Poker_human(player.name, player.tokens)
         self.croupier = Croupier()
@@ -19,6 +22,14 @@ class Poker():
 
 
     def bet(self, player = True, all_in = False) -> None:
+        """Plays the action of bet in poker game
+
+        :param player: If `True` player plays the bet, if False `Croupier` is playing
+            Croupier move - under construction
+        :type player: bool
+        :param all_in: `True` if player wants to bet all his tokens
+        :type all_in: bool
+        """
         if player:
             if all_in:
                 player_bet = self.poker_player.tokens
@@ -45,6 +56,12 @@ class Poker():
         #TODO: what croupier does in bet situation
 
     def match(self, player = True) -> None:
+        """Plays the match action in poker game
+        
+        :param player: If `True` player plays the bet, if False `Croupier` is playing
+            Croupier move - under construction
+        :type player: bool
+        """
         self.bet_money += self.last_bet
         if player:
             self.poker_player.spend_tokens(self.last_bet)
@@ -52,10 +69,23 @@ class Poker():
         self.last_bet = 0
 
     def fold(self, player = True):
+        """Plays the fold
+        
+        :param player: If `True` nothing happens - allows the game to end, if `False` player
+            wins all the tokens because Croupier is automatically loses
+        :type player: bool
+        """
         if not player:
             self.poker_player.add_tokens(self.bet_money)
     
-    def winner(self):
+    def winner(self) -> Union['Poker_human' , 'Croupier']:
+        """Establishes a winner of the poker game. First checks the rank of player and 
+            croupier, than compares it. If both ranks are the same uses a `winner` class 
+            to determine the winner
+
+        :return: player or croupier, depending on who one the poker game
+        :rtype: class:`poker.poker_human.Poker_human` or class:`poker.croupier.Croupier`
+        """
         self.poker_player.rank()
         self.croupier.rank()
         self_rank = self.poker_player.hand_rank

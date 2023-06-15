@@ -4,13 +4,24 @@ from poker.cards import Suit, Rank
 from poker.deck import Deck
 
 class Winners():
+    """Class that helps determine the player that has better hand if both
+        of them have the same rank.
+        """
     def __init__(self, poker_player1: Poker_Player, poker_player2: Poker_Player) -> None:
+        """Constructor method
+        """
         self.player1 = poker_player1
         self.hand1 = sorted(poker_player1.hand.cards)
         self.player2 = poker_player2
         self.hand2 = sorted(poker_player2.hand.cards)
 
     def winner_high_card(self) -> Poker_Player:
+        """Finds the winner if both players have high card by iterating from 
+            highest to lowest card.
+
+        :return: Player with the highest card value
+        :rtype: class:`poker.poker_player.Poker_Player    
+        """
         for i in range(5):
             if self.hand1[i][0] > self.hand2[i][0]:
                 return self.player1
@@ -19,6 +30,12 @@ class Winners():
 
         
     def winner_pair(self) -> Poker_Player:
+        """Finds the winner if both players have high card by checking who has
+            older pair, if pairs are the same looks for the highest card.
+
+        :return: Player with older pair or higher card.
+        :rtype: class:`poker.poker_player.Poker_Player    
+        """
         last_pair1 = False
         last_pair2 = False
         for i in range(4):
@@ -49,6 +66,11 @@ class Winners():
 
     @staticmethod        
     def find_high_card(hand: Hand) -> tuple:
+        """Finds the card which doesn't create a pair when player has two pairs
+        
+        :return: cards which isn't in pair
+        :rtype: tuple
+        """
         for i in range(4):
             if hand[i][0] != hand[i + 1][0]:
                 if i == 0:
@@ -58,6 +80,12 @@ class Winners():
                 
          
     def winner_two_pairs(self) -> Poker_Player:
+        """Finds the winner if both players have high card by iterating from 
+            highest to lowest card.
+
+        :return: Player with the highest card value
+        :rtype: class:`poker.poker_player.Poker_Player    
+        """
         if self.hand1[3][0] > self.hand2[3][0]:
             return self.player1
         elif self.hand1[3][0] < self.hand2[3][0]:
