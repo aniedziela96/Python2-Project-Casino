@@ -40,7 +40,7 @@ class Casino():
         """
         Creates player based on a name and tokens.
         
-        :param name: PLayer's name
+        :param name: Player's name
         :type name: str
         :param tokens: Number of tokens
         :type tokens: int

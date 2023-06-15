@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>11</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>1056</x><y>869</y><w>528</w><h>176</h></coordinates><panel_attributes>*Casino*
+<diagram program="umletino" version="15.1"><zoom_level>3</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>288</x><y>237</y><w>144</w><h>48</h></coordinates><panel_attributes>*Casino*
 --
 + file: str
 --
@@ -6,7 +6,7 @@
 + login(): Player
 + start(): None
 + logout(player: Player): None
-+ check_tokens(tokens: int, player: Player, blackjack: bool): bool </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1672</x><y>814</y><w>231</w><h>209</h></coordinates><panel_attributes>*Player*
++ check_tokens(tokens: int, player: Player, blackjack: bool): bool </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>456</x><y>222</y><w>63</w><h>57</h></coordinates><panel_attributes>*Player*
 --
 + name: str
 + tokens: int
@@ -15,7 +15,7 @@
 + get_tokens(): int
 + spend_tokens(tokens: int): None
 + add_tokens(tokens: int): None
-+ all_in(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>484</x><y>891</y><w>440</w><h>242</h></coordinates><panel_attributes>*Bingo*
++ all_in(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>132</x><y>243</y><w>120</w><h>66</h></coordinates><panel_attributes>*Bingo*
 --
 + player: Player
 + gamblers: tuple
@@ -28,7 +28,7 @@ _+ make_bingo_board(): Board_
 _+ make_times(number_of_fake_players: int, time: float): float[ ]_
 + pay_prize(): None
 + sum_up(): None
-+ start_game(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>22</x><y>770</y><w>407</w><h>165</h></coordinates><panel_attributes>*BingoGame*
++ start_game(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>6</x><y>210</y><w>111</w><h>45</h></coordinates><panel_attributes>*BingoGame*
 --
 + bingo_players: tuple
 + boards: Board[ ]
@@ -38,14 +38,14 @@ _+ make_times(number_of_fake_players: int, time: float): float[ ]_
 + check_boards(number: int): None
 + is_bingos(): int[ ]
 + show_players_boards(): None
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>1045</y><w>363</w><h>132</h></coordinates><panel_attributes>*Board*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>285</y><w>99</w><h>36</h></coordinates><panel_attributes>*Board*
 --
 + columns: list
 --
 + __init__(columns: list): None
 + check(number: int): None
 + is_bingo(): bool
-+ show(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>396</x><y>1397</y><w>682</w><h>242</h></coordinates><panel_attributes>*Blackjack*
++ show(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>108</x><y>381</y><w>186</w><h>66</h></coordinates><panel_attributes>*Blackjack*
 --
 + croupier: Croupier_bj
 + player: Blackjack_player
@@ -60,19 +60,19 @@ _+ make_times(number_of_fake_players: int, time: float): float[ ]_
 + double_down(): str
 + insurance(): str/None
 + split(): str/Blackjack
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1628</x><y>1727</y><w>231</w><h>132</h></coordinates><panel_attributes>*Blackjack_hand*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>444</x><y>471</y><w>63</w><h>36</h></coordinates><panel_attributes>*Blackjack_hand*
 --
 + score: int
 --
 + calculate_score(): None
 + is_pair(): bool
-+ split(): tuple</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1155</x><y>1782</y><w>330</w><h>121</h></coordinates><panel_attributes>*Blackjack_player*
++ split(): tuple</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>315</x><y>486</y><w>90</w><h>33</h></coordinates><panel_attributes>*Blackjack_player*
 --
 + bets: Blackjack_hand[ ]
 --
 + show_bets(): None
 + player_hit(card: list, hand_number = int): None 
-+ add_bet(hand: Blackjack_hand): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1144</x><y>1199</y><w>407</w><h>319</h></coordinates><panel_attributes>*Start_blackjack*
++ add_bet(hand: Blackjack_hand): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>312</x><y>327</y><w>111</w><h>87</h></coordinates><panel_attributes>*Start_blackjack*
 --
 + player: Player
 + blackjack_player: Blackjack_player
@@ -92,7 +92,7 @@ _+ make_times(number_of_fake_players: int, time: float): float[ ]_
 + final(): None
 + start_game(): None
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1210</x><y>1584</y><w>231</w><h>165</h></coordinates><panel_attributes>*Croupier_bj*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>330</x><y>432</y><w>63</w><h>45</h></coordinates><panel_attributes>*Croupier_bj*
 --
 + hand: Blackjack_hand
 + score: int
@@ -101,7 +101,7 @@ _+ make_times(number_of_fake_players: int, time: float): float[ ]_
 + show_hidden(): None
 + show_open(): None
 + set_score(): None
-+ cropiers_move(deck: Deck): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1034</x><y>517</y><w>396</w><h>242</h></coordinates><panel_attributes>*Races*
++ cropiers_move(deck: Deck): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>282</x><y>141</y><w>108</w><h>66</h></coordinates><panel_attributes>*Races*
 --
 + names: tuple
 + tracks: tuple
@@ -116,7 +116,7 @@ _+ other_bets(number_of_gamblers: int): str[]_
 + make_bet(): int
 + make_race(): None
 + sum_up(bet: int, winners: int[], other_bets: int[]): None
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1353</x><y>154</y><w>583</w><h>242</h></coordinates><panel_attributes>*Mouse*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>369</x><y>42</y><w>159</w><h>66</h></coordinates><panel_attributes>*Mouse*
 --
 + name: str
 + speed: float
@@ -129,7 +129,7 @@ _+ other_bets(number_of_gamblers: int): str[]_
 + get_speed(): float
 + get_stamina(): float
 + get_preference(): str
-+ get_daily_well_being(): float</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>869</x><y>121</y><w>341</w><h>231</h></coordinates><panel_attributes>*Race*
++ get_daily_well_being(): float</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>237</x><y>33</y><w>93</w><h>63</h></coordinates><panel_attributes>*Race*
 --
 + track: Track
 + runners: Mouse[ ] 
@@ -141,24 +141,24 @@ _+ other_bets(number_of_gamblers: int): str[]_
 + show_full_stats(): None
 + show_random_stats(number_to_show: int): None
 _+ get_winners(times: float[ ]): int[ ]_
-+ show_results(times: float[ ], winners: int [ ]): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>682</x><y>440</y><w>231</w><h>132</h></coordinates><panel_attributes>*Track*
++ show_results(times: float[ ], winners: int [ ]): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>186</x><y>120</y><w>63</w><h>36</h></coordinates><panel_attributes>*Track*
 --
 + track_type: str
 + distance: int
 --
 + get_track_type(): str
 + get_distance(): int
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2398</x><y>891</y><w>242</w><h>88</h></coordinates><panel_attributes>*Croupier*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>654</x><y>243</y><w>66</w><h>24</h></coordinates><panel_attributes>*Croupier*
 --
 --
 + croupier_bet: None
-+ croupier_match(last_bet: int): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1892</x><y>1529</y><w>110</w><h>33</h></coordinates><panel_attributes>Rank</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1727</x><y>1562</y><w>110</w><h>33</h></coordinates><panel_attributes>Suit</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1672</x><y>1375</y><w>231</w><h>110</h></coordinates><panel_attributes>*Deck*
++ croupier_match(last_bet: int): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>516</x><y>417</y><w>30</w><h>9</h></coordinates><panel_attributes>Rank</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>471</x><y>426</y><w>30</w><h>9</h></coordinates><panel_attributes>Suit</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>456</x><y>375</y><w>63</w><h>30</h></coordinates><panel_attributes>*Deck*
 --
 card_list: tuple[ ]
 --
 + shuffle(): None
 + is_empyt(): bool
-+ draw(n: int): tuple[ ] </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2068</x><y>1463</y><w>231</w><h>165</h></coordinates><panel_attributes>*Hand*
++ draw(n: int): tuple[ ] </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>564</x><y>399</y><w>63</w><h>45</h></coordinates><panel_attributes>*Hand*
 --
 + cards: tuple[ ]
 --
@@ -167,7 +167,7 @@ card_list: tuple[ ]
 + is_straight(): bool
 + is_five(): bool
 + rank(): str
-+ show_hand(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2101</x><y>1166</y><w>297</w><h>209</h></coordinates><panel_attributes>*Poker*
++ show_hand(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>573</x><y>318</y><w>81</w><h>57</h></coordinates><panel_attributes>*Poker*
 --
 + player: Player
 + poker_player: Poker_human
@@ -179,10 +179,10 @@ card_list: tuple[ ]
 + bet(player: bool, all_in: bool) -&gt; None
 + match(player: bool): None
 + fold(player: bool): None
-+ winner(): Poker_human/Croupier</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2398</x><y>1012</y><w>231</w><h>66</h></coordinates><panel_attributes>*Poker_human*
++ winner(): Poker_human/Croupier</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>654</x><y>276</y><w>63</w><h>18</h></coordinates><panel_attributes>*Poker_human*
 --
 --
-+ players_bet(tokens: int): bool/str</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2013</x><y>836</y><w>286</w><h>143</h></coordinates><panel_attributes>*Poker_player*
++ players_bet(tokens: int): bool/str</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>549</x><y>228</y><w>78</w><h>39</h></coordinates><panel_attributes>*Poker_player*
 --
 + hand: Hand
 + hand_rank: None/str
@@ -190,7 +190,7 @@ card_list: tuple[ ]
 + __init__(nams: str, money: int): None
 + draw_cards(tuple[ ]): None
 + rank(): None
-+ show_player_hand(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1606</x><y>1089</y><w>231</w><h>209</h></coordinates><panel_attributes>*Poker_Game*
++ show_player_hand(): None</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>438</x><y>297</y><w>63</w><h>57</h></coordinates><panel_attributes>*Poker_Game*
 --
 + poker_player: Player
 + deck: Deck
@@ -202,7 +202,7 @@ card_list: tuple[ ]
 + round_two(): None
 + final(): None
 + start_game(): None
-_+ end_game(): None_</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2552</x><y>1155</y><w>286</w><h>297</h></coordinates><panel_attributes>*Winners*
+_+ end_game(): None_</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>696</x><y>315</y><w>78</w><h>81</h></coordinates><panel_attributes>*Winners*
 --
 + player1: Poker_player
 + hand1: tuple[ ]
@@ -219,7 +219,7 @@ _+ find_high_card(hand: Hand): tuple_
 + winner_full_house(): Poker_player
 + winner_four_of_a_kind(): Poker_player
 + winner_straigh_flush(): Poker_player
-+ winner_royal_flush(): str</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2145</x><y>308</y><w>286</w><h>143</h></coordinates><panel_attributes>*Bet*
++ winner_royal_flush(): str</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>585</x><y>84</y><w>78</w><h>39</h></coordinates><panel_attributes>*Bet*
 --
 + weight: int
 + options: int[ ]
@@ -227,48 +227,48 @@ _+ find_high_card(hand: Hand): tuple_
 +__init__(weight: int, options: int[ ]): None
 + is_option_ok(option: int): bool
 + correct_option(option: int): int
-+ winner_prize(tokens: int): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2519</x><y>759</y><w>231</w><h>99</h></coordinates><panel_attributes>*Dozens*
++ winner_prize(tokens: int): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>687</x><y>207</y><w>63</w><h>27</h></coordinates><panel_attributes>*Dozens*
 --
 + option: int
 --
 + __init__(option: int): None
-+ is_in_bet(number: int): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2519</x><y>275</y><w>231</w><h>99</h></coordinates><panel_attributes>*Eighteens*
++ is_in_bet(number: int): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>687</x><y>75</y><w>63</w><h>27</h></coordinates><panel_attributes>*Eighteens*
 --
 + option: int
 --
 + __init__(option: int): None
-+ is_in_bet(number: int): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2519</x><y>385</y><w>231</w><h>99</h></coordinates><panel_attributes>*EvenOdd*
++ is_in_bet(number: int): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>687</x><y>105</y><w>63</w><h>27</h></coordinates><panel_attributes>*EvenOdd*
 --
 + option: int
 --
 + __init__(option: int): None
-+ is_in_bet(number: int): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2519</x><y>143</y><w>231</w><h>121</h></coordinates><panel_attributes>*FourNumbers*
++ is_in_bet(number: int): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>687</x><y>39</y><w>63</w><h>33</h></coordinates><panel_attributes>*FourNumbers*
 --
 + option: int[ ]
 --
 + __init__(option: int): None
 + is_in_bet(number: int): bool
 + is_option_ok(option: int[ ]): bool
-+ correst_option(option: int[ ]): int[ ]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2519</x><y>649</y><w>231</w><h>88</h></coordinates><panel_attributes>*OneNumber*
++ correst_option(option: int[ ]): int[ ]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>687</x><y>177</y><w>63</w><h>24</h></coordinates><panel_attributes>*OneNumber*
 --
 + option: int
 --
 + __init__(option: int): None
-+ is_in_bet(number: int): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2519</x><y>506</y><w>231</w><h>132</h></coordinates><panel_attributes>*ThreeNumbers*
++ is_in_bet(number: int): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>687</x><y>138</y><w>63</w><h>36</h></coordinates><panel_attributes>*ThreeNumbers*
 --
 + option: int[ ]
 --
 + __init__(option: int): None
 + is_in_bet(number: int): bool
 + is_option_ok(option: int[ ]): bool
-+ correst_option(option: int[ ]): int[ ]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2519</x><y>0</y><w>231</w><h>132</h></coordinates><panel_attributes>*TwoNumbers*
++ correst_option(option: int[ ]): int[ ]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>687</x><y>0</y><w>63</w><h>36</h></coordinates><panel_attributes>*TwoNumbers*
 --
 + option: int[ ]
 --
 + __init__(option: int): None
 + is_in_bet(number: int): bool
 + is_option_ok(option: int[ ]): bool
-+ correst_option(option: int[ ]): int[ ]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1815</x><y>616</y><w>231</w><h>165</h></coordinates><panel_attributes>*Roulette*
++ correst_option(option: int[ ]): int[ ]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>495</x><y>168</y><w>63</w><h>45</h></coordinates><panel_attributes>*Roulette*
 --
 + player: Player
 + bet_weights: tuple
@@ -278,53 +278,53 @@ _+ find_high_card(hand: Hand): tuple_
 + show_available_bets(): None
 + make_bet(): tuple
 + start_roulette(): None
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2299</x><y>440</y><w>242</w><h>385</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;330;200;330</additional_attributes></element><element><id>Relation</id><coordinates><x>2343</x><y>440</y><w>198</w><h>275</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;230;160;230</additional_attributes></element><element><id>Relation</id><coordinates><x>2387</x><y>440</y><w>154</w><h>176</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;140;120;140</additional_attributes></element><element><id>Relation</id><coordinates><x>2420</x><y>440</y><w>121</w><h>33</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2420</x><y>341</y><w>121</w><h>33</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2343</x><y>198</y><w>198</w><h>132</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;100;10;10;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2255</x><y>99</y><w>286</w><h>231</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;190;10;10;240;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2013</x><y>352</y><w>154</w><h>286</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>627</x><y>120</y><w>66</w><h>105</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;330;200;330</additional_attributes></element><element><id>Relation</id><coordinates><x>639</x><y>120</y><w>54</w><h>75</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;230;160;230</additional_attributes></element><element><id>Relation</id><coordinates><x>651</x><y>120</y><w>42</w><h>48</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;140;120;140</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>120</y><w>33</w><h>9</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>93</y><w>33</w><h>9</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>639</x><y>54</y><w>54</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;100;10;10;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>615</x><y>27</y><w>78</w><h>63</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;190;10;10;240;10</additional_attributes></element><element><id>Relation</id><coordinates><x>549</x><y>96</y><w>42</w><h>78</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
-m2=1..*</panel_attributes><additional_attributes>10;240;10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1892</x><y>880</y><w>143</w><h>33</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2288</x><y>869</y><w>132</w><h>66</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;100;40</additional_attributes></element><element><id>Relation</id><coordinates><x>2288</x><y>924</y><w>132</w><h>121</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;100;90</additional_attributes></element><element><id>Relation</id><coordinates><x>1551</x><y>671</y><w>286</w><h>220</h></coordinates><panel_attributes>lt=.&gt;
-&lt;&lt;call&gt;&gt;</panel_attributes><additional_attributes>240;20;10;20;10;180</additional_attributes></element><element><id>Relation</id><coordinates><x>1507</x><y>1034</y><w>121</w><h>110</h></coordinates><panel_attributes>lt=.&gt;
-&lt;&lt;call&gt;&gt;</panel_attributes><additional_attributes>90;80;20;80;20;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1826</x><y>1210</y><w>297</w><h>44</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1..*</panel_attributes><additional_attributes>10;240;10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>516</x><y>240</y><w>39</w><h>9</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>624</x><y>237</y><w>36</w><h>18</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;100;40</additional_attributes></element><element><id>Relation</id><coordinates><x>624</x><y>252</y><w>36</w><h>33</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;100;90</additional_attributes></element><element><id>Relation</id><coordinates><x>423</x><y>183</y><w>78</w><h>60</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;call&gt;&gt;</panel_attributes><additional_attributes>240;20;10;20;10;180</additional_attributes></element><element><id>Relation</id><coordinates><x>411</x><y>282</y><w>33</w><h>30</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;call&gt;&gt;</panel_attributes><additional_attributes>90;80;20;80;20;10</additional_attributes></element><element><id>Relation</id><coordinates><x>498</x><y>330</y><w>81</w><h>12</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;250;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1166</x><y>1034</y><w>66</w><h>187</h></coordinates><panel_attributes>lt=.&gt;
-&lt;&lt;call&gt;&gt;</panel_attributes><additional_attributes>10;150;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>913</x><y>924</y><w>165</w><h>44</h></coordinates><panel_attributes>lt=.&gt;
-&lt;&lt;call&gt;&gt;</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1199</x><y>748</y><w>66</w><h>143</h></coordinates><panel_attributes>lt=.&gt;
-&lt;&lt;call&gt;&gt;</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>1826</x><y>1474</y><w>88</w><h>88</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;250;10</additional_attributes></element><element><id>Relation</id><coordinates><x>318</x><y>282</y><w>18</w><h>51</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;call&gt;&gt;</panel_attributes><additional_attributes>10;150;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>249</x><y>252</y><w>45</w><h>12</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;call&gt;&gt;</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element><element><id>Relation</id><coordinates><x>327</x><y>204</y><w>18</w><h>39</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;call&gt;&gt;</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>498</x><y>402</y><w>24</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;10;50;60;50</additional_attributes></element><element><id>Relation</id><coordinates><x>1672</x><y>1474</y><w>77</w><h>132</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;10;50;60;50</additional_attributes></element><element><id>Relation</id><coordinates><x>456</x><y>402</y><w>21</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;10;90;50;90</additional_attributes></element><element><id>Relation</id><coordinates><x>1716</x><y>1287</y><w>44</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;10;90;50;90</additional_attributes></element><element><id>Relation</id><coordinates><x>468</x><y>351</y><w>12</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>2387</x><y>1232</y><w>187</w><h>44</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>651</x><y>336</y><w>51</w><h>12</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;150;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2024</x><y>968</y><w>66</w><h>561</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;150;10</additional_attributes></element><element><id>Relation</id><coordinates><x>552</x><y>264</y><w>18</w><h>153</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;10;480;40;480</additional_attributes></element><element><id>Relation</id><coordinates><x>1771</x><y>1012</y><w>44</w><h>99</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;10;480;40;480</additional_attributes></element><element><id>Relation</id><coordinates><x>483</x><y>276</y><w>12</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>2200</x><y>968</y><w>44</w><h>220</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>264</y><w>12</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;10;180</additional_attributes></element><element><id>Relation</id><coordinates><x>1837</x><y>1617</y><w>308</w><h>176</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;140;260;140;260;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1430</x><y>1617</y><w>253</w><h>132</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;10;180</additional_attributes></element><element><id>Relation</id><coordinates><x>501</x><y>441</y><w>84</w><h>48</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;140;260;140;260;10</additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>441</y><w>69</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;200;10;200;100</additional_attributes></element><element><id>Relation</id><coordinates><x>1474</x><y>1804</y><w>176</w><h>44</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;200;10;200;100</additional_attributes></element><element><id>Relation</id><coordinates><x>402</x><y>492</y><w>48</w><h>12</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1,2,3,4</panel_attributes><additional_attributes>10;10;140;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1056</x><y>1584</y><w>176</w><h>44</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1,2,3,4</panel_attributes><additional_attributes>10;10;140;10</additional_attributes></element><element><id>Relation</id><coordinates><x>288</x><y>432</y><w>48</w><h>12</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;140;10</additional_attributes></element><element><id>Relation</id><coordinates><x>891</x><y>1628</y><w>286</w><h>220</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;140;10</additional_attributes></element><element><id>Relation</id><coordinates><x>243</x><y>444</y><w>78</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;10;170;240;170</additional_attributes></element><element><id>Relation</id><coordinates><x>1276</x><y>1507</y><w>44</w><h>99</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;10;170;240;170</additional_attributes></element><element><id>Relation</id><coordinates><x>348</x><y>411</y><w>12</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>1166</x><y>1507</y><w>44</w><h>297</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>318</x><y>411</y><w>12</w><h>81</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;10;250</additional_attributes></element><element><id>Relation</id><coordinates><x>924</x><y>1232</y><w>242</w><h>187</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;10;250</additional_attributes></element><element><id>Relation</id><coordinates><x>252</x><y>336</y><w>66</w><h>51</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1,2,3,4</panel_attributes><additional_attributes>200;10;10;10;10;150</additional_attributes></element><element><id>Relation</id><coordinates><x>1540</x><y>1419</y><w>154</w><h>44</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1,2,3,4</panel_attributes><additional_attributes>200;10;10;10;10;150</additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>387</y><w>42</w><h>12</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>924</y><w>55</w><h>143</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>252</y><w>15</w><h>39</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
-m2=1..*</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>418</x><y>781</y><w>187</w><h>132</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1..*</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>114</x><y>213</y><w>51</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1..*</panel_attributes><additional_attributes>140;100;140;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1144</x><y>341</y><w>44</w><h>198</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1..*</panel_attributes><additional_attributes>140;100;140;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>312</x><y>93</y><w>12</w><h>54</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;160;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>902</x><y>341</y><w>77</w><h>176</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;160;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>246</x><y>93</y><w>21</w><h>48</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>40;10;40;130;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>1199</x><y>220</y><w>176</w><h>44</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>40;10;40;130;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>327</x><y>60</y><w>48</w><h>12</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1..*
 m2=2..*</panel_attributes><additional_attributes>10;10;140;10</additional_attributes></element></diagram>

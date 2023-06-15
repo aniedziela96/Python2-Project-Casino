@@ -98,7 +98,7 @@ class Bingo:
         print("")
         input("Press ENTER to come back to main menu ")
 
-    def start_game(self):
+    def start_game(self) -> None:
         """
         Operates the entire game by the while loop, if/elif/else conditions.
         At first, spends player's tokens.
