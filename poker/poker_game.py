@@ -80,8 +80,8 @@ class Poker():
     
     def winner(self) -> Union['Poker_human' , 'Croupier']:
         """Establishes a winner of the poker game. First checks the rank of player and 
-            croupier, than compares it. If both ranks are the same uses a `winner` class 
-            to determine the winner
+        croupier, than compares it. If both ranks are the same uses a `winner` class 
+        to determine the winner
 
         :return: player or croupier, depending on who one the poker game
         :rtype: class:`poker.poker_human.Poker_human` or class:`poker.croupier.Croupier`

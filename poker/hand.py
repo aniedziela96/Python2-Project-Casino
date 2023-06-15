@@ -80,8 +80,9 @@ class Hand():
         :return: The name of a rank
         :rtype: str
         """
-        if not self.is_five:
+        if not self.is_five():
             raise IndexError ('only possible for 5 cards hands')
+        
         sorted_hand = sorted(self.cards)
         # checks if there is a pair - if there is there's no possibility for straight, colour etc.
         if sorted_hand[0][0] == sorted_hand[1][0] or \
