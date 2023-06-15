@@ -2,6 +2,8 @@ import enum
 
 
 class Suit(enum.IntEnum):
+    """Class representing card suits
+    """
     HEARTS = 1
     DIAMONDS = 2
     SPADES = 3
@@ -20,6 +22,8 @@ class Suit(enum.IntEnum):
         return suit
 
 class Rank(enum.IntEnum):
+    """Class representing card ranks
+    """
     TWO = 2
     THREE = 3
     FOUR = 4

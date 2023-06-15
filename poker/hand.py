@@ -5,16 +5,25 @@ HAND_RANKS = ['High card', 'Pair', 'Two Pair', 'Three of a kind',
            'Straight Flush', 'Royal Flush']
 
 class Hand():
-    """Class representing a hand, with cards.
+    """Class representing a hand with cards.
     """
     def __init__(self) -> None:
+        """Constructor method
+        """
         self.cards = []
 
     def add_cards(self, cards: list) -> None:
+        """Adds the card to the hand.
+
+        :param cards: a list of cards to be added to the hand
+        :type cards: list
+        """
         for card in cards:
             self.cards.append(card)
     
     def __str__(self) -> str:
+        """String representation of a hand
+        """
         cards_str = ""
         for card in self.cards:
             rank = str(card[0])
@@ -26,6 +35,11 @@ class Hand():
         return cards_str.removesuffix(", ")
 
     def is_one_color(self) -> bool:
+        """Checks if the cards on the hand have the same suit
+
+        :return: `True` if all the cards have the same suit, `False` otherwise
+        :rtype: bool
+        """
         for i in range(len(self.cards) - 1):
             if self.cards[i][1] != self.cards[i + 1][1]:
                 return False
@@ -33,6 +47,12 @@ class Hand():
         return True
     
     def is_straight(self) -> bool:
+        """Checks if after sorting the values of cards create sequence that are
+            increasing by one -straight.
+
+        :return: `True` if cards are straight, `False` otherwie
+        :rtype: bool
+        """
         sorted_cards = sorted(self.cards)
         for i in range(len(self.cards) - 1):
             if sorted_cards[i][0] + 1 != sorted_cards[i + 1][0]:
@@ -41,14 +61,27 @@ class Hand():
         return True
     
     def is_five(self) -> bool:
+        """Checks if there are five cards on the hand
+
+        :return: `True` if there are 5 cards on the hand, `False` otherwise
+        :rtype: bool
+        """
         if len(self.cards) == 5:
             return True
         else:
             return False
 
     def rank(self) -> str:
+        """Checks a poker rank that the cards on the hand create.
+
+        :raises IndexError: If there are not 5 cards on the hand raises an error, 
+            the rank can be only determined for 5 cards.
+        ...
+        :return: The name of a rank
+        :rtype: str
+        """
         if not self.is_five:
-            raise ValueError ('only possible for 5 cards hands')
+            raise IndexError ('only possible for 5 cards hands')
         sorted_hand = sorted(self.cards)
         # checks if there is a pair - if there is there's no possibility for straight, colour etc.
         if sorted_hand[0][0] == sorted_hand[1][0] or \
@@ -98,6 +131,8 @@ class Hand():
             return HAND_RANKS[0]
         
     def show_hand(self) -> None:
+        """Shows a representation of a cards in the hand.
+        """
         if self.cards == []:
             print(" ")
         else:

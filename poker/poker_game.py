@@ -6,6 +6,10 @@ from poker.poker_human import Poker_human
 from poker.deck import Deck
 
 class Poker():
+    """Class contaning methods that handle possible poker actions
+    :param player: Player playing poker
+    :type player: class:`main.player.Player`
+    """
     def __init__(self, player: Player) -> None:
         self.player = player
         self.poker_player = Poker_human(player.name, player.tokens)
