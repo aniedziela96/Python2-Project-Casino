@@ -62,12 +62,12 @@ class Race:
                 if self.track == "flat":
                     if preference == "flat":
                         # If a mouse likes current type of a track, she runs faster
-                        stamina += 0.1
+                        stamina += 1
                     # This formula is based on the uniformly accelerated/retraded motion equation
                     time = (-speed + ((speed ** 2.0 + 2.0 * stamina * distance) ** 0.5)) / stamina
                 elif self.track == "rising":
                     if preference == "rising":
-                        stamina += 0.1
+                        stamina += 1
                     # This formula is based on the uniformly accelerated/retraded motion equation
                     # on an inclined plane with an angle of inclination of 30 degrees, 
                     # so we subtract g*sin(30) from the acceleration, where g is the acceleration due to gravity
@@ -75,7 +75,7 @@ class Race:
                             ((speed ** 2.0 + 2.0 * (stamina - 9.81 * 0.5) * distance) ** 0.5)) / (stamina - 9.81 * 0.5)
                 else:
                     if preference == "sloping":
-                        stamina += 0.1
+                        stamina += 1
                     # This formula is based on the uniformly accelerated/retraded motion equation
                     # on an inclined plane with an angle of inclination of 30 degrees, 
                     # so we add g*sin(30) from the acceleration, where g is the acceleration due to gravity
