@@ -80,8 +80,7 @@ class Winners():
                 
          
     def winner_two_pairs(self) -> Poker_Player:
-        """Finds the winner if both players have high card by iterating from 
-            highest to lowest card.
+        """Finds the winner if both players have two pairs.
 
         :return: Player with the highest card value
         :rtype: class:`poker.poker_player.Poker_Player    
@@ -102,18 +101,33 @@ class Winners():
                     return self.player2
                 
     def winner_three_of_a_kind(self) -> Poker_Player:
+        """Finds the winner if both players have three of a kind.
+
+        :return: Player with the oldest three
+        :rtype: class:`poker.poker_player.Poker_Player    
+        """
         if self.hand1[2] > self.hand2[2]:
             return self.player1
         elif self.hand1[2] < self.hand2[2]:
             return self.player2
     
     def winner_straight(self) -> Poker_Player:
+        """Finds the winner if both players have straight.
+
+        :return: Player with the highest card.
+        :rtype: class:`poker.poker_player.Poker_Player    
+        """
         if self.hand1[4][0] > self.hand2[4][0]:
             return self.player1
         elif self.hand1[4][0] < self.hand2[4][0]:
             return self.player2
         
     def winner_flush(self) -> Poker_Player:
+        """Finds the winner if both players have flush.
+
+        :return: Player with the highest card.
+        :rtype: class:`poker.poker_player.Poker_Player    
+        """
         for i in range(5):
             if self.hand1[i][0] > self.hand2[i][0]:
                 return self.player1
@@ -126,23 +140,43 @@ class Winners():
             return self.player2
         
     def winner_full_house(self) -> Poker_Player:
+        """Finds the winner if both players have full house.
+
+        :return: Player with the oldest three
+        :rtype: class:`poker.poker_player.Poker_Player    
+        """
         if self.hand1[2] > self.hand2[2]:
             return self.player1
         else:
             return self.player2
         
     def winner_four_of_a_kind(self) -> Poker_Player:
+        """Finds the winner if both players have four of a kind.
+
+        :return: Player with the oldest four.
+        :rtype: class:`poker.poker_player.Poker_Player    
+        """
         if self.hand1[2] > self.hand2[2]:
             return self.player1
         else:
             return self.player2
         
     def winner_straight_flush(self) -> Poker_Player:
+        """Finds the winner if both players have three of a kind.
+
+        :return: Player with the highest card.
+        :rtype: class:`poker.poker_player.Poker_Player    
+        """
         if self.hand1[4] > self.hand2[4]:
             return self.player1
         else:
             return self.player2
         
     def winner_royal_flush(self) -> str:
+        """It won't happen in your lifetime ;)
+
+        :return: JACKPOT!
+        :rtype: str   
+        """
         return "JACKPOT"
     
