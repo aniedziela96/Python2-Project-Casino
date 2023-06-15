@@ -1,5 +1,8 @@
-from casino import Casino
-from player import Player
+import sys
+sys.path.insert(0, '/Users/hss/Documents/Python2-Project-Casino')
+
+from main.casino import Casino
+from main.player import Player
 import unittest
 
 
