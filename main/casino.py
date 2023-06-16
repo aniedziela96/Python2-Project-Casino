@@ -137,7 +137,7 @@ class Casino():
                 bet = player.get_tokens() + 1
                 while not self.check_tokens(bet, player, blackjack=True):
                     bet = int(input("Place your bet: "))
-                    if self.check_tokens(bet, player, blackjack=True):
+                    if not self.check_tokens(bet, player, blackjack=True):
                         print("You don't have enough tokens")
 
                 player.spend_tokens(bet)
