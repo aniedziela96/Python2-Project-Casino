@@ -161,3 +161,5 @@ class Roulette:
         print(f"Your current wallet balance is: {self.player.get_tokens()} tokens")
         print("")
         print("Feel free to play again!")
+        print("")
+        input("Press ENTER to come back to main menu ")

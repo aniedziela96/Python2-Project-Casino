@@ -114,6 +114,7 @@ class Casino():
             print("Type 'q' if you want to quit")
 
             choice = input("Type a number of a game: ")
+            os.system('cls' if os.name == 'nt' else 'clear')
 
             if choice == "1":
                 if self.check_tokens(10, player):
@@ -147,24 +148,36 @@ class Casino():
                 os.system('cls' if os.name == 'nt' else 'clear')
 
             elif choice == "4":
-                print("Roulette is starting")
+                print("")
                 r = Roulette(player)
                 r.start_roulette()
 
+                os.system('cls' if os.name == 'nt' else 'clear')
+
             elif choice == "5":
                 if self.check_tokens(10, player):
-                    print("Bingo is starting")
+                    print("")
                     b = Bingo(player)
                     b.start_game()
 
+                    os.system('cls' if os.name == 'nt' else 'clear')
+
 
             elif choice == "q":
+                print("")
                 print("Thank you for playing, hope to see you soon!")
+                print("")
                 self.logout(player)
                 break
 
             elif choice == "b":
+                print("")
                 print(f"You have {player.get_tokens()} tokens")
+                print("")
+                input("Press ENTER to come back to main menu ")
+                os.system('cls' if os.name == 'nt' else 'clear')
+
+            
 
     def logout(self, player: Player) -> None:
         """When leaving the casino saves a current amount of tokens in players file.

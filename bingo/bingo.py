@@ -78,7 +78,7 @@ class Bingo:
         """
         times = []
         for _ in range(number_of_fake_players):
-                times.append(round(uniform(time-2, time+3), 5))
+                times.append(round(uniform(time-2, time+2), 5))
         return times
 
     def pay_prize(self) -> None:
