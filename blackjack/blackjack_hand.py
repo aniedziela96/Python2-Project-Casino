@@ -51,7 +51,7 @@ class Blackjack_hand(Hand):
         :return: Card that has been removed
         :rtype: tuple
         """
-        if self.is_pair():
+        if not self.is_pair():
             raise ValueError("Only possible if there are two cards")
         
         card_splitted = self.cards.pop()

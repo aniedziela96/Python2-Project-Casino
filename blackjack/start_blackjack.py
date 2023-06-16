@@ -33,8 +33,8 @@ class Strat_blackjack():
         self.croupier.draw_cards(self.deck.draw(2))
         # self.croupier.draw_cards([(Rank.KING, Suit.CLUBS), (Rank.ACE, Suit.DIAMONDS)])
         first_bet = Blackjack_hand()
-        first_bet.add_cards(self.deck.draw(2))
-        # first_bet.add_cards([(Rank.FIVE, Suit.CLUBS), (Rank.FIVE, Suit.DIAMONDS)])
+        # first_bet.add_cards(self.deck.draw(2))
+        first_bet.add_cards([(Rank.FIVE, Suit.CLUBS), (Rank.FIVE, Suit.DIAMONDS)])
         self.blackjack_player.add_bet(first_bet)
         self.list_of_games.append(Blackjack(self.croupier, self.blackjack_player, 
                                             self.bet_money, self.deck))
@@ -57,9 +57,9 @@ class Strat_blackjack():
         print(f"Playing bet number {bet_number}")
         print("1: Stand")
         print("2: Hit")
-        print("3: Double down")
-
+        
         if first:
+            print("3: Double down")
             if self.croupier.hand.cards[1][0] == 14:
                 print("4: Insurance")
 
@@ -143,18 +143,27 @@ class Strat_blackjack():
                 print("You don't have enough money for insurance"
                       ", choose different option")
                 self.decision(game)
+            elif result == "no":
+                print("No")
+                self.decision(game)
             else:
                 setattr(self.player, 'tokens', self.blackjack_player.get_tokens())
 
 
         elif chosen_action == "5":
-            result = game.split()
-            if result == "failed":
+            try:
+                result = game.split()
+                if result == "failed":
+                    self.decision(game)
+                else:
+                    setattr(self.player, 'tokens', self.blackjack_player.get_tokens())
+                    self.list_of_games.append(result)
+                    self.play_bet(game)
+            except:
+                print("You can only choose split if you have two cards of" 
+                      "the same value.")
                 self.decision(game)
-            else:
-                setattr(self.player, 'tokens', self.blackjack_player.get_tokens())
-                self.list_of_games.append(result)
-                self.play_bet(game)
+            
 
 
     def players_score(self) -> list:
