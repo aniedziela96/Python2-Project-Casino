@@ -1,7 +1,7 @@
 import unittest
 import sys
 sys.path.insert(0, 'C:/Users/niedz/Documents/Python projects/Casino/Casino')
-from blackjack.blackjack_hand import Blackjack_hand
+from blackjack_hand import Blackjack_hand
 from poker.cards import Rank, Suit
 from blackjack.blackjack_game import Blackjack
 from blackjack.croupier_bj import Croupier_bj
