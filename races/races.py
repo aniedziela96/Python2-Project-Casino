@@ -102,13 +102,13 @@ class Races:
 
         # making new track;
         # distance is an int (in meters)
-        track = Track(choice(self.tracks), randrange(5, 9))
+        track = Track(choice(self.tracks), randrange(10, 15))
         runners = []
         lst_of_names = sample(self.names, k=5)
 
         # making runners
         for i in range(5):
-            mouse = Mouse(lst_of_names[i], round(uniform(10, 10.5), 5), round(uniform(-1.5, 1.5), 5),
+            mouse = Mouse(lst_of_names[i], round(uniform(3.5, 4.75), 5), round(uniform(4.5, 5), 5),
                           choice(self.tracks), round(abs(np.random.normal(1, 0.2, 1)[0]), 5))
             runners.append(mouse)
         race = Race(track, runners)
