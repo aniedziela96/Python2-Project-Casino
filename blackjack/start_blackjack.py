@@ -143,18 +143,27 @@ class Strat_blackjack():
                 print("You don't have enough money for insurance"
                       ", choose different option")
                 self.decision(game)
+            elif result == "no":
+                print("No")
+                self.decision(game)
             else:
                 setattr(self.player, 'tokens', self.blackjack_player.get_tokens())
 
 
         elif chosen_action == "5":
-            result = game.split()
-            if result == "failed":
+            try:
+                result = game.split()
+                if result == "failed":
+                    self.decision(game)
+                else:
+                    setattr(self.player, 'tokens', self.blackjack_player.get_tokens())
+                    self.list_of_games.append(result)
+                    self.play_bet(game)
+            except:
+                print("You can only choose split if you have two cards of" 
+                      "the same value.")
                 self.decision(game)
-            else:
-                setattr(self.player, 'tokens', self.blackjack_player.get_tokens())
-                self.list_of_games.append(result)
-                self.play_bet(game)
+            
 
 
     def players_score(self) -> list:

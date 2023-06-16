@@ -95,6 +95,9 @@ class Blackjack():
         if self.player.get_tokens() < insurance:
             return "failed"
         
+        if self.croupier.hand.cards[1][0] != 14:
+            return "no"
+        
         self.player.spend_tokens(insurance)
         self.croupier.set_score()
         if self.croupier.hand.score == 21:
