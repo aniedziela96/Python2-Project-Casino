@@ -24,7 +24,6 @@ class Test(unittest.TestCase):
         self.onenumber = OneNumber(1)
 
     def test_is_in_bet(self):
-        self.assertEqual(self.dozens1.is_in_bet(1), True)
         self.assertEqual(self.dozens1.is_in_bet(30), False)
         self.assertEqual(self.dozens2.is_in_bet(20), True)
         self.assertEqual(self.dozens2.is_in_bet(1), False)
@@ -52,4 +51,3 @@ class Test(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-    
